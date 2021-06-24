@@ -1,0 +1,5 @@
+---
+layout: default
+title: About
+---
+<h1>About us</h1>

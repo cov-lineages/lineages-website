@@ -1,0 +1,11 @@
+name,sample_date,travel_history,adm2,patient_or_HCW,ward
+E001,2020-09-22,USA,Edinburgh,patient,003
+E002,2020-09-21,,Edinburgh,HCW,NA
+E003,2020-09-20,,Edinburgh,patient,003
+E004,2020-09-20,,Edinburgh,patient,003
+E005,2020-09-23,Japan,Edinburgh,patient,006
+E006,2020-09-19,USA,Edinburgh,patient,006
+E007,2020-09-19,,Edinburgh,patient,006
+E008,2020-09-22,,Edinburgh,patient,006
+E009,2020-09-22,,Edinburgh,patient,006
+E010,2020-09-22,,Edinburgh,HCW,NA

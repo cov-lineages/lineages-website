@@ -1,0 +1,312 @@
+---
+layout: default
+---
+
+  <script src="https://cdn.jsdelivr.net/gh/rambaut/figtree.js@db798529/dist/figtree.umd.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+
+  <style>
+    .footer {
+      display: none;
+    }
+   
+
+  </style>
+
+  <body>
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function() {
+        if ($(this).scrollTop() > 20) {
+        $('#toTopBtn').fadeIn();
+        } else {
+        $('#toTopBtn').fadeOut();
+        }
+        });
+        
+        $('#toTopBtn').click(function() {
+        $("html, body").animate({
+        scrollTop: 0
+        }, 400);
+        return false;
+        });
+        });
+    </script>
+    
+    <script type="text/javascript">
+      const updateTableFactory = (tooltipId,metadata)=>(tipId)=>{
+              const data = metadata[tipId];
+              const tableDiv = d3.select(document.getElementById(tooltipId));
+              //Remove table
+          tableDiv.html("")
+              if (data !== undefined) {
+                  const visibleData = Object.keys(data).filter(d=>d!=='sequence_name');
+                  tableDiv.append("h3")
+                      .attr("class",'tooltip-header')
+                      .text(tipId)
+                      .append("hr");
+                  tableDiv.selectAll("p")
+                          .data(visibleData)
+                          .enter()
+                          .append("p")
+                          .attr("class","tooltip-text")
+                              .selectAll("span")
+                              .data(d=>[d,data[d]])
+                              .enter()
+                              .append("span")
+                              .attr("class",(d,i)=> i===0? "tooltip-key" :"tooltip-value")
+                              .text((d,i)=>i===0? d + " : ": d);
+              }
+      }
+    <%text>
+
+      function addSliderEventHandler(sliderID,fig){
+        const svg = fig.svgSelection.select(function() { return this.parentNode; })
+        const initialHeight = svg.attr("height");
+        const maxHeight = fig.tree().externalNodes.length*50; // 50 pixels for each tip plus a little for margins;
+
+        if(maxHeight<=initialHeight){
+          d3.select(`#${sliderID}`).remove();// don't need  a slider
+          return;
+        }
+        const heightScale = d3.scaleLinear()
+                .range([initialHeight,maxHeight])
+                .domain([0,1])
+
+            if(initialHeight/fig.tree().externalNodes.length>12){
+              fig.svgSelection.selectAll(".label")
+              .classed("show",true)
+            }
+
+        d3.select(`#${sliderID}`).on("input",function(){
+              const svgHeight = heightScale(this.value);
+              //magic number!!
+              svg.attr("height", svgHeight);
+            fig.update();
+            if(svgHeight/fig.tree().externalNodes.filter(node=>!node[fig.id].ignore).length>12){
+              fig.svgSelection.selectAll(".label")
+              .classed("show",true)
+            }else{
+              fig.svgSelection.selectAll(".label")
+              .classed("show",false)
+            }
+        })
+      }
+      </%text>
+
+      function buildTree(svgID, myTreeString,tooltipID,backgroundDataString,sliderID) {
+          const backgroundData = JSON.parse(backgroundDataString);
+          const updateTable = updateTableFactory(tooltipID, backgroundData);
+          const margins = {top:50,bottom:60,left:100,right:250}
+          const svg = d3.select(document.getElementById(svgID))
+          svg.selectAll("g").remove();
+          const newickString = myTreeString;
+          const tree = figtree.Tree.parseNewick(newickString);
+          const fig = new figtree.FigTree(document.getElementById(svgID),margins, tree)
+          fig.layout(figtree.rectangularLayout)
+                  .nodes(figtree.circle()
+                                  .filter(n=>!n.children)
+                                  .attr("r",8)
+                                  .hilightOnHover(20)
+                                  .onClick((node,i,n)=>{
+                                    updateTable(node.name);
+                                    fig.svgSelection.selectAll(".selected").classed("selected",false);
+                                    d3.select(n[i]).classed("selected",true);
+                                  }),
+                          figtree.tipLabel(v=>v.name).attr("dx",10),
+                          figtree.rectangle()
+                                  .filter(n=>n[fig.id].collapsed)
+                                  .attr("width",20)
+                                  .attr("height",20)
+                  )
+                        .nodeBackgrounds(figtree.circle()
+                                          .attr("r", 10)
+                                .filter(n=>!n.children)
+                                        )
+                        .branches(figtree.branch()
+                                    .hilightOnHover(20) 
+                                    .collapseOnClick()
+                                    .on("click",()=>{
+                                      const svgHeight = fig.svgSelection.select(function() { return this.parentNode; }).attr("height");
+                                      if(svgHeight/fig.tree().externalNodes.filter(node=>!node[fig.id].ignore).length>12){
+                                        fig.svgSelection.selectAll(".label")
+                                          .classed("show",true)
+                                      }else{
+                                        fig.svgSelection.selectAll(".label")
+                                        .classed("show",false)
+                                      }
+                                    })
+                            )
+                            .feature(
+                                    figtree.scaleBar()
+                                      .direction("x")
+                                      .length(1/29903)
+                                      .x(-60)
+                                      .y(-30)
+                                      // .y(fig.svgSelection.select(function() { return this.parentNode; }).attr("height")-margins.top-margins.bottom+20)
+                                      .title({text:"~1 SNP",
+                                      yPadding:10})
+                                        )
+
+        addSliderEventHandler(sliderID,fig);
+
+      }
+    </script>
+      <div id="wrapper" class="reportWrapper">
+        <div id="main">
+          <div class="inner">
+            <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
+              <section>
+                <h1>{{ page.lineage }} 
+                    <small class="text-muted">{{ page.today }}</small>
+                </h1>
+                <br>
+            <br>
+            <h3>Description</h3>
+            <div class="contrib">{{ page.description }}</div>
+            <small>This webpage is generated using publically available sequence data from GISAID, shared by international sequencing efforts.</small>
+            <br><br>
+            {% assign grinch_data = site.data.grinch_data[page.lineage] %}
+            <h3>Table 1 | Summary of {{ page.lineage }} data</h3>
+            <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th style="width:30%;">Statistic</th>
+                    <th style="width:60%;">Information</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>Countries with sequences</td>
+                  <td>{{ grinch_data["Country count"] }}</td>
+                </tr>
+                <tr>
+                    <td>Sequence count</td>
+                    <td>{{ grinch_data["Count"] }}</td>
+                </tr>
+                <tr>
+                  <td>Countries</td>
+                  <td>{{ grinch_data["Countries"] }}</td>
+                </tr>
+                <tr>
+                  <td>First detected</td>
+                  <td>{{ page.detected }}</td>
+                </tr>
+                <tr>
+                  <td>Earliest sample date</td>
+                  <td>{{ grinch_data["Earliest date"] }}</td>
+                </tr>
+                <tr>
+                  <td>Defining SNPs</td>
+                  <td>{{ page.snps }}</td>
+                </tr>
+              </table>
+                <br>
+                {% assign figures = site.data.figures_info[page.lineage] %}
+
+                {% for figure in figures %}
+                    <div style="width: 100%">
+                      <h3>Figure {{ figure["number"] }} | {{ figure["name"] }}</h3>
+                      <p>{{ figure["caption"] }}</p>
+                       <div class="img-container" style="border: none !important">
+                          <img src="assets/images/{{ figure['file'] }}" alt="" style="object-fit:contain; background-repeat:no-repeat; max-width:{{ figure['width'] }}%"/> 
+                      </div>
+                    <br>
+                    </div>
+                {% endfor %}
+                
+                <br>
+
+              {% if site.data.grinch_data[page.lineage]["import_report"] != "NA" %}
+                {% assign import_report = site.data.grinch_data[page.lineage]["import_report"] %}
+
+                <h3><a id = "table2link"></a>Table 2 | Reported {{ page.lineage }} imports | Country count: {{ import_report | size }} </h3>
+                <br>
+                <input class="searchbar" type="text" id="myInput2" onkeyup="myFunction('myInput2','myTable2')" placeholder="Search for country..." title="searchbar">
+                <br><br>
+
+                
+                <table class="table"  id="myTable2">
+                    <thead class="thead-light">
+                    <tr>
+                      <th>Country</th>
+                      <th>Earliest report</th>
+                      <th>Date local transmission</th>
+                      <th>Local transmission</th>
+                      <th>Method of surveillance</th>
+                      <th>Source</th>
+                    </tr>
+                  </thead>
+                    {% for row in import_report %}
+                    <tr>
+                        <td>{{ row["Country"] }}</td>
+                        <td>{{ row["Earliest report"] }}</td>
+                        <td >{{ row["Date local transmission"] }}</td>
+                        <td>{{ row["Local transmission"] }}</td>
+                        <td>{{ row["Method of surveillance"] }}</td>
+                        <td><a href='{{ row["Source"] }}' style="color:#86b0a6;">{{ row["Source"] }}</a></td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                  
+                  {% endif %}
+                <h3><a id = "table3link"></a>Table 3 | Raw data for figures </h3> 
+                <br>
+                <input class="searchbar" type="text" id="myInput3" onkeyup="myFunction('myInput3','myTable3')" placeholder="Search for country..." title="searchbar"><br><br>
+                {% assign raw_data = site.data.grinch_data[page.lineage]["aggregate_data"] %}
+                <table class="table"  id="myTable3">
+                  <thead class="thead-light">
+                    <tr class="header">
+                      <th>Country</th>
+                      <th>Earliest sequence</th>
+                      <th>Number of variant sequences</th>
+                      <th>Total sequences since first variant sequence</th>
+                    </tr>
+                  </thead>
+                  {% for row in raw_data %}
+                    <tr>
+                        <td>{{ row["Country"] }}</td>
+                        <td>{{ row["Earliest sequence"] }}</td>
+                        <td>{{ row["Number of variant sequences"] }}</td>
+                        <td>{{ row["Total sequences since first variant sequence"] }}</td>
+                    </tr>
+                  {% endfor %}
+                 </table>
+              <h3>Data source and processing</h3>
+              <p> The data on this page is recent as of {{ page.timestamp }}. All SARS-CoV-2 sequences were downloaded from GISAID and genomes were de-duplicated based on GISAID sequence name – note that the publically available metadata may not fully allow us to de-duplicate by patient. Full data processing pipeline found <a href="https://github.com/cov-lineages/grinch" style="color:#86b0a6">here</a>. The sequences were then assigned lineages with pangolin {{ page.v }}, pangoLEARN version {{ page.pv }}.</p>
+              {% if page.min_snps != "NA" %}
+              <p> Pangolin assigns {{ page.lineage }} to sequences with at least {{ page.min_snps }} of the {{ page.max_snps }} defining {{ page.lineage }} SNPs – defined  <a href={{ page.source }} style="color:#86b0a6">here</a>. </p>
+              <p><b>Caveat:</b> Most locations outside the original focus have not reported sustained transmission and many cases have known travel links to the focal location. Increasing numbers of international cases is currently likely due to increased surveillance and vigilance.</p>
+              {% endif %}
+              <h3>Acknowledgements</h3>
+              <p>Created by: <a href="https://twitter.com/AineToole" style="color:#86b0a6">Áine O'Toole</a> and <a href="https://twitter.com/viralverity" style="color:#86b0a6">Verity Hill</a>, Rambaut Group, University of Edinburgh. Flight volume data from Kamran Khan, Isaac Bogoch, Alexander Watts, Oliver Pybus, Moritz Kraemer. Sequences sourced from GISAID, full acknowledgements table <a href="http://cov-lineages.org/gisaid_acknowledgements.html" style="color:#86b0a6">here</a>.</p>
+              <p>We have a pre-print up on virological <a href="https://virological.org/t/tracking-the-international-spread-of-sars-cov-2-lineages-b-1-1-7-and-b-1-351-501y-v2/592" style="color:#86b0a6">here</a> describing this web tracker.</p>
+              <br>
+            </div>
+            </div>
+
+              </div>
+                <script>
+                  function myFunction(myInput, myTable) {
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById(myInput);
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById(myTable);
+                    tr = table.getElementsByTagName("tr");
+                    for (i = 0; i < tr.length; i++) {
+                      td = tr[i].getElementsByTagName("td")[0];
+                      if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                          tr[i].style.display = "";
+                        } else {
+                          tr[i].style.display = "none";
+                        }
+                      }       
+                    }
+                  }
+
+
+                  </script>
+
+    
+  

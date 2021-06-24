@@ -1,0 +1,96 @@
+---
+layout: default
+title: Resources
+---
+<h1>Resources</h1>
+
+<section id="resourcesSection">
+	{% for item in site.data.resources %}
+
+		<div class="course">
+			<div class="course-preview">
+				<img src="assets/images/{{item.logourl}}"/>
+			</div>
+			<div class="course-info">
+				
+				<h6>{{item.type}}</h6>
+				<h2>{{item.name}}</h2>
+				<p>{{item.description}}</p><br>
+				<a class="btn" href="{{item.link}}" style="color: white !important">View</a>
+			</div>
+		</div>
+	{% endfor %}  
+</section>
+
+<style type="text/css">
+	
+section {
+	display: grid;
+  	justify-content: center;
+  	width: 100%;
+  	grid-template-columns: 1fr 1fr;
+  	grid-gap: 25px;
+}
+
+@media only screen and (max-width: 1250px) {
+  section {
+  	grid-template-columns: 1fr;
+  }
+}
+
+.course-preview img {
+	width: 175px;
+	height: auto;
+}
+
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	display: flex;
+	max-width: 100%;
+	margin: 20px;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+}
+
+.course h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.course-preview {
+	background-color: #2E86C1;
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+	height: 100%;
+}
+
+.course-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.course-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+
+
+
+
+</style>

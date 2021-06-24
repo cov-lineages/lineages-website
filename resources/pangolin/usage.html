@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<h1>Usage</h1>
+
+<h3>Simple usage</h3>
+
+<p>By default pangolin will run the pangoLEARN model to assign the most likely lineage out of all <a href="https://github.com/cov-lineages/pango-designation">currently designated lineages</a>) and scorpio to assign specific <a href="https://github.com/cov-lineages/constellations/tree/main/constellations/definitions">lineages of interest</a> by presence of constellations. </p>
+
+<ol class="listWithCode">
+  <li>Activate the environment with <span class="code">conda activate pangolin</span></li>
+  <li>Run <span class="code">pangolin &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input file</li>
+</ol>
+
+<h3>UShER mode</h3>
+
+<p>Pangolin 3.0 can optionally run a fast parsimony-based lineage assignment using <a href="https://github.com/yatisht/usher">UShER</a> as the inference engine.
+
+
+<ol class="listWithCode">
+  <li>Activate the environment with <span class="code">conda activate pangolin</span></li>
+  <li>Run <span class="code">pangolin --usher &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input file</li>
+</ol>
+
+
+<h3>Output alignment</h3>
+
+<p>In the process of lineage assignment, pangolin creates an alignment using <a href="https://github.com/lh3/minimap2">minimap2</a> to map against an early, anonymised reference SARS-CoV-2 sequence and then using <a href="https://github.com/cov-ert/gofasta">gofasta</a> to generate a fasta file from that mapping with the non-coding regions masked out with N's. For convenience (I know I certainly find it very useful for quickly generating a SARS-CoV-2 alignment), pangolin has a flag that will output this alignment in addition to the lineage report instead of writing it to temp. The exact parameters can be found in the source code <a href="https://github.com/cov-lineages/pangolin/blob/a6e5c46c4ddd50a9e647abccf70e544fa18898cb/pangolin/scripts/pangolearn.smk#L47">here</a>.</p>
+
+<ol class="listWithCode">
+  <li>Activate the environment with <span class="code">conda activate pangolin</span></li>
+  <li>Run <span class="code">pangolin --alignment &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input file</li>
+</ol>
+
+
+<h3>Full usage options</h3>
+<br>
+<pre>
+pangolin: Phylogenetic Assignment of Named Global Outbreak LINeages
+
+positional arguments:
+  query                 Query fasta file of sequences to analyse.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTDIR, 
+  --outdir OUTDIR
+                        Output directory. Default: current working directory
+  --outfile OUTFILE     Optional output file name. Default: lineage_report.csv
+  --alignment           Optional alignment output.
+  -d DATADIR, 
+  --datadir DATADIR
+                        Data directory minimally containing a fasta alignment and guide tree
+  --tempdir TEMPDIR     Specify where you want the temp stuff to go. Default: $TMPDIR
+  --no-temp             Output all intermediate files, for dev purposes.
+  --decompress-model    Permanently decompress the model file to save time running pangolin.
+  --usher               Use UShER model instead of default pangoLEARN
+  --usher-tree 
+  USHER_PROTOBUF
+                        UShER Mutation Annotated Tree protobuf file to use instead of --usher default from pangoLEARN repository or --datadir
+  --max-ambig MAXAMBIG  Maximum proportion of Ns allowed for pangolin to attempt assignment. Default: 0.3
+  --min-length MINLEN   Minimum query length allowed for pangolin to attempt assignment. Default: 25000
+  --verbose             Print lots of stuff to screen
+  -t THREADS, 
+  --threads THREADS
+                        Number of threads
+  -v, 
+  --version         show pangolin's version number and exit
+  -pv, 
+  --pangoLEARN-version
+                        show pangoLEARN's version number and exit
+  -dv, 
+  --pango-designation-version
+                        show pango-designation version number and exit
+  --update              Automatically updates to latest release of pangolin and pangoLEARN, then exits
+
+  </pre>

@@ -1,0 +1,39 @@
+---
+layout: default
+title: Updating Pangolin
+---
+
+
+<h1>Updating Pangolin</h1>
+
+<h3>For Major Releases:</h3>
+
+<p>Navigate to your local pangolin repository on the command line.</p>
+
+<ol class="listWithCode">
+	<li> <span class="code">conda activate pangolin</span>
+	<li> <span class="code">git pull</span> pulls the latest changes from github
+	<li> <span class="code">conda env update -f environment.yml</span> updates the conda environment 
+	<li> <span class="code">pip install .</span> re-installs pangolin.
+</ol>
+
+<h3>For Minor Releases:</h3>
+<br>
+<span class="code">
+pangolin --update
+</span>
+<br><br>
+
+<p>Note: This flag will update versions of pangolin and pangoLEARN to the latest tagged releases. Major releases that involve any changes to dependencies (like v2.3) will need to also update the pangolin environment using the instructions below.</p>
+
+<p>Update flag thanks to <a href="https://github.com/fmaguire">Finlay Maguire</a>!</p>
+
+
+<div class="contrib">
+	<h5>Troubleshooting Update</h5>
+
+	<ul class="listWithCode">
+		<li>If you have previously installed pangolin using <span class="code">pip</span> you will need to update pangolin in the same way, ie <span class="code">pip install . </span></li>
+		<li>Try <span class="code">pip uninstall pangolin</span> and then re-install with <span class="code">python setup.py install</span></li>
+	</ul>
+</div>

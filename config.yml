@@ -1,0 +1,9 @@
+sass:
+  sass_dir: assets/css
+  style: :nested
+
+load_paths:
+    - assets/css
+
+base_url: ""
+title: cov-lineages.org

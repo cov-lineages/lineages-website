@@ -1,0 +1,225 @@
+---
+title: Output
+layout: default
+---
+
+<h1 id="output">Output</h1>
+
+<br>
+
+<p>pangolin outputs a csv file with taxon name and lineage assigned, one line corresponding to each sequence in the fasta file provided. The following descriptions relate to pangolin 3.0 onwards.</p>
+
+<h3 id="csv-column-headers">CSV column headers</h3>
+
+<div class="contrib">
+  <h5 id="taxon">taxon</h5>
+  <p>The name of an input query sequence. Note that spaces and commas in sequence names (not a good idea to have these characters in sequence names in general) get replaced by underscores.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="lineage">lineage</h5>
+  <p>The most likely lineage assigned to a given sequence based on the inference engine used and the SARS-CoV-2 diversity <a href="https://github.com/cov-lineages/pango-designation">designated</a>. This assignment may be is sensitive to missing data at key sites.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="conflict">conflict</h5>
+  <p>In the pangoLEARN decision tree model, a given sequence gets assigned to the most likely category based on known diversity. If a sequence can fit into more than one category, the conflict score will be greater than 0 and reflect the number of categories the sequence could fit into. If the conflict score is 0, this means that within the current decision tree there is only one category that the sequence could be assigned to.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="ambiguity_score">ambiguity_score</h5>
+  <p>This score is a function of the quantity of missing data in a sequence. It represents the proportion of relevant sites in a sequnece which were imputed to the reference values. A score of 1 indicates that no sites were imputed, while a score of 0 indicates that more sites were imputed than were not imputed. This score only includes sites which are used by the decision tree to classify a sequence.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="scorpio_call">scorpio_call</h5>
+  <p>If a query is assigned a constellation by scorpio this call is output in this column. The full set of constellations searched by default can be found at <a href="https://github.com/cov-lineages/constellations">the constellations repository</a>.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="scorpio_support">scorpio_support</h5>
+  <p>The support score is the proportion of defining variants which have the alternative allele in the sequence.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="scorpio_conflict">scorpio_conflict</h5>
+  <p>The conflict score is the proportion of defining variants which have the reference allele in the sequence. Ambiguous/other non-ref/alt bases at each of the variant positions contribute only to the denominators of these scores</p>
+</div>
+
+<div class="contrib">
+  <h5 id="version">version</h5>
+  <p>A version number that represents both the pango-designation number and the inference engine used to assign the lineage. For example:</p>
+  <ul>
+    <li>PANGO-1.2 indicates an identical sequence has been previously designated this lineage, and has so gone through manual curation. The number 1.2 indicates the version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> that this assignment is based on.</li>
+    <li>PLEARN-1.2 indicates that this sequence is different from any previously designated and that the pangoLEARN model was used as an inference engine to predict the most likely lineage based on the given version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a>.</li>
+    <li>PUSHER-1.2 indicates that this sequence is different from any previously designated and that UShER was used as an inference engine with fast tree placement and parsimony-based lineage assignment, based on a guide tree (protobuf) file built from the data in a given <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> release version.</li>
+  </ul>
+</div>
+
+<div class="contrib">
+  <h5 id="pangolin_version">pangolin_version</h5>
+  <p>The version of <a href="https://github.com/cov-lineages/pangolin">pangolin</a> software running.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="pangolearn_version">pangoLEARN_version</h5>
+  <p>The dated version of the <a href="https://github.com/cov-lineages/pangoLEARN">pangoLEARN</a> model installed.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="pango_version">pango_version</h5>
+  <p>The version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> lineages that this assignment is based on.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="status">status</h5>
+  <p>Indicates whether the sequence passed the QC thresholds for minimum length and maximum N content.</p>
+</div>
+
+<div class="contrib">
+  <h5 id="note">note</h5>
+  <p>If any conflicts from the decision tree, this field will output the alternative assignments. If the sequence failed QC this field will describe why. If the sequence met the SNP thresholds for scorpio to call a constellation, it’ll describe the exact SNP counts of Alt, Ref and Amb (Alternative, reference and ambiguous) alleles for that call.</p>
+</div>
+<br>
+<h3 id="example-output">Example output</h3><br>
+<table id="myTable" class="table tightTable">
+  <thead class="thead-light">
+    <tr>
+      <th>taxon</th>
+      <th>lineage</th>
+      <th>conflict</th>
+      <th>ambiguity_<br />score</th>
+      <th>scorpio_<br />call</th>
+      <th>scorpio_<br />support</th>
+      <th>scorpio_<br />conflict</th>
+      <th>version</th>
+      <th>pangolin_<br />version</th>
+      <th>pangoLEARN_<br />version</th>
+      <th>pango_version</th>
+      <th>status</th>
+      <th>note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Virus1</td>
+      <td>B.1.617.1</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>PANGO-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>passed_qc</td>
+      <td>Assigned using designation hash.</td>
+    </tr>
+    <tr>
+      <td>Virus2</td>
+      <td>B.1.1.7</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>B.1.1.7</td>
+      <td>0.695700</td>
+      <td>0.130400</td>
+      <td>PLEARN-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>passed_qc</td>
+      <td>scorpio call:<br />Alt alleles 16;<br />Ref alleles 3;<br />Amb alleles 4</td>
+    </tr>
+    <tr>
+      <td>Virus3</td>
+      <td>A</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>PANGO-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>passed_qc</td>
+      <td>Assigned using designation hash.</td>
+    </tr>
+    <tr>
+      <td>Virus4</td>
+      <td>B</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>PLEARN-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>passed_qc</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Virus5</td>
+      <td>B.1.314</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>PLEARN-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>passed_qc</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Virus6</td>
+      <td>None</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>PLEARN-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>fail</td>
+      <td>seq_len:2997</td>
+    </tr>
+    <tr>
+      <td>Virus7</td>
+      <td>None</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>PLEARN-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>fail</td>
+      <td>N_content:0.98</td>
+    </tr>
+    <tr>
+      <td>Virus8</td>
+      <td>None</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>PLEARN-1.2</td>
+      <td>2.4.2</td>
+      <td>2021-05-10</td>
+      <td>1.2</td>
+      <td>fail</td>
+      <td>failed_to_map</td>
+    </tr>
+  </tbody>
+</table>

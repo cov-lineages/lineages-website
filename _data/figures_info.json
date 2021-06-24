@@ -1,0 +1,278 @@
+{
+    "B.1.1.7": [{
+                    "number": 1,
+                    "name": "Cumulative sequence count over time B.1.1.7",
+                    "caption": "Bars show the number of new sequences on GISAID over time, binned by epi-week. The line shows the cumulative number of sequences over time.",
+                    "file":  "Cumulative_sequence_count_over_time_B.1.1.7.svg",
+                    "width": 80
+                },{
+                    "number": 2,
+                    "name": "Date of earliest_B.1.1.7 detected",
+                    "caption": "Schematic map showing the date of the first sequence sample date in each country containing the lineage. Darker countries have earlier first sample dates.",
+                    "file":  "Date_of_earliest_B.1.1.7_detected.svg",
+                    "width": 100
+                },{
+                    "number": 3,
+                    "name": "Map of B.1.1.7 sequence counts",
+                    "caption": "Map showing the logged number of sequences of the variant in each country. Countries with more sequences are shown in darker colours.",
+                    "file":  "Map_of_B.1.1.7_sequence_counts.svg",
+                    "width": 100
+                },{
+                    "number": 4,
+                    "name": "Sequence count per country B.1.1.7",
+                    "caption": "The number of sequences of the lineage recorded in each country. The height of the bar is the logged number and the numbers above the bar are the raw counts.",
+                    "file":  "Sequence_count_per_country_B.1.1.7.svg",
+                    "width": 80
+                },{
+                    "number": 5,
+                    "name": "Frequency B.1.1.7 in sequences produced since first new variant reported per country",
+                    "caption": "The overall frequency of the lineage, defined as the number of sequences assigned the lineage divided by the total number of sequences from that country in the time since the variant was first sequenced in that country.",
+                    "file":  "Frequency_B.1.1.7_in_sequences_produced_since_first_new_variant_reported_per_country.svg",
+                    "width": 80
+                },{
+                    "number": 6,
+                    "name": "B.1.1.7 count per continent",
+                    "caption": "Seven day rolling average of sequence counts per continent. Please note that recent declines may be due to delay in reporting rather than reflecting a change in the underlying virus population.",
+                    "file":  "B.1.1.7_count_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 7,
+                    "name": "Rolling average B.1.1.7 frequency per continent",
+                    "caption": "Seven day rolling average of frequency of sequences of the lineage of interest. Frequency is calculated by dividing the number of sequences of the lineage of interest by the total sequences for each continent for each day.",
+                    "file":  "Rolling_average_B.1.1.7_frequency_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 9,
+                    "name": "Air traffic by destination B.1.1.7",
+                    "caption": "The number of ticketed origin-to-destination journeys from London airports to countries outside the United Kingdom during October 2020.</p> <p>Colours indicate numbers of published genomes of B.1.1.7 deposited on GISAID. Grey bars indicate countries that have reported the presence of the variant but have not yet published B.1.1.7 sequences on GISAID. White bars indicate countries with no reports of B.1.1.7.</p> <p>Flight data come from the International Air Transportation Association that capture anonymized, passenger-level flight itinerary data, comprising both commercial flights and scheduled charter flights. These data account for ~90% of global air travel volumes, with the remaining volumes modelled using market intelligence. We report data from destinations including >5,000 passengers.</p> <p>Note that flight data reflects final-destination on a booked journey, we cannot account for instances where two separate tickets were purchased.</p>",
+                    "file":  "Air_traffic_by_destination_B.1.1.7.svg",
+                    "width": 80
+                }],
+        "P.1": [{
+                    "number": 1,
+                    "name": "Cumulative sequence count over time P.1",
+                    "caption": "Bars show the number of new sequences on GISAID over time, binned by epi-week. The line shows the cumulative number of sequences over time.",
+                    "file":  "Cumulative_sequence_count_over_time_P.1.svg",
+                    "width": 80
+                },{
+                    "number": 2,
+                    "name": "Date of earliest_P.1 detected",
+                    "caption": "Schematic map showing the date of the first sequence sample date in each country containing the lineage. Darker countries have earlier first sample dates.",
+                    "file":  "Date_of_earliest_P.1_detected.svg",
+                    "width": 100
+                },{
+                    "number": 3,
+                    "name": "Map of P.1 sequence counts",
+                    "caption": "Map showing the logged number of sequences of the variant in each country. Countries with more sequences are shown in darker colours.",
+                    "file":  "Map_of_P.1_sequence_counts.svg",
+                    "width": 100
+                },{
+                    "number": 4,
+                    "name": "Sequence count per country P.1",
+                    "caption": "The number of sequences of the lineage recorded in each country. The height of the bar is the logged number and the numbers above the bar are the raw counts.",
+                    "file":  "Sequence_count_per_country_P.1.svg",
+                    "width": 80
+                },{
+                    "number": 5,
+                    "name": "Frequency P.1 in sequences produced since first new variant reported per country",
+                    "caption": "The overall frequency of the lineage, defined as the number of sequences assigned the lineage divided by the total number of sequences from that country in the time since the variant was first sequenced in that country.",
+                    "file":  "Frequency_P.1_in_sequences_produced_since_first_new_variant_reported_per_country.svg",
+                    "width": 80
+                },{
+                    "number": 6,
+                    "name": "P.1 count per continent",
+                    "caption": "Seven day rolling average of sequence counts per continent. Please note that recent declines may be due to delay in reporting rather than reflecting a change in the underlying virus population.",
+                    "file":  "P.1_count_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 7,
+                    "name": "Rolling average P.1 frequency per continent",
+                    "caption": "Seven day rolling average of frequency of sequences of the lineage of interest. Frequency is calculated by dividing the number of sequences of the lineage of interest by the total sequences for each continent for each day.",
+                    "file":  "Rolling_average_P.1_frequency_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 9,
+                    "name": "Air traffic by destination P.1",
+                    "caption": "The number of ticketed origin-to-destination journeys from Manaus, Brazil to countries outside Brazil during October 2020.</p> <p>Colours indicate numbers of published genomes of P.1 deposited on GISAID. Grey bars indicate countries that have reported the presence of the variant but have not yet published P.1 sequences on GISAID. White bars indicate countries with no reports of P.1.</p> <p>Flight data come from the International Air Transportation Association that capture anonymized, passenger-level flight itinerary data, comprising both commercial flights and scheduled charter flights. These data account for ~90% of global air travel volumes, with the remaining volumes modelled using market intelligence. We report data from destinations including >5,000 passengers.</p> <p>Note that flight data reflects final-destination on a booked journey, we cannot account for instances where two separate tickets were purchased.</p>",
+                    "file":  "Air_traffic_by_destination_P.1.svg",
+                    "width": 80
+                }],
+        "B.1.351": [{
+                    "number": 1,
+                    "name": "Cumulative sequence count over time B.1.351",
+                    "caption": "Bars show the number of new sequences on GISAID over time, binned by epi-week. The line shows the cumulative number of sequences over time.",
+                    "file":  "Cumulative_sequence_count_over_time_B.1.351.svg",
+                    "width": 80
+                },{
+                    "number": 2,
+                    "name": "Date of earliest_B.1.351 detected",
+                    "caption": "Schematic map showing the date of the first sequence sample date in each country containing the lineage. Darker countries have earlier first sample dates.",
+                    "file":  "Date_of_earliest_B.1.351_detected.svg",
+                    "width": 100
+                },{
+                    "number": 3,
+                    "name": "Map of B.1.351 sequence counts",
+                    "caption": "Map showing the logged number of sequences of the variant in each country. Countries with more sequences are shown in darker colours.",
+                    "file":  "Map_of_B.1.351_sequence_counts.svg",
+                    "width": 100
+                },{
+                    "number": 4,
+                    "name": "Sequence count per country B.1.351",
+                    "caption": "The number of sequences of the lineage recorded in each country. The height of the bar is the logged number and the numbers above the bar are the raw counts.",
+                    "file":  "Sequence_count_per_country_B.1.351.svg",
+                    "width": 80
+                },{
+                    "number": 5,
+                    "name": "Frequency B.1.351 in sequences produced since first new variant reported per country",
+                    "caption": "The overall frequency of the lineage, defined as the number of sequences assigned the lineage divided by the total number of sequences from that country in the time since the variant was first sequenced in that country.",
+                    "file":  "Frequency_B.1.351_in_sequences_produced_since_first_new_variant_reported_per_country.svg",
+                    "width": 80
+                },{
+                    "number": 6,
+                    "name": "B.1.351 count per continent",
+                    "caption": "Seven day rolling average of sequence counts per continent. Please note that recent declines may be due to delay in reporting rather than reflecting a change in the underlying virus population.",
+                    "file":  "B.1.351_count_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 7,
+                    "name": "Rolling average B.1.351 frequency per continent",
+                    "caption": "Seven day rolling average of frequency of sequences of the lineage of interest. Frequency is calculated by dividing the number of sequences of the lineage of interest by the total sequences for each continent for each day.",
+                    "file":  "Rolling_average_B.1.351_frequency_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 9,
+                    "name": "Air traffic by destination B.1.351",
+                    "caption": "The number of ticketed origin-to-destination journeys from South African airports to destinations outside of South Africa during October 2020.</p> <p>Colours indicate numbers of published genomes of B.1.351 deposited on GISAID. Grey bars indicate countries that have reported the presence of the variant but have not yet published B.1.351 sequences on GISAID. White bars indicate countries with no reports of B.1.351.</p> <p>Flight data come from the International Air Transportation Association that capture anonymized, passenger-level flight itinerary data, comprising both commercial flights and scheduled charter flights. These data account for ~90% of global air travel volumes, with the remaining volumes modelled using market intelligence. We report data from destinations including >5,000 passengers.</p> <p>Note that flight data reflects final-destination on a booked journey, we cannot account for instances where two separate tickets were purchased.</p>",
+                    "file":  "Air_traffic_by_destination_B.1.351.svg",
+                    "width": 90
+                }],
+        "A.23.1": [{
+                    "number": 1,
+                    "name": "Cumulative sequence count over time A.23.1",
+                    "caption": "Bars show the number of new sequences on GISAID over time, binned by epi-week. The line shows the cumulative number of sequences over time.",
+                    "file":  "Cumulative_sequence_count_over_time_A.23.1.svg",
+                    "width": 80
+                },{
+                    "number": 2,
+                    "name": "Date of earliest_A.23.1 detected",
+                    "caption": "Schematic map showing the date of the first sequence sample date in each country containing the lineage. Darker countries have earlier first sample dates.",
+                    "file":  "Date_of_earliest_A.23.1_detected.svg",
+                    "width": 100
+                },{
+                    "number": 3,
+                    "name": "Map of A.23.1 sequence counts",
+                    "caption": "Map showing the logged number of sequences of the variant in each country. Countries with more sequences are shown in darker colours.",
+                    "file":  "Map_of_A.23.1_sequence_counts.svg",
+                    "width": 100
+                },{
+                    "number": 4,
+                    "name": "Sequence count per country A.23.1",
+                    "caption": "The number of sequences of the lineage recorded in each country. The height of the bar is the logged number and the numbers above the bar are the raw counts.",
+                    "file":  "Sequence_count_per_country_A.23.1.svg",
+                    "width": 80
+                },{
+                    "number": 5,
+                    "name": "Frequency A.23.1 in sequences produced since first new variant reported per country",
+                    "caption": "The overall frequency of the lineage, defined as the number of sequences assigned the lineage divided by the total number of sequences from that country in the time since the variant was first sequenced in that country.",
+                    "file":  "Frequency_A.23.1_in_sequences_produced_since_first_new_variant_reported_per_country.svg",
+                    "width": 80
+                },{
+                    "number": 6,
+                    "name": "A.23.1 count per continent",
+                    "caption": "Seven day rolling average of sequence counts per continent. Please note that recent declines may be due to delay in reporting rather than reflecting a change in the underlying virus population.",
+                    "file":  "A.23.1_count_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 7,
+                    "name": "Rolling average A.23.1 frequency per continent",
+                    "caption": "Seven day rolling average of frequency of sequences of the lineage of interest. Frequency is calculated by dividing the number of sequences of the lineage of interest by the total sequences for each continent for each day.",
+                    "file":  "Rolling_average_A.23.1_frequency_per_continent.svg",
+                    "width": 80
+                }],
+            "B.1.617.2": [{
+                    "number": 1,
+                    "name": "Cumulative sequence count over time B.1.617.2",
+                    "caption": "Bars show the number of new sequences on GISAID over time, binned by epi-week. The line shows the cumulative number of sequences over time.",
+                    "file":  "Cumulative_sequence_count_over_time_B.1.617.2.svg",
+                    "width": 80
+                },{
+                    "number": 2,
+                    "name": "Date of earliest_B.1.617.2 detected",
+                    "caption": "Schematic map showing the date of the first sequence sample date in each country containing the lineage. Darker countries have earlier first sample dates.",
+                    "file":  "Date_of_earliest_B.1.617.2_detected.svg",
+                    "width": 100
+                },{
+                    "number": 3,
+                    "name": "Map of B.1.617.2 sequence counts",
+                    "caption": "Map showing the logged number of sequences of the variant in each country. Countries with more sequences are shown in darker colours.",
+                    "file":  "Map_of_B.1.617.2_sequence_counts.svg",
+                    "width": 100
+                },{
+                    "number": 4,
+                    "name": "Sequence count per country B.1.617.2",
+                    "caption": "The number of sequences of the lineage recorded in each country. The height of the bar is the logged number and the numbers above the bar are the raw counts.",
+                    "file":  "Sequence_count_per_country_B.1.617.2.svg",
+                    "width": 80
+                },{
+                    "number": 5,
+                    "name": "Frequency B.1.617.2 in sequences produced since first new variant reported per country",
+                    "caption": "The overall frequency of the lineage, defined as the number of sequences assigned the lineage divided by the total number of sequences from that country in the time since the variant was first sequenced in that country.",
+                    "file":  "Frequency_B.1.617.2_in_sequences_produced_since_first_new_variant_reported_per_country.svg",
+                    "width": 80
+                },{
+                    "number": 6,
+                    "name": "B.1.617.2 count per continent",
+                    "caption": "Seven day rolling average of sequence counts per continent. Please note that recent declines may be due to delay in reporting rather than reflecting a change in the underlying virus population.",
+                    "file":  "B.1.617.2_count_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 7,
+                    "name": "Rolling average B.1.617.2 frequency per continent",
+                    "caption": "Seven day rolling average of frequency of sequences of the lineage of interest. Frequency is calculated by dividing the number of sequences of the lineage of interest by the total sequences for each continent for each day.",
+                    "file":  "Rolling_average_B.1.617.2_frequency_per_continent.svg",
+                    "width": 80
+                }],
+                "B.1.525": [{
+                    "number": 1,
+                    "name": "Cumulative sequence count over time B.1.525",
+                    "caption": "Bars show the number of new sequences on GISAID over time, binned by epi-week. The line shows the cumulative number of sequences over time.",
+                    "file":  "Cumulative_sequence_count_over_time_B.1.525.svg",
+                    "width": 80
+                },{
+                    "number": 2,
+                    "name": "Date of earliest_B.1.525 detected",
+                    "caption": "Schematic map showing the date of the first sequence sample date in each country containing the lineage. Darker countries have earlier first sample dates.",
+                    "file":  "Date_of_earliest_B.1.525_detected.svg",
+                    "width": 100
+                },{
+                    "number": 3,
+                    "name": "Map of B.1.525 sequence counts",
+                    "caption": "Map showing the logged number of sequences of the variant in each country. Countries with more sequences are shown in darker colours.",
+                    "file":  "Map_of_B.1.525_sequence_counts.svg",
+                    "width": 100
+                },{
+                    "number": 4,
+                    "name": "Sequence count per country B.1.525",
+                    "caption": "The number of sequences of the lineage recorded in each country. The height of the bar is the logged number and the numbers above the bar are the raw counts.",
+                    "file":  "Sequence_count_per_country_B.1.525.svg",
+                    "width": 80
+                },{
+                    "number": 5,
+                    "name": "Frequency B.1.525 in sequences produced since first new variant reported per country",
+                    "caption": "The overall frequency of the lineage, defined as the number of sequences assigned the lineage divided by the total number of sequences from that country in the time since the variant was first sequenced in that country.",
+                    "file":  "Frequency_B.1.525_in_sequences_produced_since_first_new_variant_reported_per_country.svg",
+                    "width": 80
+                },{
+                    "number": 6,
+                    "name": "B.1.525 count per continent",
+                    "caption": "Seven day rolling average of sequence counts per continent. Please note that recent declines may be due to delay in reporting rather than reflecting a change in the underlying virus population.",
+                    "file":  "B.1.525_count_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 7,
+                    "name": "Rolling average B.1.525 frequency per continent",
+                    "caption": "Seven day rolling average of frequency of sequences of the lineage of interest. Frequency is calculated by dividing the number of sequences of the lineage of interest by the total sequences for each continent for each day.",
+                    "file":  "Rolling_average_B.1.525_frequency_per_continent.svg",
+                    "width": 80
+                }]
+}

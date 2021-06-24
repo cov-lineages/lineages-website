@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - cov-lineages</title>
+    <link rel="icon" href="{{ 'assets/images/favicon.png' | absolute_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/dripicons.css" | relative_url }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div id="content_wrapper" class="container">{{ content}}</div>
+    {% include footer.html %}
+  </body>
+</html>

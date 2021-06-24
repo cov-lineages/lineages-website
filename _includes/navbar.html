@@ -1,0 +1,36 @@
+<ul class="nav justify-content-center" id="main_nav">
+  <li class="nav-item">
+    <a class="navbar-brand" href="{{ 'index.html' | absolute_url }}">cov-lineages.org</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      PANGO
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="/index.html#about">About</a>
+      <a class="dropdown-item" href="/FAQ.html">FAQs</a>
+      <a class="dropdown-item" href="https://www.pango.network/how-does-the-system-work/how-to-suggest-a-new-lineage/">Suggest a New Lineage</a>
+      <a class="dropdown-item" href="/index.html#cite">How to Cite/Publications</a>
+      <a class="dropdown-item" href="/index.html#contributors">Contributors</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ 'lineage_list.html' | absolute_url }}">Lineages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ 'resources.html' | absolute_url }}">Resources</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/cov-lineages/constellations">Constellations</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      VOC Reports
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      {% for item in site.data.reported_lineages %}
+        <a class="dropdown-item" href="{{item.link}}">{{item.name}}</a>
+      {% endfor %} 
+    </div>
+  </li>
+</ul>
