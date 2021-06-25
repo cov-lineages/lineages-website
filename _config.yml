@@ -7,3 +7,6 @@ load_paths:
 
 base_url: ""
 title: cov-lineages.org
+
+plugins:
+  - jekyll-redirect-from
