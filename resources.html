@@ -4,23 +4,34 @@ title: Resources
 ---
 <h1>Resources</h1>
 
-<section id="resourcesSection">
-	{% for item in site.data.resources %}
+{% for category in site.data.resource_categories %}
+	
+	<h3>{{category.name}}</h3>
 
-		<div class="course">
-			<div class="course-preview">
-				<img src="assets/images/{{item.logourl}}"/>
-			</div>
-			<div class="course-info">
-				
-				<h6>{{item.type}}</h6>
-				<h2>{{item.name}}</h2>
-				<p>{{item.description}}</p><br>
-				<a class="btn" href="{{item.link}}" style="color: white !important">View</a>
-			</div>
-		</div>
-	{% endfor %}  
-</section>
+	<section class="resourcesSection">
+		{% for item in site.data.resources %}
+
+			{% if item.category == category.name %}
+
+				<div class="course">
+					<div class="course-preview">
+						<img src="assets/images/{{item.logourl}}"/>
+					</div>
+					<div class="course-info">
+						
+						<h6>{{item.type}}</h6>
+						<h2>{{item.name}}</h2>
+						<p>{{item.description}}</p><br>
+						<a class="btn" href="{{item.link}}" style="color: white !important">View</a>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}  
+	</section>
+	
+
+{% endfor %}
+
 
 <style type="text/css">
 	

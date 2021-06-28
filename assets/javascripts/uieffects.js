@@ -97,7 +97,7 @@ for(child of $("section .course-preview")){
 
 index = 0;
 
-for(child of $("#resourcesSection").children()){
+for(child of $(".resourcesSection").children()){
   console.log(child);
 
   $(child).css('background', lightColors[index]);

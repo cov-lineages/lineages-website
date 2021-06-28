@@ -66,13 +66,17 @@ title: Home
 		{% for item in site.data.resources %}
 			<!--<div class="logo_container"><img src="assets/images/{{item.logourl}}"/></div>-->
 
-			<figure class="effect-duke">
-				<img src="assets/images/{{item.logourl}}"/>
-				<figcaption>
-					<p>{{item.name}}</p>
-					<a href="{{item.link}}">View more</a>
-				</figcaption>			
-			</figure>
+			{% if item.category == "Internally Developed Tools" %}
+
+				<figure class="effect-duke">
+					<img src="assets/images/{{item.logourl}}"/>
+					<figcaption>
+						<p>{{item.name}}</p>
+						<a href="{{item.link}}">View more</a>
+					</figcaption>			
+				</figure>
+
+			{% endif %}
 				
 		{% endfor %}
 	</div>

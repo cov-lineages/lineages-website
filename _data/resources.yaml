@@ -3,28 +3,40 @@
   description: Pangolin was developed to implement the dynamic nomenclature of SARS-CoV-2 lineages, known as the Pango nomenclature. It allows a user to assign a SARS-CoV-2 genome sequence the most likely lineage (Pango lineage) to SARS-CoV-2 query sequences.<br><br>Pangolin assigns lineages to query sequences as described in Rambaut et al 2020.
   logourl: pangolin.png
   type: software
-- name: Civet 
-  link: https://github.com/artic-network/civet
-  description: is a tool developed with 'real-time' genomics in mind.<br><br>Using a background phylogeny, such as the large phylogeny available through the COG-UK infrastructure on CLIMB, civet will generate a report for a set of sequences of interest i.e. an outbreak investigation.
-  type: software
-  logourl: civet.png
+  category: Internally Developed Tools
 - name: Scorpio
   link: https://github.com/cov-lineages/scorpio
   description: Serious constellations of reoccurring phylogenetically-independent origin
   type: software
   logourl: scorpio.png
+  category: Internally Developed Tools
 - name: Pando
   link: http://pando.tools/
   description: View and interact with the latest global SARS-COV-2 phylogenic tree
   type: software
   logourl: pando.png
+  category: Internally Developed Tools
 - name: Llama
   link: /resources/llama.html
   description: Llama pulls out local trees from a large tree (e.g. the global SARS-CoV-2 phylogeny) from a set of queries. Will also optionally add in new sequences to the local trees on the fly. <br><br>Llama is available as a command line tool. It is open source software available under the GNU General Public License v3.0.
   type: software
   logourl: llama.svg
+  category: Internally Developed Tools
 - name: Outbreak.info
   link: https://outbreak.info/
   description: A data dashboard for viewing more information about the various SARS-COV-2 variants 
   type: dashboard
   logourl: outbreakinfo.png
+  category: Dashboards
+- name: CoVariants
+  link: https://covariants.org/
+  description: covariants stufffff
+  type: dashboard
+  logourl: covariants.png
+  category: Dashboards
+- name: PanGUIlin
+  link: https://pangolin.cog-uk.io/
+  description: Pangolin Web App
+  type: software
+  logourl: pangolin_app.svg
+  category: Software Tools
