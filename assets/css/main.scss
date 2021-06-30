@@ -626,7 +626,7 @@ figure.effect-duke:hover p {
 	opacity: 0;
 }
 
-#global_reports, #cite {
+#global_reports, #cite, #contributors {
 	margin-bottom: 250px;
 }
 
@@ -688,15 +688,39 @@ figure.effect-duke:hover p {
 
 
 .searchbar {
-	width: calc(100% - 100px);;
-	margin-left: 50px;
-	border-radius: 5px;
+	
+	border-radius: 0px 5px 5px 0px;
 	border: none;
 	padding: 10px;
-	border: none;
 	background: #ccc;
+	width: calc(100% - 150px);
+	height: 40px;
+}
+
+.searchbar-group {
+	width: calc(100% - 100px);
+	margin-left: 50px;
+	padding-bottom: 20px;
+}
+
+.searchSelect {
+	width: 150px;
+	border-radius: 5px 0px 0px 5px;
+	border: none;
+	padding: 10px;
+	background: #ccc;
+	height: 40px;
+}
+
+.report-search {
+	margin-left: 50px;
+	width: calc(100% - 100px) !important;
+	border-radius: 5px !important;
 }
 
 .thead-light th {
 	color: white !important;
 }
+
+
+

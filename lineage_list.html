@@ -11,8 +11,7 @@ children: ['A', 'A.1', 'A.2', 'A.2.1', 'A.2.2', 'A.2.3', 'A.2.4', 'A.2.5', 'A.2.
 
   <div id="tableWrapper">
       <br>
-      <input class="searchbar" type="text" id="myInput" onkeyup="myFunction('myInput','myTable')" placeholder="Search for lineage..." title="searchbar">
-      <br><br>
+      {% include searchbar.html %}
 
   <table id="myTable" class="table">
     <thead class="thead-light">

@@ -254,7 +254,11 @@ layout: default
                   </p>
                  {% endif %}
 
-                 <div class="contrib">{{site.data.lineage_data[page.lineage]["Description"]}}</div>
+                 <div class="contrib">
+                  {{site.data.lineage_data[page.lineage]["Description"]}}
+                  <br><br>
+                  <a href="https://outbreak.info/situation-reports?pango={{page.lineage}}">View more information at Outbreak.info</a>
+                 </div>
 
                 <div id="chart_container">
                   <div id="map"></div>
@@ -263,8 +267,8 @@ layout: default
                 </div>
                 <table id="myTable" class="table">
                     <h3>Table 1 | Summary of lineage & sub-lineages</h3> <br>  
-                    <input class="searchbar" type="text" id="myInput" onkeyup="myFunction('myInput','myTable')" placeholder="Search for lineage..." title="searchbar">
-                    <br><br>
+                    {% include searchbar.html %}
+
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Lineage</th>

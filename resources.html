@@ -19,9 +19,9 @@ title: Resources
 					</div>
 					<div class="course-info">
 						
-						<h6>{{item.type}}</h6>
+						<h6>{{item.subheading}}</h6>
 						<h2>{{item.name}}</h2>
-						<p>{{item.description}}</p><br>
+						<p>{{item.description}}</p><br><br>
 						<a class="btn" href="{{item.link}}" style="color: white !important">View</a>
 					</div>
 				</div>
@@ -41,6 +41,7 @@ section {
   	width: 100%;
   	grid-template-columns: 1fr 1fr;
   	grid-gap: 25px;
+  	margin-bottom: 50px;
 }
 
 @media only screen and (max-width: 1250px) {

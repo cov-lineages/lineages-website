@@ -146,25 +146,30 @@ for(child of $(".tutorial-container .img-container img")) {
 }
 
 
-function myFunction(myInput, myTable) {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById(myInput);
-  filter = input.value.toUpperCase();
-  table = document.getElementById(myTable);
+function doSearch(filter, table, fields) {
+  var tr, td, i, txtValue;
   tr = table.getElementsByTagName("tr");
-
 
   for (i = 0; i < tr.length; i++) {
     var display = false;
 
-    for (cell of tr[i].getElementsByTagName("td")) {
+    if(fields == "Lineage" && tr[i].getElementsByTagName("td").length > 0) {
 
-      console.log(cell);
-
-      cell = cell.innerHTML;
+      var cell = tr[i].getElementsByTagName("td")[0].innerHTML;
 
       if (cell.toUpperCase().indexOf(filter) > -1) {
-        display = true;;
+          display = true;;
+      }
+
+    } else {
+
+      for (cell of tr[i].getElementsByTagName("td")) {
+
+        cell = cell.innerHTML;
+
+        if (cell.toUpperCase().indexOf(filter) > -1) {
+          display = true;;
+        }
       }
     }
 
@@ -178,6 +183,30 @@ function myFunction(myInput, myTable) {
     tr[0].style.display = "";
   
   }
+
+}
+
+
+function search(form) {
+
+  var input, filter;
+  input = form;
+  fields = form.parentElement.children[0].children[0].value;
+
+  filter = input.value.toUpperCase();
+  table = form.parentElement.parentElement;
+
+  doSearch(filter, table, fields);
+}
+
+
+function reportSearch(myInput, myTable) {
+  var input, filter;
+  input = document.getElementById(myInput);
+  filter = input.value.toUpperCase();
+  table = document.getElementById(myTable);
+
+  doSearch(filter, table, "All Fields");
 }
 
 

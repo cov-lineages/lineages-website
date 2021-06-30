@@ -221,7 +221,7 @@ layout: default
 
                 <h3><a id = "table2link"></a>Table 2 | Reported {{ page.lineage }} imports | Country count: {{ import_report | size }} </h3>
                 <br>
-                <input class="searchbar" type="text" id="myInput2" onkeyup="myFunction('myInput2','myTable2')" placeholder="Search for country..." title="searchbar">
+                <input class="searchbar report-search" type="text" id="myInput2" onkeyup="reportSearch('myInput2','myTable2')" placeholder="Search for country..." title="searchbar">
                 <br><br>
 
                 
@@ -251,7 +251,7 @@ layout: default
                   {% endif %}
                 <h3><a id = "table3link"></a>Table 3 | Raw data for figures </h3> 
                 <br>
-                <input class="searchbar" type="text" id="myInput3" onkeyup="myFunction('myInput3','myTable3')" placeholder="Search for country..." title="searchbar"><br><br>
+                <input class="searchbar report-search" type="text" id="myInput3" onkeyup="reportSearch('myInput3','myTable3')" placeholder="Search for country..." title="searchbar"><br><br>
                 {% assign raw_data = site.data.grinch_data[page.lineage]["aggregate_data"] %}
                 <table class="table"  id="myTable3">
                   <thead class="thead-light">
@@ -285,28 +285,5 @@ layout: default
             </div>
 
               </div>
-                <script>
-                  function myFunction(myInput, myTable) {
-                    var input, filter, table, tr, td, i, txtValue;
-                    input = document.getElementById(myInput);
-                    filter = input.value.toUpperCase();
-                    table = document.getElementById(myTable);
-                    tr = table.getElementsByTagName("tr");
-                    for (i = 0; i < tr.length; i++) {
-                      td = tr[i].getElementsByTagName("td")[0];
-                      if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                          tr[i].style.display = "";
-                        } else {
-                          tr[i].style.display = "none";
-                        }
-                      }       
-                    }
-                  }
-
-
-                  </script>
-
     
   
