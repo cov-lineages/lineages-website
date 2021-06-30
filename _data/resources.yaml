@@ -6,7 +6,7 @@
   category: Internally Developed Tools
 - name: Scorpio
   link: https://github.com/cov-lineages/scorpio
-  description: Serious constellations of reoccurring phylogenetically-independent origin
+  description: Serious constellations of reoccurring phylogenetically-independent origin. A tool for snp-based calling of vairants of concern.
   subheading: software
   logourl: scorpio.png
   category: Internally Developed Tools
@@ -36,7 +36,7 @@
   category: Dashboards
 - name: PanGUIlin
   link: https://pangolin.cog-uk.io/
-  description: Pangolin Web App
+  description: A web application version of the Pangolin Tool
   subheading: Centre for Genomic Pathogen Surveillance
   logourl: pangolin_app.svg
   category: Software Tools
@@ -64,3 +64,15 @@
   subheading: COG-UK
   category: Dashboards
   logourl: cogukme.png
+- name: Polecat
+  link: https://github.com/artic-network/polecat
+  description: Using a background phylogeny, such as the large phylogeny available through the COG-UK infrastructure on CLIMB, polecat will identify and flag clusters based on various configurable statistics.
+  subheading: software
+  category: Internally Developed Tools
+  logourl: polecat.png
+- name: pango.network
+  link: https://pango.network
+  description: A website documenting the Pango nomenclature as well as the policies involved with designating new lineages.
+  subheading: website
+  category: Internally Developed Tools
+  logourl: pango.png
