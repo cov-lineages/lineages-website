@@ -258,6 +258,12 @@ layout: default
                   {{site.data.lineage_data[page.lineage]["Description"]}}
                   <br><br>
                   <a href="https://outbreak.info/situation-reports?pango={{page.lineage}}">View more information at Outbreak.info</a>
+
+                  <div id="otherNames">
+                    <div id="who_wrapper"><img src="{{'assets/images/who_black.png' | absolute_url}}"/><span id="who"></span></div>
+                    <div id="phe_wrapper"><img src="{{'assets/images/phe_black.png' | absolute_url}}"/><span id="phe"></span></div>
+                    <div id="nextstrain_wrapper"><img src="{{'assets/images/nextstrain_black.png' | absolute_url}}"/><span id="nextstrain"></span></div>
+                  </div>
                  </div>
 
                 <div id="chart_container">
@@ -739,9 +745,6 @@ layout: default
       }
     });
 
-    console.log(minDate);
-    console.log(maxDate);
-    console.log(data);
 
     var dates = [];
 
@@ -829,6 +832,85 @@ layout: default
       });
 
   }
+
+  function getOtherLineageNames(lineage) {
+
+    var pageName = "c" + lineage + ".json";
+    var directory = "https://raw.githubusercontent.com/cov-lineages/constellations/main/constellations/definitions/";
+
+    var whoName = "";
+    var pheNames = [];
+    var nextStrain = "";
+
+    // get WHO labels if they exist
+    $.ajax({
+        type: 'HEAD',
+        url: directory + pageName,
+        success: function() {
+                // page exists
+            d3.json(directory + pageName, function(json){
+              whoName = json["variant"]["WHO_label"];
+
+              d3.text("https://raw.githubusercontent.com/phe-genomics/variant_definitions/main/README.md", function(text) {
+                var lines = text.split("\n");
+
+                for(var line of lines) {
+
+                  if(line.indexOf(lineage) > 0) {
+                    var split = line.split(">");
+
+                    pheNames.push(split[1].split("<")[0]);
+
+                    if(line.indexOf("nextstrain:") > 0) {
+                      split = line.split("nextstrain:");
+                      split2 = split[1].split(">");
+                      nextStrain = split2[1].split("<")[0];
+                    }
+                  }
+                }
+
+                // add to UI
+
+                pheNames = pheNames.join(", ");
+
+                $("#otherNames").show();
+
+                if(whoName && whoName.length > 0) {
+                  $("#who_wrapper").show();
+                  $("#who").html("<b>WHO Name</b>: " + whoName);
+                }
+
+                console.log(pheNames);
+
+                if(pheNames && pheNames.length > 0) {
+                  $("#phe_wrapper").show();
+                  $("#phe").html("<b>PHE Name(s):</b> " + pheNames);
+                }
+
+                if(nextStrain && nextStrain.length > 0) {
+                  $("#nextstrain_wrapper").show();
+                  $("#nextstrain").html("<b>Nextrain Name:</b> " + nextStrain);
+                }
+
+                $(".footer").css('top', document.documentElement.scrollHeight);
+
+              });
+            });
+        },
+        error: function() {
+                // page does not exist
+                console.log("Could not find WHO label");
+        }
+    });
+
+
+
+
+
+
+  }
+
+  getOtherLineageNames("{{page.lineage}}");
 
 </script>
 

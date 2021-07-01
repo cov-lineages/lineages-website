@@ -455,6 +455,25 @@ html, body {
 	width: calc(100% + 50px);*/
 }
 
+#who_wrapper, #phe_wrapper, #nextstrain_wrapper {
+	display: none;
+}
+
+#otherNames {
+	padding-top: 10px;
+	display: none;
+}
+
+#otherNames img{
+	width: 30px;
+	margin: 10px;
+}
+
+#otherNames span{
+	height: 30px;
+	vertical-align: middle;
+}
+
 td {
 	word-wrap: break-word !important;
     overflow-wrap: break-word !important;
