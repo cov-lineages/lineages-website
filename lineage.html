@@ -1,7 +1,885 @@
 ---
-  layout: post
-  title: "My Post With Aliases"
-  alias: [/lineages/lineage_butt.html]
+layout: default
 ---
 
-<h1> hello </h1>
+<head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/0.2.14/d3.geo.projection.js"></script>
+</head>
+
+
+
+<style type="text/css">
+  #chart_container {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    top: 0px;
+  }
+
+  #map {
+    /*width: calc(100% - 188px);
+    flex-basis: calc(100% - 188px);*/
+    height: 600px;
+    margin-top: 20px;
+
+  }
+
+  #bar_chart {
+    /*width: calc(100% - 188px);
+    flex-basis: calc(100% - 188px);*/
+    height: 450px;
+    margin-top: 20px;
+  }
+
+  text {
+    font-size: 12px !important;
+  }
+
+  #date_chart {
+    /*width: calc(100% - 188px);
+    flex-basis: calc(100% - 188px);*/
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 90px;
+
+  }
+
+  .countries {
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linejoin: round;
+  }
+
+  .countryCount {
+    width: 50px;
+    text-align: center;
+  }
+
+
+  .locations{
+    stroke-width: 1;
+    opacity: 0.7;
+  }
+
+  .axis {
+    font: 8px 'Poppins' sans-serif;
+  }
+  .axis path,
+  .axisBottom line {
+    fill: none;
+    stroke: dimgrey;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+  }
+  .maptooltip {
+    position: absolute;
+    padding: 10px;
+    min-width: 50px;
+    min-height: 20px;
+    background-color: #6E6D92;
+    color: white;
+    z-index: 1000000000;
+    display: none;
+    border-radius: 5px;
+    font: 14px 'Poppins' sans-serif;
+  }
+
+
+</style>
+
+
+
+  
+  <script type="text/javascript">
+    const updateTableFactory = (tooltipId,metadata)=>(tipId)=>{
+            const data = metadata[tipId];
+            const tableDiv = d3.select(document.getElementById(tooltipId));
+            //Remove table
+        tableDiv.html("")
+            if (data !== undefined) {
+                const visibleData = Object.keys(data).filter(d=>d!=='sequence_name');
+                tableDiv.append("h3")
+                    .attr("class",'tooltip-header')
+                    .text(tipId)
+                    .append("hr");
+                tableDiv.selectAll("p")
+                        .data(visibleData)
+                        .enter()
+                        .append("p")
+                        .attr("class","tooltip-text")
+                            .selectAll("span")
+                            .data(d=>[d,data[d]])
+                            .enter()
+                            .append("span")
+                            .attr("class",(d,i)=> i===0? "tooltip-key" :"tooltip-value")
+                            .text((d,i)=>i===0? d + " : ": d);
+            }
+    }
+    
+
+    function buildTree(svgID, myTreeString,tooltipID,backgroundDataString,sliderID) {
+        const backgroundData = JSON.parse(backgroundDataString);
+        const updateTable = updateTableFactory(tooltipID, backgroundData);
+        const margins = {top:50,bottom:60,left:100,right:100}
+        const svg = d3.select(document.getElementById(svgID))
+        svg.selectAll("g").remove();
+        const newickString = myTreeString;
+        const tree = figtree.Tree.parseNewick(newickString);
+        const fig = new figtree.FigTree(document.getElementById(svgID),margins, tree)
+        fig.layout(figtree.rectangularLayout)
+                .nodes(figtree.circle()
+                                .filter(n=>!n.children)
+                                .attr("r",8)
+                                .hilightOnHover(20)
+                                .onClick((node,i,n)=>{
+                                  updateTable(node.name);
+                                  fig.svgSelection.selectAll(".selected").classed("selected",false);
+                                  d3.select(n[i]).classed("selected",true);
+                                }),
+                        figtree.tipLabel(v=>v.name).attr("dx",10),
+                        figtree.rectangle()
+                                .filter(n=>n[fig.id].collapsed)
+                                .attr("width",20)
+                                .attr("height",20)
+                )
+                      .nodeBackgrounds(figtree.circle()
+                                        .attr("r", 10)
+                              .filter(n=>!n.children)
+                                      )
+                      .branches(figtree.branch()
+                                  .hilightOnHover(20) 
+                                  .collapseOnClick()
+                                  .on("click",()=>{
+                                    const svgHeight = fig.svgSelection.select(function() { return this.parentNode; }).attr("height");
+                                    if(svgHeight/fig.tree().externalNodes.filter(node=>!node[fig.id].ignore).length>12){
+                                      fig.svgSelection.selectAll(".label")
+                                        .classed("show",true)
+                                    }else{
+                                      fig.svgSelection.selectAll(".label")
+                                      .classed("show",false)
+                                    }
+                                  })
+                          )
+                          .feature(
+                                  figtree.scaleBar()
+                                    .direction("x")
+                                    .length(1/29903)
+                                    .x(-60)
+                                    .y(-30)
+                                    // .y(fig.svgSelection.select(function() { return this.parentNode; }).attr("height")-margins.top-margins.bottom+20)
+                                    .title({text:"~1 SNP",
+                                    yPadding:10})
+                                      )
+
+      addSliderEventHandler(sliderID,fig);
+
+    }
+  </script>
+
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Content -->
+                <section>
+                  <header class="main">
+                    <h1 id="pageTitle">{{ page.title }}</h1>
+                  </header>
+                  <p id="parentButton" class="goToParentButton icon dripicons-arrow-thin-right">
+                  </p>
+
+                 <div class="contrib">
+                  <p id="description">{{site.data.lineage_data[page.lineage]["Description"]}}</p>
+                  <a href="https://outbreak.info/situation-reports?pango={{page.lineage}}">View more information at Outbreak.info</a>
+
+                  <div id="otherNames">
+                    <div id="who_wrapper"><img src="{{'assets/images/who_black.png' | absolute_url}}"/><span id="who"></span></div>
+                    <div id="phe_wrapper"><img src="{{'assets/images/phe_black.png' | absolute_url}}"/><span id="phe"></span></div>
+                    <div id="nextstrain_wrapper"><img src="{{'assets/images/nextstrain_black.png' | absolute_url}}"/><span id="nextstrain"></span></div>
+                  </div>
+                 </div>
+
+                <div id="chart_container">
+                  <div id="map"></div>
+                  <div id="bar_chart"></div>
+                  <div id="date_chart"></div>
+                </div>
+                <table id="myTable" class="table">
+                    <h3>Table 1 | Summary of lineage & sub-lineages</h3> <br>  
+                    {% include searchbar.html %}
+
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Lineage</th>
+                      <th scope="col">Most common countries</th>
+                      <th scope="col">Earliest date</th>
+                      <th scope="col"># designated</th>
+                      <th scope="col"># assigned</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                    
+                  
+                </table>
+                </section>
+              </div>
+          </div>
+      </div>
+
+
+
+
+<script src="{{ 'assets/javascripts/js-yaml.min.js' | absolute_url }}"></script>
+
+<script type="text/javascript">
+	
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  console.log(urlParams.get("lineage"));
+
+  var selectedLineage = urlParams.get("lineage");
+  var children = [];
+ 
+  d3.text("{{'/data/lineages.yml' | absolute_url}}", function(text) {
+  	  var yml = jsyaml.load(text);
+      for(var lin of yml) {
+      	if(lin.name == selectedLineage) {
+      		for(var child of lin.children) {
+      			children.push(child);
+      		}
+
+      		$("#pageTitle").html("Lineage " + selectedLineage);
+
+      		if(lin.parent) {
+      			$("#parentButton").html("<a href=\"/lineage.html?lineage="+lin.parent+"\">Go to parent lineage: "+lin.parent+"</a>")
+      			$("#parentButton").show();
+      		}
+
+
+
+      		d3.csv("https://raw.githubusercontent.com/cov-lineages/cov-support/master/cov_support/data/country_coordinates.csv", function(coordsCsv) {
+			    d3.json("https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/lineage_data.json",function(metadata) {
+			      /*metadata = metadata.filter(function(d) {
+			        if(d.lineage == selectedLineage || children.includes(d.lineage)) {
+			          return true;
+			        }
+			        return false;
+			      });*/
+
+			      $("#description").html(metadata[selectedLineage]["Description"])
+
+
+                  for(var child of children) {
+                  	if(metadata[child] && child != selectedLineage) {
+                  		var rowString = "";
+
+	                  	if(child.indexOf("*") > 0) {
+	                  		rowString = "<tr><td>"+child+"</td>";
+	                  	} else {
+	                  		rowString = "<tr><td><a href=\"lineage.html?lineage="+child+"\">"+child+"</a></td>";
+	                  	}
+
+	                  	rowString = rowString + "<td>"+metadata[child]["Countries"]+"</td>";
+	                  	rowString = rowString + "<td>"+metadata[child]["Earliest date"]+"</td>";
+	                  	rowString = rowString + "<td>"+metadata[child]["Number designated"]+"</td>";
+	                  	rowString = rowString + "<td>"+metadata[child]["Number assigned"]+"</td>";
+	                  	rowString = rowString + "<td>"+metadata[child]["Description"]+"</td>";
+	                  	rowString = rowString + "</td>"
+
+	                  	$("#myTable").append(rowString);
+                  	}
+                  }
+
+                  $(".footer").css('top', document.documentElement.scrollHeight);
+
+
+
+			      var countryCentroidMap = new Map();
+
+			      coordsCsv.forEach(function(country) {
+			        countryCentroidMap[country.Country.toUpperCase()] = country;
+
+			        var key = country.Country.toUpperCase();
+
+			        if(key == "USA") {
+			          countryCentroidMap["UNITED STATES OF AMERICA"] = country;
+			        }
+
+			        if(key == "CONGO") {
+			          countryCentroidMap["DEMOCRATIC REPUBLIC OF THE CONGO"] = country;
+			          countryCentroidMap["REPUBLIC_OF_THE_CONGO"] = country;
+			        }
+
+			        if(key == "UK") {
+			          countryCentroidMap["UNITED KINGDOM"] = country;
+			        }
+
+			        if(key == "TIMOR-LESTE") {
+			          countryCentroidMap["EAST TIMOR"] = country;
+			        }
+
+			        if(key == "SERBIA") {
+			          countryCentroidMap["REPUBLIC OF SERBIA"] = country;
+			        }
+
+			        if(key == "PALESTINIAN_TERRITORIES") {
+			          countryCentroidMap["PALESTINE"] = country;
+			        }
+
+			        if(key == "SWAZILAND") {
+			          countryCentroidMap["ESWATINI"] = country;
+			        }
+
+			      });
+
+			      var countryToCount = new Map();
+			      var dateToEntries = new Map();
+
+			      var dateToRegions = {};
+
+			      var lineages = children;
+
+			      if(!lineages.includes(selectedLineage)) {
+			        lineages.push(selectedLineage);
+			      }
+
+
+
+			      var sum = 0;
+			      lineages.forEach(function(key) {
+
+			        if(key in metadata) {
+
+			          metadata[key]["Country counts"].forEach(function(c) {
+			            c.counts.forEach(function(count) {
+			              
+			              if(countryCentroidMap[c.country.toUpperCase()]) {
+
+			                if(!dateToRegions[count.date]) {
+			                    dateToRegions[count.date] = {
+			                      Africa: 0,
+			                      Antarctica: 0,
+			                      Asia: 0,
+			                      Europe: 0,
+			                      NorthAmerica: 0,
+			                      Oceania: 0,
+			                      SouthAmerica: 0,
+			                      date: count.date
+			                    }
+			                  }
+
+			                  var region = countryCentroidMap[c.country.toUpperCase()].Continent;
+
+			                  dateToRegions[count.date][region] = dateToRegions[count.date][region] + count.count;
+			              
+			              }
+
+			              countryName = c.country.toUpperCase();
+
+			              if(!countryToCount[countryName]) {
+			                countryToCount[countryName] = 0;
+			              }
+
+			              countryToCount[countryName] = countryToCount[countryName] + count.count;
+
+
+			            });
+			          });
+			        }
+			        
+
+			      });
+
+			      initialData = [];
+			      barChartData = [];
+			      dateChartData = Object.entries(dateToRegions);
+
+
+			      Object.keys(countryToCount).forEach(function(c) {  
+			        c = c.toUpperCase();
+
+			        if(c == "USA" || c == "UNITED_STATES") {
+			          c = "UNITED STATES OF AMERICA"
+			        }
+
+			        if(c == "CONGO" || c =="REPUBLIC_OF_THE_CONGO") {
+			          c = "DEMOCRATIC REPUBLIC OF THE CONGO"
+			        }
+
+			        if(c == "UK" || c == "UNITED_KINGDOM") {
+			          c = "UNITED KINGDOM";
+			        }
+
+			        if(c == "EAST TIMOR") {
+			          c = "TIMOR-LESTE";
+			        }
+
+			        if(c == "SERBIA") {
+			          c = "REPUBLIC OF SERBIA";
+			        }
+
+			        if(c == "PALESTINIAN_TERRITORIES") {
+			          c = "PALESTINE";
+			        }
+
+			        if(c == "SWAZILAND") {
+			          c = "ESWATINI";
+			        }
+
+
+			        if(countryCentroidMap[c] && countryToCount[c]) {
+
+			          var entry = {
+			            country: c,
+			            count: countryToCount[c],
+			            latitude: countryCentroidMap[c].Latitude,
+			            longitude: countryCentroidMap[c].Longitude,
+			            region: countryCentroidMap[c].Continent
+			          }
+
+			          initialData.push(entry);
+
+			          var barChartEntry = {
+			            country: c,
+			            count: countryToCount[c],
+			            region: countryCentroidMap[c].Continent
+			          }
+
+			          barChartData.push(barChartEntry);
+			        } else {
+			          console.log("unable to find centroid or count for: '" + c + "'");
+			        }
+
+			        barChartData = barChartData.sort((a,b) => (a.count > b.count) ? 1 : ((b.count > a.count) ? -1 : 0)); 
+
+			      });
+
+			      drawLocations();
+			      drawBarChart(barChartData);
+
+			      if(dateChartData.length>0) {
+			        drawDateChart(dateChartData);
+			      } else {
+			        $("#date_chart").hide();
+			      }
+
+
+
+			    });
+			  });
+      	}
+      }
+  });
+
+  var continents = ["Europe", "Asia", "NorthAmerica", "SouthAmerica", "Africa", "Antarctica", "Oceania"].reverse();
+
+  var colourMap = {
+    "Europe": "#984464",
+    "Asia": "#86b0a6",
+    "NorthAmerica": "#52495a",
+    "SouthAmerica": "#557b86",
+    "Africa": "#b88f89",
+    "Oceania": "#eb7e83",
+    "Antarctica": "#cdcdcd"
+  }
+
+  var body = document.body,
+    html = document.documentElement;
+
+  var height = $("#map").height();
+  var width = $("#map").width();
+
+  var projection = d3.geo.equirectangular()
+                    .scale(165)
+                    .translate( [width/2, height / 2]);
+
+  var path = d3.geo.path()
+    .projection(projection);
+
+  var svg = d3.select("#map").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  d3.json("https://raw.githubusercontent.com/jdamiani27/Data-Visualization-and-D3/master/lesson4/world_countries.json", function(json){
+    svg.selectAll("path")
+      .data(json.features)
+      .enter()
+      .append("path")
+        .attr("d",path)
+        .attr("class", "countries")
+  });
+
+  var initialData;
+  var barChartData;
+
+  
+
+  function drawLocations() {
+    var div = d3.select("body").append("div") 
+      .attr("class", "maptooltip");
+
+    svg.selectAll("circle")
+      .data(initialData)
+      .enter()
+      .append("circle")
+      .attr("cx", function(d) {
+      return projection([d.longitude, d.latitude])[0];
+      })
+      .attr("cy", function(d) {
+      return projection([d.longitude, d.latitude])[1];
+      })
+      .attr("r", function(d) {
+        // scale to number of cases, but capped at 40px to not completely cover map
+        return Math.log(d.count) * 2;//Math.min(Math.max(d.count/ 20, 2), 50);
+      })
+      .attr("fill", function(d) {
+        return colourMap[d.region];
+      })
+      .attr("class", "locations")
+      .on("mouseover", function(d) { 
+          $(".maptooltip").html(d.country + ": " + d.count + " sequences");
+          $(".maptooltip").css({top: d3.event.pageY - 15, left: d3.event.pageX + 15, position:'absolute'});
+          $(".maptooltip").show();
+        })
+        .on("mouseout", function(d) {   
+            $(".maptooltip").hide();
+        });
+
+  };
+
+  function drawBarChart(data) {
+    var margin = {top: 20, right: 40, bottom: 200, left: 200},
+
+    width = $("#bar_chart").width() - (margin.left + margin.right);
+    height = $("#bar_chart").height() - (margin.top + margin.bottom);
+
+    data = data.filter(function(d) {
+        if(d.count >= 1) {
+          return true;
+        }
+
+        return false;
+      });
+
+    data.sort(function(x, y){
+       return d3.ascending(x.count, y.count);
+    });
+
+    var originalCountryCount = data.length;
+
+    var maxBarSize = width;
+
+    if(data.length <= 1) {
+      maxBarSize = width / 3;
+    }
+
+    var x = d3.scale.ordinal().rangeRoundBands([0, maxBarSize], .05);
+
+    var y = d3.scale.log().range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .ticks(10)
+        .tickFormat(function (d) {
+          return y.tickFormat(4,d3.format(",d"))(d)
+        });
+
+    var svg = d3.select("#bar_chart").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
+
+      data = data.slice(Math.max(data.length - 25, 0))
+
+      x.domain(data.map(function(d) { return d.country; }));
+      y.domain([0.1, d3.max(data, function(d) { return d.count; })]);
+
+      svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis)
+        .selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", "-.55em")
+          .attr("transform", "rotate(-90)" );
+
+      svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis)
+        .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end");
+
+      svg.selectAll("bar")
+          .data(data)
+          .enter().append("rect")
+          .attr("fill", function(d) {
+            return colourMap[d.region];
+          })
+          .attr("x", function(d) { return x(d.country); })
+          .attr("width", x.rangeBand())
+          .attr("y", function(d) { return y(d.count); })
+          .attr("height", function(d) { return height - y(d.count); })
+          .on("mouseover", function(d) { 
+            $(".maptooltip").html(d.country + ": " + d.count + " sequences");
+            $(".maptooltip").css({top: d3.event.pageY - 15, left: d3.event.pageX + 15, position:'absolute'});
+            $(".maptooltip").show();
+          })
+          .on("mouseout", function(d) {   
+              $(".maptooltip").hide();
+          });
+
+      var lineLegend = svg.selectAll(".lineLegend").data(Object.keys(colourMap))
+        .enter().append("g")
+        .attr("class","lineLegend")
+        .attr("transform", function (d,i) {
+                return "translate(" + -200 + "," + (i*20) +")";
+            });
+
+      lineLegend.append("text").text(function (d) {return d;})
+          .attr("transform", "translate(15,9)"); //align texts with boxes
+
+      lineLegend.append("rect")
+          .attr("fill", function (d, i) {return colourMap[d]; })
+          .attr("width", 10).attr("height", 10);
+
+      var messages = [data.length + "/" + originalCountryCount + " countries shown"];
+
+      var countryCount = svg.selectAll(".countryCount").data(messages)
+        .enter().append("g")
+        .attr("class","lineLegend")
+        .attr("transform", function (d,i) {
+              return "translate(" + -200 + "," + (i*20) + 175 +")";
+          });
+
+      countryCount.append("text").text(function (d) {return d;}).attr("transform", "translate(0,9)");
+
+  }
+
+  function drawDateChart(data) {
+
+
+    var margin = {top: 20, right: 0, bottom: 35, left: 30};
+
+    var width = $("#date_chart").width();
+    var height = $("#date_chart").height();
+
+    var svg = d3.select("#date_chart")
+      .append("svg")
+      .attr("width", width -(margin.left + margin.right))
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var parse = d3.time.format("%Y-%m-%d").parse;
+
+
+    // Transpose the data into layers
+    var dataset = d3.layout.stack()(continents.map(function(region) {
+      return data.map(function(d) {
+        d = d[1];
+
+        return {x: parse(d.date), y: +d[region], region: region};
+      });
+    }));
+
+
+    var minDate, maxDate;
+
+    data.forEach(function(d) {
+      d = d[1];
+      var date = parse(d.date);
+
+      if(!minDate) {
+        minDate = date;
+        maxDate = date;
+      }
+
+      if(minDate > date) {
+        minDate = date;
+      }
+
+      if(maxDate < date) {
+        maxDate = date;
+      }
+    });
+
+
+    var dates = [];
+
+    if(data.length < 2) {
+      dates.push(new Date(minDate));
+      minDate.setDate(minDate.getDate() + 1);
+    } else {
+       while (minDate <= maxDate){
+        dates.push(new Date(minDate));
+        minDate.setDate(minDate.getDate() + 1);
+      };
+
+    }
+
+    var maxBandSize = 100 + (width - (margin.left + margin.right));
+
+    if(minDate == maxDate) {
+      maxBandSize = maxBandSize / 2;
+    }
+
+    // Set x, y and colors
+    var x = d3.scale.ordinal()
+      .domain(dates.map(function(d) { return d; }))
+      .rangeRoundBands([0, maxBandSize], 0.01);
+
+    var y = d3.scale.linear()
+      .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
+      .range([height, 0]);
+
+    var colors = [];
+    for(var c of continents) {
+      colors.push(colourMap[c]);
+    }
+
+    // Define and draw axes
+    var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .ticks(4)
+      .tickSize(-width, 0, 0)
+      .tickFormat( function(d) { return d } );
+    
+    var ticks = x.domain().filter(function(d,i){ return d.getDate() == 15; } );
+
+    var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom")
+      .tickFormat(d3.time.format("%b"))
+      .tickValues(ticks);
+
+    svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+    svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "rotate(-90)" )
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+    var formatDate = d3.time.format("%d-%b-%Y")
+
+    // Create groups for each series, rects for each segment 
+    var groups = svg.selectAll("g.sequences")
+      .data(dataset)
+      .enter().append("g")
+      .attr("class", "sequences")
+      .style("fill", function(d, i) { return colors[i]; });
+
+    var rect = groups.selectAll("rect")
+      .data(function(d) { return d; })
+      .enter()
+      .append("rect")
+      .attr("x", function(d) { return x(d.x); })
+      .attr("y", function(d) { return y(d.y0 + d.y); })
+      .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+      .attr("width", x.rangeBand())
+      .on("mouseover", function(d, i) { 
+        $(".maptooltip").html(formatDate(d.x) + "<br>" + d.y + " sequences<br>" + d.region);
+        $(".maptooltip").css({top: d3.event.pageY - 15, left: d3.event.pageX + 15});
+        $(".maptooltip").show();
+      })
+      .on("mouseout", function(d) {   
+          $(".maptooltip").hide();
+      });
+
+  }
+
+  function getOtherLineageNames(lineage) {
+
+    var pageName = "c" + lineage + ".json";
+    var directory = "https://raw.githubusercontent.com/cov-lineages/constellations/main/constellations/definitions/";
+
+    var whoName = "";
+    var pheNames = [];
+    var nextStrain = "";
+
+    // get WHO labels if they exist
+    $.ajax({
+        type: 'HEAD',
+        url: directory + pageName,
+        success: function() {
+                // page exists
+            d3.json(directory + pageName, function(json){
+              whoName = json["variant"]["WHO_label"];
+
+              d3.text("https://raw.githubusercontent.com/phe-genomics/variant_definitions/main/README.md", function(text) {
+                var lines = text.split("\n");
+
+                for(var line of lines) {
+
+                  if(line.indexOf(lineage) > 0) {
+                    var split = line.split(">");
+
+                    pheNames.push(split[1].split("<")[0]);
+
+                    if(line.indexOf("nextstrain:") > 0) {
+                      split = line.split("nextstrain:");
+                      split2 = split[1].split(">");
+                      nextStrain = split2[1].split("<")[0];
+                    }
+                  }
+                }
+
+                // add to UI
+
+                if(whoName && whoName.length > 0) {
+                  $("#who_wrapper").show();
+                  $("#who").html("<b>WHO Name</b>: " + whoName);
+                }
+
+                console.log(pheNames);
+
+                if(pheNames && pheNames.length > 0) {
+                  pheNames = pheNames.join(", ");
+
+                  $("#phe_wrapper").show();
+                  $("#phe").html("<b>PHE Name(s):</b> " + pheNames);
+                }
+
+                if(nextStrain && nextStrain.length > 0) {
+                  $("#nextstrain_wrapper").show();
+                  $("#nextstrain").html("<b>Nextrain Name:</b> " + nextStrain);
+                }
+
+                $(".footer").css('top', document.documentElement.scrollHeight);
+
+              });
+            });
+        },
+        error: function() {
+                // page does not exist
+                console.log("Could not find WHO label");
+        }
+    });
+  }
+
+  getOtherLineageNames(selectedLineage);
+
+
+</script>

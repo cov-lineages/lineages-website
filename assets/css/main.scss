@@ -457,11 +457,7 @@ html, body {
 
 #who_wrapper, #phe_wrapper, #nextstrain_wrapper {
 	display: none;
-}
-
-#otherNames {
 	padding-top: 10px;
-	display: none;
 }
 
 #otherNames img{
@@ -482,6 +478,7 @@ td {
 .goToParentButton {
 	text-align: center;
 	font-size: 120%;
+	display: none;
 }
 
 .goToParentButton a {
@@ -529,6 +526,16 @@ figure.effect-duke img,
 figure.effect-duke p {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
+}
+
+.duke-description {
+	font-size: 60%;
+	height: 150px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+	-webkit-line-clamp: 3;
 }
 
 figure.effect-duke:hover img {

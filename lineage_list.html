@@ -31,7 +31,7 @@ children: ['A', 'A.1', 'A.2', 'A.2.1', 'A.2.2', 'A.2.3', 'A.2.4', 'A.2.5', 'A.2.
       {% if row["Lineage"] contains "*" %}
       <td> {{ row["Lineage"] }} </td>
       {% else %}
-      <td><a href="/lineages/lineage_{{ child }}.html">{{ row["Lineage"] }}</a> </td>
+      <td><a href="/lineage.html?lineage={{ child }}">{{ row["Lineage"] }}</a> </td>
       {% endif %}
       <td>{{ row["Countries"] }}</td>
       <td>{{ row["Earliest date"] }}</td>
