@@ -92,7 +92,7 @@ title: Home
 				<div id="contributor_grid">
 					{% for item in site.data.reported_lineages %}
 						{% if item.type == category.name %}
-							<div class="contrib"><a href="{{item.link | absolute_url}}">{{item.name}}</a></div>
+							<div class="contrib"><a href=".{{item.link}}">{{item.name}}</a></div>
 						{% endif %}
 					{% endfor %} 
 				</div>
