@@ -1,5 +1,5 @@
 - name: Pangolin
-  link: /resources/pangolin.html
+  link: ./resources/pangolin.html
   description: Pangolin was developed to implement the dynamic nomenclature of SARS-CoV-2 lineages, known as the Pango nomenclature. It allows a user to assign a SARS-CoV-2 genome sequence the most likely lineage (Pango lineage) to SARS-CoV-2 query sequences.<br><br>Pangolin assigns lineages to query sequences as described in Rambaut et al 2020.
   logourl: pangolin.png
   subheading: software
