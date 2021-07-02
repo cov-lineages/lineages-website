@@ -197,7 +197,7 @@ layout: default
 
                  <div class="contrib">
                   <p id="description">{{site.data.lineage_data[page.lineage]["Description"]}}</p>
-                  <a href="https://outbreak.info/situation-reports?pango={{page.lineage}}">View more information at Outbreak.info</a>
+                  <a href="" id="outbreakLink">View more information at Outbreak.info</a>
 
                   <div id="otherNames">
                     <div id="who_wrapper"><img src="{{'assets/images/who_black.png' | absolute_url}}"/><span id="who"></span></div>
@@ -259,6 +259,9 @@ layout: default
       		}
 
       		$("#pageTitle").html("Lineage " + selectedLineage);
+
+      		var a = document.getElementById('outbreakLink');
+			a.href = "https://outbreak.info/situation-reports?pango=" + selectedLineage;
 
       		if(lin.parent) {
       			$("#parentButton").html("<a href=\"./lineage.html?lineage="+lin.parent+"\">Go to parent lineage: "+lin.parent+"</a>")
