@@ -2,13 +2,140 @@
 layout: default
 ---
 
-<h1>Constellations</h1>
+<style type="text/css">
+	td {
+		max-width: 250px;
+	}
 
-A constellation is a collection of mutations which are functionally meaningful, but which may arise independently a number of times. <br><br>
+</style>
 
-Here we include files that define:<br><br>
+<h1>Constellations</h1><br><br>
+
+<p>A constellation is a collection of mutations which are functionally meaningful, but which may arise independently a number of times.</p>
+
+<p>More information about constellations as well as their definitions can be found in the <a href="https://github.com/cov-lineages/constellations">Constellations github repo</a>.
+
+<p>There we include files that define:</p>
 
 <ul>
 <li>lineages of concern - for these lineages, the defining mutations have been extracted so that individual sequences can be classified deterministically</li>
 <li>genomically interesting regions e.g. RBD sites which interact with ACE2</li>
 </ul>
+
+<br>
+
+<table id="myTable" class="table">
+  <h3>Summary of Currently Defined Constellations</h3> <br> 
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Label</th>
+      <th scope="col">Description</th>
+      <th scope="col">Sources</th>
+      <th scope="col">Type</th>
+      <th scope="col">Variant</th>
+      <th scope="col">Tags</th>
+      <th scope="col">Sites</th>
+      <th scope="col">Rules</th>
+    </tr>
+  </thead>
+</table>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script type="module">
+    import { request } from "https://cdn.pika.dev/@octokit/request";
+
+    myAsyncMethod()
+    async function myAsyncMethod () {
+        const result = await request('GET /repos/{owner}/{repo}/contents/{path}', {
+		  owner: 'cov-lineages',
+		  repo: 'constellations',
+		  path: 'constellations/definitions'
+		})
+
+        for(var d of result.data) {
+
+        	d3.json(d.download_url, function(json) {
+        		json["tags"] = json["tags"].join(", ");
+        		json["sites"] = json["sites"].join(", ");
+        		json["sources"] = json["sources"].join("<br>");
+
+        		var rules = "";
+        		for(var key in json["rules"]) {
+        			rules = rules + key + ": " + json["rules"][key] + "<br>";
+        		}
+        		json["rules"] = rules;
+
+
+        		var variant = "";
+        		for(var key in json["variant"]) {
+        			variant = variant + key + ": " + json["variant"][key] + "<br>";
+        		}
+        		json["variant"] = variant;
+
+
+
+        		var rowString = "<tr><td>"+json["label"]+"</td>";
+              	rowString = rowString + "<td>"+json["description"]+"</td>";
+              	rowString = rowString + "<td>"+json["sources"]+"</td>";
+              	rowString = rowString + "<td>"+json["type"]+"</td>";
+              	rowString = rowString + "<td>"+json["variant"]+"</td>";
+              	rowString = rowString + "<td>"+json["tags"]+"</td>";
+              	rowString = rowString + "<td>"+json["sites"]+"</td>";
+              	rowString = rowString + "<td>"+json["rules"]+"</td>";
+              	rowString = rowString + "</td>"
+
+              	$("#myTable").append(rowString);
+              
+              	$(".footer").css('top', document.documentElement.scrollHeight);
+        	});
+
+
+        }
+    }
+</script>  
+<script type="text/javascript">
+	
+
+    var directory = "https://raw.githubusercontent.com/cov-lineages/constellations/main/constellations/definitions/";
+
+
+    /*function handleFileName(name) {
+    	var fileName = "c" + name + ".json";
+
+    	$.ajax({
+	        type: 'HEAD',
+	        url: directory + fileName,
+	        success: function(data) {
+	        	d3.json(directory + fileName, function(json) {
+
+                  	rowString = "<tr><td>"+json["label"]+"</td>";
+                  	rowString = rowString + "<td>"+json["description"]+"</td>";
+                  	rowString = rowString + "<td>"+json["sources"]+"</td>";
+                  	rowString = rowString + "<td>"+json["type"]+"</td>";
+                  	rowString = rowString + "<td>"+json["variant"]+"</td>";
+                  	rowString = rowString + "<td>"+json["tags"].split(",").join(", ")+"</td>";
+                  	rowString = rowString + "<td>"+json["sites"]+"</td>";
+                  	rowString = rowString + "<td>"+json["rules"]+"</td>";
+                  	rowString = rowString + "</td>"
+
+                  	$("#myTable").append(rowString);
+                  
+                  	$(".footer").css('top', document.documentElement.scrollHeight);
+
+	        	});
+	        },
+	        failure: function() {
+
+	        }
+		});
+
+    }	*/
+
+
+    
+
+
+</script>

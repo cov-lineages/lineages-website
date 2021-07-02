@@ -252,6 +252,8 @@ layout: default
   	  var yml = jsyaml.load(text);
       for(var lin of yml) {
       	if(lin.name == selectedLineage) {
+      		console.log(lin);
+
       		for(var child of lin.children) {
       			children.push(child);
       		}
@@ -296,6 +298,10 @@ layout: default
 
 	                  	$("#myTable").append(rowString);
                   	}
+                  }
+
+                  if(children.length == 1 && children[0] == selectedLineage) {
+                  	$("#myTable").append("<tr><td>No descendent lineages found</td></tr>");
                   }
 
                   $(".footer").css('top', document.documentElement.scrollHeight);

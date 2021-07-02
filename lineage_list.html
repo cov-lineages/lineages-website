@@ -24,7 +24,9 @@ children: ['A', 'A.1', 'A.2', 'A.2.1', 'A.2.2', 'A.2.3', 'A.2.4', 'A.2.5', 'A.2.
         <th class="desc-td" scope="col">Description</th>
       </tr>
     </thead>
-      {% for child in page.children %}
+      {% for c in site.data.lineages %}
+
+      {% assign child = c.name %}
 
       {% assign row = site.data.lineage_data[child] %}
     <tr>
