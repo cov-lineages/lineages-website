@@ -87,7 +87,6 @@ html, body {
 
 .footer {
   position:absolute;
-  top: 0px;
   width: 100%;
   background: white;
   color: black;
@@ -132,6 +131,8 @@ html, body {
 	height: auto;
 	object-fit: cover;
 	opacity: 0.4;
+
+
 }
 
 #constellations {
@@ -598,6 +599,10 @@ figure.effect-duke:hover p {
 	}
 
 	#pangolin_link_grid {
+		grid-template-columns: 1fr;
+	}
+
+	#contributor_grid {
 		grid-template-columns: 1fr;
 	}
 }
