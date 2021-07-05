@@ -39,3 +39,32 @@
     </div>
   </li>-->
 </ul>
+
+
+
+<ul class="p-nested-dropdowns" id="mobile_menu">
+    <li class="nested-dropdown">
+        <div id="mobile_menu_btn">Menu</div>
+        <!-- First level sub dropdown -->
+        <ul>
+            <li><a class="nested-nav-item" href="{{ 'index.html' | absolute_url }}">Home</a></li>
+            <li>
+               <div class="nested-nav-item">PANGO</div>
+                <ul>
+                    <li><a class="nested-nav-item" href="{{'/index.html#about' | absolute_url}}">About</a></li>
+                    <li><a class="nested-nav-item" href="{{'/FAQ.html' | absolute_url}}">FAQs</a></li>
+                    <li><a class="nested-nav-item" href="https://www.pango.network/how-does-the-system-work/how-to-suggest-a-new-lineage/">Suggest a New Lineage</a></li>
+                    <li><a class="nested-nav-item" href="{{'/index.html#cite' | absolute_url}}">How to Cite/Publications</a></li>
+                    <li><a class="nested-nav-item" href="{{'/index.html#contributors' | absolute_url}}">Contributors</a></li>
+                    <li><a class="nested-nav-item" href="{{'/index.html#contact' | absolute_url}}">Contact Us</a></li>
+                </ul>
+            </li>
+            <li><a class="nested-nav-item" href="{{ 'lineage_list.html' | absolute_url }}">Lineages</a></li>
+            <li><a class="nested-nav-item" href="{{ 'resources.html' | absolute_url }}">Resources</a></li>
+            <li><a class="nested-nav-item" href="{{ 'constellations.html' | absolute_url }}">Constellations</a></li>
+            <li><a class="nested-nav-item" href="{{ 'index.html#global_reports' | absolute_url }}">VOC Reports</a></li>
+        </ul>
+    </li>
+</ul>
+
+

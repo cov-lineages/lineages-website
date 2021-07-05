@@ -45,6 +45,10 @@ html, body {
   font-weight: 300;
 }
 
+#mobile-background {
+	display: none;
+}
+
 #splash {
 	/*background-image: linear-gradient(to bottom, #000000, #14080e, #1e0f1a, #241527, #261b37, #2c254b, #2e2f60, #2a3b76, #364b96, #425bb6, #506bd8, #5f7cfb);*/
 	position: fixed;
@@ -577,8 +581,45 @@ figure.effect-duke:hover p {
 	transform: scale3d(1,1,1);
 }
 
+
+#view_nav_button {
+	display: none;
+	position: fixed;
+	top: 50px;
+	width: 100%;
+	text-align: center;
+	font-size: 200%;
+	color: white;
+}
+
+#mobile_menu {
+	display: none;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	width: calc(100% - 50px);
+	height: 100px;
+	color: white;
+	font-weight: 300;
+	font-size: 150%;
+	background: #262626;
+}
+
+#mobile_menu_btn {
+	width: calc(100%);
+	height: 100%;
+	text-align: center;
+	padding-top: 25px;
+
+}
+
+.mobile-menu-dropdown {
+	marign-top: 50px;
+}
+
+
 /* Media queries */
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 768px) {
 	.content {
 		padding: 0 10px;
 		text-align: center;
@@ -595,7 +636,16 @@ figure.effect-duke:hover p {
 	}
 
 	#splash_text {
+		font-size: 200%;
+		text-align: center;
+		width: 80%;
+		left: 10%;
+		margin: 0px !important;
 		display: none;
+	}
+
+	#splash_sections_container {
+		top: 125px;
 	}
 
 	#pangolin_link_grid {
@@ -605,7 +655,34 @@ figure.effect-duke:hover p {
 	#contributor_grid {
 		grid-template-columns: 1fr;
 	}
+
+	#splash svg {
+		display: none;
+	}
+
+	#mobile-background {
+		background: url('../images/9808-01-01.svg');
+		background-size: cover;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	#main_nav {
+		display: none;
+	}
+
+	#mobile_menu {
+		display: block;
+	}
+
+	h3 {
+		font-size: 150%;
+	}
 }
+
+
+
 
 
 #software_logos figure {
@@ -753,5 +830,76 @@ figure.effect-duke:hover p {
 	color: white !important;
 }
 
+/* The root */
+.p-nested-dropdowns {
+    /* Border */
+    display: flex;
+
+    /* Reset list styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.p-nested-dropdowns li, .annoying {
+    /* Spacing */
+    padding: 8px;
+
+    /* Used to position the sub dropdown */
+    position: relative;
+}
+
+/* The sub dropdown */
+.p-nested-dropdowns ul {
+    /* Border */
+
+    /* Hidden by default */
+    display: none;
+
+    /* Absolute position */
+    left: 0;
+    position: absolute;
+    top: 100%;
+
+    /* Reset styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    /* Width */
+    width: 220px;
+
+    background-color: #262626;
+    z-index: 1000000;
+}
+
+.nav-link {
+	z-index: 1000000;
+}
+
+/* The second level sub dropdown */
+.p-nested-dropdowns ul ul {
+    left: 100%;
+    position: absolute;
+    top: 0;
+
+    max-height: 420px;
+    overflow: scroll;
+}
+
+/* Change background color of list item when being hovered */
+.p-nested-dropdowns li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Show the direct sub dropdown when hovering the list item */
+.p-nested-dropdowns li:hover > ul {
+    display: block;
+}
+
+.nested-nav-item, .nested-nav-item:hover, .nested-nav-item:focus {
+	color: white;
+}
 
 

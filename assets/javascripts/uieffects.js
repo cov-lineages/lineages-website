@@ -209,3 +209,4 @@ function reportSearch(myInput, myTable) {
   doSearch(filter, table, "All Fields");
 }
 
+
