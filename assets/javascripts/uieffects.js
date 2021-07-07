@@ -45,8 +45,10 @@ $(document).ready(function(){
     if(scroll_start > 25) {
         //$(".nav").css('background', '#2E86C1');
         $(".nav").css('background', '#262626');
+        $("#mobile_menu").css('background', '#262626');
      } else {
       $(".nav").css('background-color', 'transparent');
+      $("#mobile_menu").css('background-color', 'transparent');
      }
 
      /*if(scroll_start >= $("#software_logos").offset().top && scroll_start < ($("#software_logos").offset().top + $("#software_logos").height())) {

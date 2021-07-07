@@ -594,15 +594,17 @@ figure.effect-duke:hover p {
 
 #mobile_menu {
 	display: none;
-	position: absolute;
-	top: 25px;
+	position: fixed;
+	top: 0px;
 	left: 25px;
 	width: calc(100% - 50px);
-	height: 100px;
+	height: 125px;
 	color: white;
 	font-weight: 300;
 	font-size: 150%;
 	background: #262626;
+	z-index: 1000000000;
+	border-top: 25px solid white;
 }
 
 #mobile_menu_btn {
@@ -676,8 +678,28 @@ figure.effect-duke:hover p {
 		display: block;
 	}
 
-	h3 {
+	h2 {
 		font-size: 150%;
+	}
+	h3 {
+		font-size: 140%;
+	}
+	h1 {
+		font-size: 160%;
+	}
+	h4 {
+		font-size: 120%;
+	}
+
+	.contrib {
+	}
+
+	.contrib a {
+		word-break: break-all;
+	}
+
+	#myTabble {
+		max-width: 100%;
 	}
 }
 
