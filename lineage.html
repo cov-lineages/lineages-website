@@ -247,10 +247,12 @@ layout: default
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
 
-  console.log(urlParams.get("lineage"));
-
   var selectedLineage = urlParams.get("lineage");
   var children = [];
+
+  if(!selectedLineage) {
+    window.location.href = "./lineage_list.html";
+  }
  
   d3.text("{{'/data/lineages.yml' | absolute_url}}", function(text) {
   	  var yml = jsyaml.load(text);
@@ -282,6 +284,11 @@ layout: default
 			        }
 			        return false;
 			      });*/
+
+                  if(!metadata[selectedLineage]) {
+                    window.location.href = "./lineage_list.html";
+                  }
+
 
 			           $("#description").html(metadata[selectedLineage]["Description"]);
                  $("#countries").html("<b>Most Common Countries</b>: " + metadata[selectedLineage]["Countries"]);
