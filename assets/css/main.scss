@@ -639,16 +639,15 @@ figure.effect-duke:hover p {
 	}
 
 	#splash_text {
-		font-size: 200%;
+		font-size: 170%;
 		text-align: center;
 		width: 80%;
 		left: 10%;
 		margin: 0px !important;
-		display: none;
 	}
 
 	#splash_sections_container {
-		top: 125px;
+		top: calc(100% - 25px);
 	}
 
 	#pangolin_link_grid {
@@ -660,15 +659,19 @@ figure.effect-duke:hover p {
 	}
 
 	#splash svg {
-		display: none;
+		margin-right: 25px;
 	}
 
 	#mobile-background {
-		background: url('../images/9808-01-01.svg');
-		background-size: cover;
+		/*background: url('../images/9808-01-01.svg');*/
+		
 		display: block;
-		width: 100%;
+		width: 25px;
 		height: 100%;
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		background: white;
 	}
 
 	#main_nav {
