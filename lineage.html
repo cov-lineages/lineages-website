@@ -196,7 +196,11 @@ layout: default
                   </p>
 
                  <div class="contrib">
-                  <p id="description">{{site.data.lineage_data[page.lineage]["Description"]}}</p>
+                  <p id="description"></p>
+                  <p id="countries"></p>
+                  <p id="earliest_date"></p>
+                  <p id="num_designated"></p>
+                  <p id="num_assigned"></p>
                   <a href="" id="outbreakLink">View more information at Outbreak.info</a>
 
                   <div id="otherNames">
@@ -261,7 +265,7 @@ layout: default
       		$("#pageTitle").html("Lineage " + selectedLineage);
 
       		var a = document.getElementById('outbreakLink');
-			a.href = "https://outbreak.info/situation-reports?pango=" + selectedLineage;
+			    a.href = "https://outbreak.info/situation-reports?pango=" + selectedLineage;
 
       		if(lin.parent) {
       			$("#parentButton").html("<a href=\"./lineage.html?lineage="+lin.parent+"\">Go to parent lineage: "+lin.parent+"</a>")
@@ -279,11 +283,15 @@ layout: default
 			        return false;
 			      });*/
 
-			      $("#description").html(metadata[selectedLineage]["Description"])
+			           $("#description").html(metadata[selectedLineage]["Description"]);
+                 $("#countries").html("<b>Most Common Countries</b>: " + metadata[selectedLineage]["Countries"]);
+                 $("#earliest_date").html("<b>Earliest Date</b>: " + metadata[selectedLineage]["Earliest date"]);
+                 $("#num_designated").html("<b>Number Dessignated</b>: " + metadata[selectedLineage]["Number designated"]);
+                 $("#num_assigned").html("<b>Number Assigned</b>: " + metadata[selectedLineage]["Number assigned"]);
 
 
                   for(var child of children) {
-                  	if(metadata[child] && child != selectedLineage) {
+                  	if(metadata[child]) {
                   		var rowString = "";
 
 	                  	if(child.indexOf("*") > 0) {
@@ -303,7 +311,7 @@ layout: default
                   	}
                   }
 
-                  if(children.length == 1 && children[0] == selectedLineage) {
+                  if(children.length == 1 && children[0] != selectedLineage) {
                   	$("#myTable").append("<tr><td>No descendent lineages found</td></tr>");
                   }
 

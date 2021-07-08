@@ -89,6 +89,10 @@ html, body {
 	min-width: 0px !important;
 }
 
+.td {
+	min-width: 0px !important;
+}
+
 .footer {
   position:absolute;
   width: 100%;
@@ -177,9 +181,6 @@ html, body {
 	padding-top: 125px;
 }
 
-.container table td {
-	min-width: 150px;
-}
 
 .reportWrapper td {
 	max-width: 200px;
