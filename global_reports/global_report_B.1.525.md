@@ -14,5 +14,4 @@ threshold: "NA"
 import_data: "N"
 detected: "Multiple"
 source: "https://github.com/cov-lineages/pango-designation/issues/4"
-permalink: /global_report_B.1.525.html
 ---

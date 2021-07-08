@@ -14,5 +14,4 @@ threshold: "NA"
 import_data: "N"
 detected: "Uganda"
 source: "https://www.medrxiv.org/content/10.1101/2021.02.08.21251393v1"
-permalink: /global_report_A.23.1.html
 ---
