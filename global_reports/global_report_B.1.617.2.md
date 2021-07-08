@@ -14,5 +14,4 @@ threshold: "NA"
 import_data: "N"
 detected: "India"
 source: "https://github.com/cov-lineages/pango-designation/issues/49"
-permalink: /global_report_B.1.617.2.html
 ---
