@@ -11,4 +11,63 @@ layout: default
     </div>
   </div>
 
+<p> These are all options for controlling which sequences in the background dataset get pulled out into the catchment areas around the query sequences.</p>
+
+<h2>SNP distances</h2>
+<p>These options control the SNP distance around the query to define the size of the catchment area</p>
+<br>
+<p><strong>Arguments:</strong></p><br>
+<p>-snpd/--snp-distance: <br> The radius around the query in terms of number of SNPs (i.e. 2 would give two SNPs upstream, downstream and to either side of the query</p><br>
+<p><strong>Default:</strong> 2 <br> </p>
+<p>--snp-distance-up <br> Number of SNPs upstream (i.e closer to the reference sequence) to include</p><br>
+<p><strong>Default:</strong><br> 2</p>
+<p>--snp-distance-down <br> Number of SNPs downstream (i.e further away from the reference sequence) to include</p><br>
+<p><strong>Default:</strong><br> 2</p>
+<p>--snp-distance-side <br> Number of SNPs to either side (i.e the same level of difference to the reference sequence) to include</p><br>
+<p><strong>Default:</strong><br> 2</p>
+
+<h2>Catchment size </h2>
+<p>Defines the maximum number of sequences in a single catchment. Catchments larger than this value will be downsampled before tree building.</p>
+<br>
+<p><strong>Default:</strong>100<br></p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--catchment-size {$NUMBER}
+<br>
+</p>
+
+<h2>Downsampling</h2>
+<p>There a set of modes to downsample the catchments by. This can be useful for focussing in on the queries you are interested in, either by enriching import local context or by reducing detail in unncessary global contexts.</p>
+<br>
+<p><strong>General usage:</strong><br>--downsample mode={$MODE} {$MODE_SPECIFIC_OPTIONS}
+<p><strong>Default:</strong>random</p>
+
+<p><strong> Modes:</strong></p><br>
+<p>random</p><br>
+<p>
+This will randomly downsample non-query sequences in the catchment.
+</p>
+<p>enrich</p><br>
+<p>
+Indicate a metadata field to enrich by. This could be for example samples between date ranges or locations that are of interest. If using date ranges to enrich for, the dates must be separated by a colon.
+</p>
+<strong>Default:</strong>10<br>
+</p>
+<br>
+<p>
+<strong>Usage: </strong> --downsample mode=enrich factor={$NUMBER} {$COLUMN_NAME}={$VALUES}<br> 
+<br>
+</p>
+<p>normalise</p><br>
+<p><strong>Default:</strong><br></p>
+<br>
+<p>
+<strong>Usage: </strong><br> 
+<br>
+</p>
+
+
+
+
 
