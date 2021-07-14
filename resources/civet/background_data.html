@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div id="pangolin_grid">
+<div id="civet_grid">
     <div>
         <a href="{{ 'resources/civet.html' | absolute_url }}" class="image"><img src="../../assets/images/civet.png" style="max-height:300px;max-width:320px" alt="" /></a>
     </div>
@@ -31,32 +31,41 @@ layout: default
 
 <p>civet will look for these files in the `-d/--datadir` specified, or alternatively they can be provided with specific flags/ config arguments:</p>
 
-<h2>--background-fasta</h2>
+<h2>-bseq/--background-sequences</h2>
  
 <p>By default, civet will look for a fasta file in the data directory to use as the background sequence dataset. To provide a custom fasta file, use</p>
 <col class="listWithCode">
-	<li>the ``-bf/--background-fasta`` flag</li>
-	<li>add `background_fasta: <your-alignment-file>.fasta` to the config file</li>
+	<li>the ``-bf/--background-sequences`` flag</li>
+	<li>add `background_sequences: <your-alignment-file>.fasta` to the config file</li>
 </col>
 
-<h2>-bc/--background-csv</h2>
+<h2>-bm/--background-metadata</h2>
 
 <p>By default, civet will look for a csv containing background data in the data directory. However, to provide custom background data, use</p>
 
 <col class="listWithCode">
-	<li>the ``--background-csv`` flag</li>
+	<li>the ``--background-metadata`` flag</li>
 	<li>add `background_metadata: <your-metadata-file>.csv` to the config file</li>
 </col>
 
-<h2>-bSNPs/--background-SNPs</h2>
+<p> For more information on how to configure options connected to background metadata columns, see <a href="{{ 'resources/civet/background_column_configuration.html' | absolute_url }}">Background column configuration</a>
+
+<h2>-bsnp/--background-snps</h2>
  
 <p>By default, civet will look for a csv containing background SNPs in the data directory. However, to provide custom background SNPs, use</p>
 <col class="listWithCode">
-	<li>the ``--background-SNPs`` flag</li>
-	<li>add `background_SNPs: <your-SNP-file>.csv` to the config file</li>
+	<li>the ``--background-snps`` flag</li>
+	<li>add `background_snps: <your-SNP-file>.csv` to the config file</li>
 </col>
 <p>To generate the SNP file as a time-saver if you’re planning on running multiple civet reports on the same dataset, run</p>
 
 <span class="code">gofasta updown list -q <your-alignment-file>.fasta</span>
 
 <p>to generate the SNP data file for the background data.</p>
+
+<h2>--background-data-checks</h2>
+<p>Run checks on cusom background data files Default: False</p>
+
+<h2>-bt/--background-tree</h2>
+
+<p> coming soon </p>
