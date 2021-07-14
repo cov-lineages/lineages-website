@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<h1>Background Data</h1>
+
+<p><strong>civet</strong> summarises information around a set of sequences of interest. It relies on the user providing an alignment and metadata file, and an optional SNP file for speed-ups.</p>
+
+<p>By default, civet will search for an environment variable CIVET_DATADIR and use this to find the background data. This can be overwritten by providing the `-d/--datadir` flag or by specifying `datadir` in the optional civet config file.</p>
+
+<h2>Background data files</h2>
+
+<col class="listWithCode">
+	<li>A <span class="code">metadata.csv</span> file. (Required)</li>
+	<li>An alignment <span class="code">fasta</span> file. (Required)</li>
+	<li>Optionally, a <span class="code">mutations.csv</span> file. (Optional)</li>
+</col>
+
+<br>
+<p>The records in each file should correspond 1:1 in the fasta file, metadata file and SNP file.</p>
+<br>
+
+<p>civet will look for these files in the `-d/--datadir` specified, or alternatively they can be provided with specific flags/ config arguments:</p>
+
+<h2>--background-fasta</h2>
+ 
+<p>By default, civet will look for a fasta file in the data directory to use as the background sequence dataset. To provide a custom fasta file, use</p>
+<col class="listWithCode">
+	<li>the ``-bf/--background-fasta`` flag</li>
+	<li>add `background_fasta: <your-alignment-file>.fasta` to the config file</li>
+</col>
+
+<h2>-bc/--background-csv</h2>
+
+<p>By default, civet will look for a csv containing background data in the data directory. However, to provide custom background data, use</p>
+
+<col class="listWithCode">
+	<li>the ``--background-csv`` flag</li>
+	<li>add `background_metadata: <your-metadata-file>.csv` to the config file</li>
+</col>
+
+<h2>-bSNPs/--background-SNPs</h2>
+ 
+<p>By default, civet will look for a csv containing background SNPs in the data directory. However, to provide custom background SNPs, use</p>
+<col class="listWithCode">
+	<li>the ``--background-SNPs`` flag</li>
+	<li>add `background_SNPs: <your-SNP-file>.csv` to the config file</li>
+</col>
+<p>To generate the SNP file as a time-saver if you’re planning on running multiple civet reports on the same dataset, run</p>
+
+<span class="code">gofasta updown list -q <your-alignment-file>.fasta</span>
+
+<p>to generate the SNP data file for the background data.</p>

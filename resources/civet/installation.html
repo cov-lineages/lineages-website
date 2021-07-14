@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<h1>Installation</h1>
+
+<col class="listWithCode">
+	<li> Clone the civet3 repository with <span class="code">git clone https://github.com/cov-ert/civet3.git && cd civet3</span></li>
+	<li> <span class="code">conda env create -f environment.yml</span></li>
+	<li> <span class="code">conda activate civet3</span></li>
+	<li> <span class="code">pip install . </span></li>
+</col>
+
+<br>
+<h2>Dependencies If <b>Not</b> Installing Using the Conda Environment</h2>
+
+<div class="contrib"><strong>Note</strong>: Note: we recommend using civet in the conda environment specified in the environment.yml file as per the instructions above. If you can't use conda for some reason, dependency details can be found in the environment.yml file.</div>
+
+<h4>Check the install worked</h4>
+
+<p>Type (in the <strong>civet3</strong> environment):</p>
+
+<div class="code" style="width: 150px;">
+	civet -v<br>
+	civet --art
+</div>
+<br>
+
+<p>You should see the version of <strong>civet</strong> and the civet logo printed printed respectively.</p>
+
+<h4>Troubleshooting install</h4>
+<ul class="listWithCode">
+	<li> If you get an error message similar to <span class="code">command not found: civet</span> double check you are in the civet3 environment with <span class="code">conda activate civet3 </span></li>
+	<li> Then try <span class="code">pip uninstall civet</span> and then re-install with <span class="code">pip install .</span></li>
+</ul>
+
