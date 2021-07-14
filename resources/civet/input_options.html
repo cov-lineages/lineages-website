@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<h1>Input options</h1>
+
+<h2>-c/ --config</h2>
+
+<p>A yaml (or yml) config file that describes the analysis you want to run and the type of report you want to generate.</p>
+
+<p>You can provide any of the command line arguments via this config file, for instance pass the input.csv or ID string in through via the configuation file.</p>
+
+<p>Using this input option will allow the user to run very specific, elaborate reports again and again, without having to specify all arguments via the command line.</p>
+
+<p>Note, if the same option is specified in the config file and as a command line argument, the command line argument will overwrite the config file option.</p>
+
+
+<p><span class="code">civet -c config.yaml</span></p>
+<br>
+
+<h3>Example config.yaml file:</h3>
+
+<p>
+# Input options:<br>
+input_csv: test.csv<br>
+fasta: test.fasta<br>
+<br>
+# Output options:<br>
+datadir: `<path-to-datadir>`<br>
+
+</p>
+
+<h2>-i/--input-csv</h2>
+
+<p>Input csv file with an identifier column. By default civet will look for a column called `name` but this can be changed with the `-icol/--input-column` flag (or added to the input config file).</p>
+
+<p>For more information about how to configure column matching see <a href="{{ 'resources/civet/column_matching.html' | absolute_url }}">Column matching</a>.</p>
+<col class="listWithCode">
+	<li>Run: <span class="code">civet -i input.csv</span><br></li>
+    <li>Specify <span class="code">input_csv: input.csv</span> in the config.yaml file and run <span class="code">civet -c config.yaml</span></li>
+</col>
+<br>
+<h2>Specificy IDs</h2>
+
+<p>A comma-separated set of ids that civet trys to match against the database (you can define what field you want to match against with <span class="code">-dcol/--data-column</span>, the default is will match against the `sequence_name` column).</p>
+
+<col class="listWithCode">
+	<li>Run: <span class="code">civet -ids EGID001,EGID002</span><br></li>
+    <li>Run: <span class="code">civet --id-string EGID001,EGID002</span><br></li>
+    <li>Specify <span class="code">ids: EGID001,EGID002</span> in the config.yaml file and run <span class="code">civet -c config.yaml</span></li>
+</col>
+<br>
+<h2>-fm / --from-metadata</h2>
+
+<p>If all sequences of interest are in the background tree and metadata, the user can opt to define a set of query sequences using the <span class="code">-fm/--from-metadata</span> flag.</p>
+
+<p>To do this, supply one or more of <span class="code">column_name=match_string</span> pairs. For example:</p>
+<col class="listWithCode">
+	<li><span class="code">civet -fm adm2=Edinburgh sample_date=2020-09-20</span><br></li>
+    <li>civet can also detect and filter by date ranges:<span class="code">civet -fm sample_date=2020-05-01:2020-06-01</span></li>
+</col>
+
+<p>A <strong>civet</strong> instance is then run with the sequences that match the search parameters. If the search hits more than the maximum number of query sequences (configurable with <span class="code">-mq/--max-queries</span>) then you'll be prompted to define a more specific search.</p>
+
+<h2>-f / --fasta</h2>
+
+<p>Optional input fasta file with sequences not yet added to the background data. These will be added into the tree next to their closest sequence found in the background data.</p>
+<p>If no csv or ID string is supplied, civet will use all fasta records in this file as the query set.</p>
+<br>
+<h3>-n/--max-ambiguity</h3> 
+<p>Maximum proportion of Ns allowed to attempt analysis. Default: 0.5 (i.e. 50% N content)</p>
+
+<h3>-l/--min-length</h3>
+<p>Minimum query length allowed to attempt analysis. Default: 20000</p>

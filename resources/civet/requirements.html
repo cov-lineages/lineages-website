@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<h1>Civet Requirements</h1>
+
+<p>civet runs on MacOS and Linux. The conda environment recipe may not build on Windows (I haven't tested it), but can be run using the Windows subsystem for Linux.</p>
+
+<p>To run civet, you will need</p>
+<ol>
+  <li>Conda version 4.9 or greater, we use Miniconda3.. Can be downloaded from <a href="https://docs.conda.io/en/latest/miniconda.html">here</a></li>
+  <li>Access to a set of background data files, minimally a metadata csv file and an aligned fasta file. More information about this data <a href="{{ 'resources/civet/background_data.html' | absolute_url }}">here</a></li>
+</ol>
+
+<h2>Dependencies</h2>
+
+<div class="contrib">
+    <ul>
+    <li>biopython</li>
+    <li>iqtree>=2.1</li>
+    <li>minimap2>=2.17</li>
+    <li>python=3.9</li>
+    <li>snakemake-minimal</li>
+    <li>cov-ert::jclusterfunk</li>
+    <li>gofasta>=0.0.4</li>
+    <li>mako>=1.1</li>
+    <li>snipit</li>
+  </ul>
+  <strong>We recommend installing these packages using conda</strong>
+</div>
+

@@ -1,0 +1,30 @@
+---
+layout: default
+title: Updating Civet
+---
+
+
+<h1>Updating Civet</h1>
+
+
+<p>Navigate to your local civet repository on the command line.</p>
+
+<ol class="listWithCode">
+	<li> <span class="code">conda activate civet3</span>
+	<li> <span class="code">git pull</span> pulls the latest changes from github
+	<li> <span class="code">conda env update -f environment.yml</span> updates the conda environment 
+	<li> <span class="code">pip install .</span> re-installs civet.
+</ol>
+
+<br><br>
+
+
+<div class="contrib">
+	<h5>Troubleshooting Update</h5>
+
+	<ul class="listWithCode">
+		<li>If you have previously installed civet using <span class="code">pip</span> you will need to update civet in the same way, ie <span class="code">pip install . </span></li>
+		<li>Try <span class="code">pip uninstall civet</span> and then re-install with <span class="code">pip install .</span></li>
+		<li>If all else fails, remove the environment following the instructions found <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment">in the conda documentation</a>. Then follow the civet installation instructions from the beginning.</li>
+	</ul>
+</div>
