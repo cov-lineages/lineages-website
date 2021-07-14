@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<div id="pangolin_grid">
+    <div>
+        <a href="{{ 'resources/civet.html' | absolute_url }}" class="image"><img src="../../assets/images/civet.png" style="max-height:300px;max-width:320px" alt="" /></a>
+    </div>
+    <div>
+        <h1>Installation</h1>
+        
+    </div>
+  </div>
+
+<h3>Set up civet3 environment</h3>
+
+<ol class="listWithCode">
+	<li> Clone the civet3 repository with <span class="code">git clone https://github.com/cov-ert/civet3.git && cd civet3</span></li>
+	<li> <span class="code">conda env create -f environment.yml</span></li>
+	<li> <span class="code">conda activate civet3</span></li>
+	<li> <span class="code">pip install . </span></li>
+</ol>
+
+<h3>Recommended: Set up environment variables</h3>
+<p>This sets the default background data directory to the latest output of datapipe. Alternatively, the directory can be specified with -d/--datadir or supplied in a config file.</p>
+<br>
+<col>
+	<li> Add the following to your .bash_profile</li>
+</col>
+<br>
+<div class="code">CIVET_DATADIR=/cephfs/covid/bham/results/msa/latest/civet3 <br>
+        export CIVET_DATADIR<br>
+        CIVETMODE='CLIMB'<br>
+        export CIVETMODE<br>
+</div>
+<br>
+
+<col>
+	<li>Run:</li>
+</col>
+<br>
+<div class="code">source .bash_profile</div>
+<br>
+<h4>Check the install worked</h4>
+
+<p>Type (in the <strong>civet3</strong> environment):</p>
+
+<div class="code" >
+    echo $CIVET_DATADIR
+	civet -v
+	civet --art
+</div>
+<br>
+
+<p>You should see the path supplied, the version of <strong>civet</strong> and the civet logo printed printed respectively.</p>
+
+<h4>Troubleshooting install</h4>
+<p>If you get an error message similar to <span class="code">command not found: civet</span></p>
+<ol class="listWithCode">
+	<li> Double check you are in the civet3 environment with <span class="code">conda activate civet3 </span></li>
+	<li> Then try <span class="code">pip uninstall civet</span> and then re-install with <span class="code">pip install .</span></li>
+</ol>
+
