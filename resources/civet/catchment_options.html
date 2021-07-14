@@ -50,20 +50,20 @@ This will randomly downsample non-query sequences in the catchment.
 </p>
 <p>enrich</p><br>
 <p>
-Indicate a metadata field to enrich by. This could be for example samples between date ranges or locations that are of interest. If using date ranges to enrich for, the dates must be separated by a colon.
+Indicate a metadata field to enrich by, ie preferentially keep sequences with these metadata values in the downsample. This could be for example samples between date ranges or locations that are of interest. If using date ranges to enrich for, the dates must be separated by a colon.
 </p>
 <strong>Default:</strong>10<br>
 </p>
-<br>
 <p>
 <strong>Usage: </strong> --downsample mode=enrich factor={$NUMBER} {$COLUMN_NAME}={$VALUES}<br> 
 <br>
 </p>
+
 <p>normalise</p><br>
-<p><strong>Default:</strong><br></p>
+<p> Choose a metadata field to normalise across, so that sequences with different values of the field are represented evenly.
 <br>
 <p>
-<strong>Usage: </strong><br> 
+<strong>Usage: </strong> --downsample mode=normalise ${METADATA_FIELD}<br> 
 <br>
 </p>
 
