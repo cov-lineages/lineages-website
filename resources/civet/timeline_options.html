@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+
+<div id="civet_grid">
+    <div>
+        <a href="{{ 'resources/civet.html' | absolute_url }}" class="image"><img src="../../assets/images/civet.png" style="max-height:300px;max-width:320px" alt="" /></a>
+    </div>
+    <div>
+        <h1>Timeline options (report option 5)</h1>
+        <p>How to customise the timelines produced in the civet report.</p>
+    </div>
+  </div>
+
+<p> Timelines of queries in each catchment area will be produced</p>
+
+<h2>-td/--timeline-dates</h2>
+
+<p>Comma separated string of metadata columns containing date information to plot on the timeline. Must be in the format YYYY-MM-DD</p>
+<br>
+<p><strong>Default:</strong><br> --input-date-column or --background-date-column</p>
+<br>
+<p>See <a href="{{ 'resources/civet/input_column_configuration.html' | absolute_url }}">Input column configuration</a> and <a href="{{ 'resources/civet/background_column_configuration.html' | absolute_url }}">Background column configuration</a></p>
+
+ 
+<p>
+<strong>Usage: </strong><br> 
+--timeline-dates {$LIST} or -td {$LIST}<br>
+</p>
