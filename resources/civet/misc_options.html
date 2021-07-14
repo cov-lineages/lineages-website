@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+
+<div id="civet_grid">
+    <div>
+        <a href="{{ 'resources/civet.html' | absolute_url }}" class="image"><img src="../../assets/images/civet.png" style="max-height:300px;max-width:320px" alt="" /></a>
+    </div>
+    <div>
+        <h1>Misc options</h1>
+    </div>
+  </div>
+
+
+<p>These are a collection of options that didn't fit into other groups and are mostly to do with the running of civet</p>
+
+<h2>--civet-mode</h2>
+<p>If this is equal to "CLIMB", then UK-specific defaults will be used for some arguments.</p>
+<br>
+<p><strong>Default:</strong><br> GLOBAL</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--civet-mode CLIMB or --civet-mode GLOBAL <br>
+</p>
+
+<h2>-r/--reference-sequence</h2>
+<p>Custom reference genome to map and pad against. Must match the reference the background sequence alignment was generated from.</p>
+<br>
+<p><strong>Default:</strong><br> WH04.fasta (SARS-CoV-2 reference sequence)</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--reference-sequence {$SEQUENCE_FILE}<br>
+</p>
+
+<h2>-mem/--max-memory</h2>
+<p>Indicates the maximum amount of RAM (in GB) to use for tree building.</p>
+<br>
+<p><strong>Default:</strong><br> 8</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--max-memory {$NUMBER}<br>
+</p>
+
+<h2>--art</h2>
+<p>Flag to show artwork</p>
+<br>
+<p><strong>Default:</strong><br> False</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--art<br>
+</p>
+
+<h2>-t/--threads</h2>
+<p>Number of threads used in running civet</p>
+<br>
+<p><strong>Default:</strong><br> 1</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--threads {$NUMBER}<br>
+</p>
+
+<h2>--verbose</h2>
+<p>Flag to provides more information on the processes being run by printing to screen</p>
+<br>
+<p><strong>Default:</strong><br> False</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--verbose<br>
+</p>
+
+<h2>-v/--version</h2>
+<p>Flag to show the civet version and exit</p>
+<br>
+<p><strong>Default:</strong><br> False</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--version<br>
+</p>
+
+<h2>-h/--help</h2>
+<p>Prints help associated with all of the arguments</p>
+<br>
+<p><strong>Default:</strong><br> False</p>
+<br>
+<p>
+<strong>Usage: </strong><br>
+--help<br>
+</p>
+
+
+
+
