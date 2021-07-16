@@ -8619,10 +8619,6 @@
   children:
       - B.1.351.3
   parent: B.1.351
-- name: B.1.351.4
-  children:
-      - B.1.351.4
-  parent: B.1.351
 - name: B.1.343
   children:
       - B.1.343
@@ -11470,6 +11466,10 @@
   children:
       - B.1.347
   parent: B.1
+- name: B.1.351.4
+  children:
+      - B.1.351.4
+  parent: B.1.351
 - name: B.1.352
   children:
       - B.1.352
