@@ -27,13 +27,13 @@ layout: default
 <p><strong>Default:</strong><br> 2</p>
 
 <h2>Catchment size </h2>
-<p>Defines the maximum number of sequences in a single catchment. Catchments larger than this value will be downsampled before tree building.</p>
+<p>Defines the maximum number of background sequences in a single catchment. Catchments with more background sequences than this value will be downsampled before tree building. Downsampling strategy can be configured with `--downsample`.</p>
 <br>
 <p><strong>Default:</strong>100<br></p>
 <br>
 <p>
 <strong>Usage: </strong><br>
---catchment-size {$NUMBER}
+--catchment-background-size {$NUMBER}
 <br>
 </p>
 
