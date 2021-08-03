@@ -3093,6 +3093,8 @@
       - P.5
       - P.6
       - P.7
+      - Q.1
+      - Q.2
       - R.1
       - R.2
       - S.1
@@ -4566,6 +4568,8 @@
       - P.5
       - P.6
       - P.7
+      - Q.1
+      - Q.2
       - R.1
       - R.2
       - S.1
@@ -5173,6 +5177,8 @@
       - P.5
       - P.6
       - P.7
+      - Q.1
+      - Q.2
       - R.1
       - R.2
       - S.1
@@ -5242,7 +5248,17 @@
 - name: B.1.1.7
   children:
       - B.1.1.7
+      - Q.1
+      - Q.2
   parent: B.1.1
+- name: Q.1
+  children:
+      - Q.1
+  parent: B.1.1.7
+- name: Q.2
+  children:
+      - Q.2
+  parent: B.1.1.7
 - name: B.1.1.8
   children:
       - B.1.1.8
