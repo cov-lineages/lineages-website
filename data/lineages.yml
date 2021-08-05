@@ -10,6 +10,7 @@
       - A.2.5
       - A.2.5.1
       - A.2.5.2
+      - A.2.5.3
       - A.3
       - A.4
       - A.5
@@ -1439,6 +1440,7 @@
       - A.2.5
       - A.2.5.1
       - A.2.5.2
+      - A.2.5.3
   parent: A
 - name: A.2.2
   children:
@@ -1457,6 +1459,7 @@
       - A.2.5
       - A.2.5.1
       - A.2.5.2
+      - A.2.5.3
   parent: A.2
 - name: A.2.5.1
   children:
@@ -1465,6 +1468,10 @@
 - name: A.2.5.2
   children:
       - A.2.5.2
+  parent: A.2.5
+- name: A.2.5.3
+  children:
+      - A.2.5.3
   parent: A.2.5
 - name: A.3
   children:
