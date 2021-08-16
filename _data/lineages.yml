@@ -1634,6 +1634,7 @@
       - AY.10
       - AY.11
       - AY.12
+      - AY.15
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -3200,6 +3201,7 @@
       - AY.10
       - AY.11
       - AY.12
+      - AY.15
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -9908,6 +9910,7 @@
       - AY.10
       - AY.11
       - AY.12
+      - AY.15
       - B.1.617
       - B.1.617.1
       - B.1.617.2
@@ -9934,6 +9937,7 @@
       - AY.10
       - AY.11
       - AY.12
+      - AY.15
       - B.1.617.2
   parent: B.1.617
 - name: B.1.617.3
@@ -11000,6 +11004,10 @@
   children:
       - AY.12
   parent: B.1.617.2
+- name: AY.15
+  children:
+      - AY.15
+  parent: B.1.617.2
 - name: XA
   children:
       - XA
@@ -11955,10 +11963,3 @@
       - B.1.457
       - B.1.457.1
   parent: B.1
-- name: B.1.457.1
-  children:
-      - B.1.457.1
-  parent: B.1.457
-- name: B.1.461
-  children:
-      - B.1.461
