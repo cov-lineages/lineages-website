@@ -34,6 +34,12 @@
   subheading: Emma Hodcroft, University of Bern, Switzerland
   logourl: covariants.png
   category: Dashboards
+- name: covSPECTRUM
+  link: https://cov-spectrum.ethz.ch//
+  description: An interactive dashboard SARS-CoV-2 variants with sophisticated queries
+  subheading: Computational Evolution group at ETH Zurich, Switzerland
+  logourl: https://cov-spectrum.ethz.ch/
+  category: Dashboards
 - name: PanGUIlin
   link: https://pangolin.cog-uk.io/
   description: A web application version of the Pangolin Tool
