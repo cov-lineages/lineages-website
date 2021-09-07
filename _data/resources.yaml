@@ -6,7 +6,7 @@
   category: Internally Developed Tools
 - name: Scorpio
   link: https://github.com/cov-lineages/scorpio
-  description: Serious constellations of reoccurring phylogenetically-independent origin. A tool for snp-based calling of vairants of concern.
+  description: Serious constellations of reoccurring phylogenetically-independent origin. A tool for snp-based calling of variants of concern.
   subheading: software
   logourl: scorpio.png
   category: Internally Developed Tools
@@ -33,6 +33,12 @@
   description: A dashboard giving an overview of SARS-CoV-2 variants and interesting mutations
   subheading: Emma Hodcroft, University of Bern, Switzerland
   logourl: covariants.png
+  category: Dashboards
+- name: covSPECTRUM
+  link: https://cov-spectrum.ethz.ch/
+  description: An interactive dashboard SARS-CoV-2 variants with sophisticated queries
+  subheading: Computational Evolution group at ETH Zurich, Switzerland
+  logourl: covspectrum.png
   category: Dashboards
 - name: PanGUIlin
   link: https://pangolin.cog-uk.io/
