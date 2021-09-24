@@ -1628,6 +1628,7 @@
       - AY.3
       - AY.3.1
       - AY.4
+      - AY.4.1
       - AY.5
       - AY.5.1
       - AY.5.2
@@ -1661,6 +1662,7 @@
       - AY.31
       - AY.32
       - AY.33
+      - AY.34
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -3146,6 +3148,7 @@
       - P.1.10.1
       - P.1.10.2
       - P.1.11
+      - P.1.12
       - P.2
       - P.3
       - P.4
@@ -3228,6 +3231,7 @@
       - AY.3
       - AY.3.1
       - AY.4
+      - AY.4.1
       - AY.5
       - AY.5.1
       - AY.5.2
@@ -3261,6 +3265,7 @@
       - AY.31
       - AY.32
       - AY.33
+      - AY.34
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -4674,6 +4679,7 @@
       - P.1.10.1
       - P.1.10.2
       - P.1.11
+      - P.1.12
       - P.2
       - P.3
       - P.4
@@ -5305,6 +5311,7 @@
       - P.1.10.1
       - P.1.10.2
       - P.1.11
+      - P.1.12
       - P.2
       - P.3
       - P.4
@@ -5500,6 +5507,7 @@
       - P.1.10.1
       - P.1.10.2
       - P.1.11
+      - P.1.12
       - P.2
       - P.3
       - P.4
@@ -10015,6 +10023,7 @@
       - AY.3
       - AY.3.1
       - AY.4
+      - AY.4.1
       - AY.5
       - AY.5.1
       - AY.5.2
@@ -10048,6 +10057,7 @@
       - AY.31
       - AY.32
       - AY.33
+      - AY.34
       - B.1.617
       - B.1.617.1
       - B.1.617.2
@@ -10064,6 +10074,7 @@
       - AY.3
       - AY.3.1
       - AY.4
+      - AY.4.1
       - AY.5
       - AY.5.1
       - AY.5.2
@@ -10097,6 +10108,7 @@
       - AY.31
       - AY.32
       - AY.33
+      - AY.34
       - B.1.617.2
   parent: B.1.617
 - name: B.1.617.3
@@ -10793,6 +10805,7 @@
       - P.1.10.1
       - P.1.10.2
       - P.1.11
+      - P.1.12
   parent: B.1.1.28
 - name: P.1.1
   children:
@@ -10847,6 +10860,10 @@
 - name: P.1.11
   children:
       - P.1.11
+  parent: P.1
+- name: P.1.12
+  children:
+      - P.1.12
   parent: P.1
 - name: P.2
   children:
@@ -11133,7 +11150,12 @@
 - name: AY.4
   children:
       - AY.4
+      - AY.4.1
   parent: B.1.617.2
+- name: AY.4.1
+  children:
+      - AY.4.1
+  parent: AY.4
 - name: AY.5
   children:
       - AY.5
@@ -11269,6 +11291,10 @@
 - name: AY.33
   children:
       - AY.33
+  parent: B.1.617.2
+- name: AY.34
+  children:
+      - AY.34
   parent: B.1.617.2
 - name: XA
   children:
@@ -11939,29 +11965,3 @@
       - B.1.197
   parent: B.1
 - name: B.1.200
-  children:
-      - B.1.200
-  parent: B.1
-- name: B.1.202
-  children:
-      - B.1.202
-  parent: B.1
-- name: B.1.204
-  children:
-      - B.1.204
-  parent: B.1
-- name: B.1.207
-  children:
-      - B.1.207
-  parent: B.1
-- name: B.1.209
-  children:
-      - B.1.209
-  parent: B.1
-- name: B.1.216
-  children:
-      - B.1.216
-  parent: B.1
-- name: B.1.217
-  children:
-      - B.1.217
