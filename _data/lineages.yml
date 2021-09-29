@@ -1663,6 +1663,10 @@
       - AY.32
       - AY.33
       - AY.34
+      - AY.35
+      - AY.36
+      - AY.37
+      - AY.38
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -3266,6 +3270,10 @@
       - AY.32
       - AY.33
       - AY.34
+      - AY.35
+      - AY.36
+      - AY.37
+      - AY.38
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -10058,6 +10066,10 @@
       - AY.32
       - AY.33
       - AY.34
+      - AY.35
+      - AY.36
+      - AY.37
+      - AY.38
       - B.1.617
       - B.1.617.1
       - B.1.617.2
@@ -10109,6 +10121,10 @@
       - AY.32
       - AY.33
       - AY.34
+      - AY.35
+      - AY.36
+      - AY.37
+      - AY.38
       - B.1.617.2
   parent: B.1.617
 - name: B.1.617.3
@@ -11296,6 +11312,22 @@
   children:
       - AY.34
   parent: B.1.617.2
+- name: AY.35
+  children:
+      - AY.35
+  parent: B.1.617.2
+- name: AY.36
+  children:
+      - AY.36
+  parent: B.1.617.2
+- name: AY.37
+  children:
+      - AY.37
+  parent: B.1.617.2
+- name: AY.38
+  children:
+      - AY.38
+  parent: B.1.617.2
 - name: XA
   children:
       - XA
@@ -11935,33 +11967,3 @@
 - name: B.1.177.22
   children:
       - B.1.177.22
-  parent: B.1.177
-- name: B.1.183
-  children:
-      - B.1.183
-  parent: B.1
-- name: B.1.185
-  children:
-      - B.1.185
-  parent: B.1
-- name: B.1.186
-  children:
-      - B.1.186
-  parent: B.1
-- name: B.1.191
-  children:
-      - B.1.191
-  parent: B.1
-- name: B.1.193
-  children:
-      - B.1.193
-  parent: B.1
-- name: B.1.196
-  children:
-      - B.1.196
-  parent: B.1
-- name: B.1.197
-  children:
-      - B.1.197
-  parent: B.1
-- name: B.1.200
