@@ -1678,6 +1678,18 @@
       - AY.39.1.1
       - AY.40
       - AY.41
+      - AY.42
+      - AY.43
+      - AY.44
+      - AY.45
+      - AY.46
+      - AY.46.1
+      - AY.46.2
+      - AY.46.3
+      - AY.46.4
+      - AY.46.5
+      - AY.46.6
+      - AY.47
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -3302,6 +3314,18 @@
       - AY.39.1.1
       - AY.40
       - AY.41
+      - AY.42
+      - AY.43
+      - AY.44
+      - AY.45
+      - AY.46
+      - AY.46.1
+      - AY.46.2
+      - AY.46.3
+      - AY.46.4
+      - AY.46.5
+      - AY.46.6
+      - AY.47
       - AZ.1
       - AZ.2
       - AZ.2.1
@@ -10797,6 +10821,18 @@
       - AY.39.1.1
       - AY.40
       - AY.41
+      - AY.42
+      - AY.43
+      - AY.44
+      - AY.45
+      - AY.46
+      - AY.46.1
+      - AY.46.2
+      - AY.46.3
+      - AY.46.4
+      - AY.46.5
+      - AY.46.6
+      - AY.47
       - B.1.617
       - B.1.617.1
       - B.1.617.2
@@ -10863,6 +10899,18 @@
       - AY.39.1.1
       - AY.40
       - AY.41
+      - AY.42
+      - AY.43
+      - AY.44
+      - AY.45
+      - AY.46
+      - AY.46.1
+      - AY.46.2
+      - AY.46.3
+      - AY.46.4
+      - AY.46.5
+      - AY.46.6
+      - AY.47
       - B.1.617.2
   parent: B.1.617
 - name: AY.1
@@ -11099,6 +11147,60 @@
 - name: AY.41
   children:
       - AY.41
+  parent: B.1.617.2
+- name: AY.42
+  children:
+      - AY.42
+  parent: B.1.617.2
+- name: AY.43
+  children:
+      - AY.43
+  parent: B.1.617.2
+- name: AY.44
+  children:
+      - AY.44
+  parent: B.1.617.2
+- name: AY.45
+  children:
+      - AY.45
+  parent: B.1.617.2
+- name: AY.46
+  children:
+      - AY.46
+      - AY.46.1
+      - AY.46.2
+      - AY.46.3
+      - AY.46.4
+      - AY.46.5
+      - AY.46.6
+  parent: B.1.617.2
+- name: AY.46.1
+  children:
+      - AY.46.1
+  parent: AY.46
+- name: AY.46.2
+  children:
+      - AY.46.2
+  parent: AY.46
+- name: AY.46.3
+  children:
+      - AY.46.3
+  parent: AY.46
+- name: AY.46.4
+  children:
+      - AY.46.4
+  parent: AY.46
+- name: AY.46.5
+  children:
+      - AY.46.5
+  parent: AY.46
+- name: AY.46.6
+  children:
+      - AY.46.6
+  parent: AY.46
+- name: AY.47
+  children:
+      - AY.47
   parent: B.1.617.2
 - name: B.1.617.3
   children:
