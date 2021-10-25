@@ -50,8 +50,8 @@ layout: default
   <h5 id="version">version</h5>
   <p>A version number that represents both the pango-designation number and the inference engine used to assign the lineage. For example:</p>
   <ul>
-    <li>PANGO-1.2 indicates an identical sequence has been previously designated this lineage, and has so gone through manual curation. The number 1.2 indicates the version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> that this assignment is based on.</li>
-    <li>PLEARN-1.2 indicates that this sequence is different from any previously designated and that the pangoLEARN model was used as an inference engine to predict the most likely lineage based on the given version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a>.</li>
+    <li>PANGO-1.2 indicates an identical sequence has been previously designated this lineage, and has so gone through manual curation. The number 1.2 indicates the version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> that this assignment is based on. These hashes and pango-designation version is bundled with the pangoLEARN and UShER models.</li>
+    <li>PLEARN-1.2 indicates that this sequence is different from any previously designated and that the pangoLEARN model was used as an inference engine to predict the most likely lineage based on the given version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> upon which the pangoLEARN model was trained.</li>
     <li>PUSHER-1.2 indicates that this sequence is different from any previously designated and that UShER was used as an inference engine with fast tree placement and parsimony-based lineage assignment, based on a guide tree (protobuf) file built from the data in a given <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> release version.</li>
   </ul>
 </div>
@@ -68,7 +68,7 @@ layout: default
 
 <div class="contrib">
   <h5 id="pango_version">pango_version</h5>
-  <p>The version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> lineages that this assignment is based on.</p>
+  <p>The version of <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> lineages that this assignment is based on. This corresponds to the <a href="https://github.com/cov-lineages/pangoLEARN/blob/master/pangoLEARN/__init__.py">pango-designation</a> version used to train the pangoLEARN/UShER models (and provide hashed lineage assignments) and not the <a href="https://github.com/cov-lineages/pango-designation">pango-designation</a> installed as a dependency (which is used only for lineage aliases).</p>
 </div>
 
 <div class="contrib">
