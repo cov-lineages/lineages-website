@@ -68,7 +68,7 @@ $(document).ready(function(){
   } else {
     $(".nav").css('background', '#262626');
   }
-    
+  generateGitHubIssueLinks();
 });
 
 $(function(){
@@ -212,3 +212,12 @@ function reportSearch(myInput, myTable) {
 }
 
 
+function generateGitHubIssueLinks() {
+  const descItems = document.querySelectorAll('.desc-td');
+  for (const item of descItems) {
+    if (item.innerHTML.match(/#(\d+)/)) {
+      item.innerHTML = 
+        item.innerHTML.replace(/#(\d+)/, `<a href="https://github.com/cov-lineages/pango-designation/issues/$1" target="_blank">#$1</a>`);
+    }
+  }
+}

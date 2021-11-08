@@ -2,6 +2,18 @@
 layout: default
 ---
 
+<style type="text/css">
+	
+.selectedHeader {
+	font-weight: 500;
+}
+
+.selectedDiv {
+	border: 5px solid red;
+}
+
+</style>
+
 <h1>Frequently asked questions</h1>
 <br>
 <h5>A set of FAQs related to lineages are available <a href="https://www.pango.network/">here</a>, the following are a list of FAQs related to the pangolin software tool and cov-lineages.org website.</h5>
@@ -72,4 +84,62 @@ If you have a complete genome sequence and suspect there's something wrong with 
 Please post an issue to the <a href="https://github.com/cov-lineages/pangolin">pangolin github repository</a> where we will answer any queries and try to fix any bugs you may have found!
 
 </div>
+
+<script type="text/javascript">
+	
+
+	var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+                   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+
+	var selectedQ = urlParams.get("q");
+
+	var num = parseInt(selectedQ);
+
+	if(num || num === 0) {
+
+		var count = 0;
+
+		for(var i of document.getElementById("content_wrapper").children) {
+
+			if(i.tagName == "H3" && count == num) {
+				i.classList.add("selectedHeader");
+				i.scrollIntoView();
+			}
+
+
+			if(i.classList) {
+				if(i.classList[0] == "contrib") {
+
+					if(count == num) {
+						i.classList.add("selectedDiv");
+						
+						var scrollDiv = i.offsetTop;
+
+
+						if(scrollDiv < limit) {
+							scrollDiv = scrollDiv - 175;
+						}
+
+						window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+					}
+
+					count = count + 1;
+
+
+				}
+			}
+
+
+		}
+
+
+	}
+
+
+
+
+</script>
 
