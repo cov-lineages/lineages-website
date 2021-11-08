@@ -87,6 +87,10 @@ layout: default
     font: 14px 'Poppins' sans-serif;
   }
 
+  td {
+    max-width: 300px;
+  }
+
 
 </style>
 
@@ -227,6 +231,7 @@ layout: default
                       <th scope="col"># designated</th>
                       <th scope="col"># assigned</th>
                       <th scope="col">Description</th>
+                      <th scope="col">WHO Name</th>
                     </tr>
                   </thead>
                     
@@ -307,12 +312,14 @@ layout: default
 	                  		rowString = "<tr><td><a href=\"./lineage.html?lineage="+child+"\">"+child+"</a></td>";
 	                  	}
 
+                      var who_id = "who_" + child.replace(/\./g, "_");
+
 	                  	rowString = rowString + "<td>"+metadata[child]["Countries"]+"</td>";
 	                  	rowString = rowString + "<td>"+metadata[child]["Earliest date"]+"</td>";
 	                  	rowString = rowString + "<td>"+metadata[child]["Number designated"]+"</td>";
 	                  	rowString = rowString + "<td>"+metadata[child]["Number assigned"]+"</td>";
 	                  	rowString = rowString + "<td>"+metadata[child]["Description"]+"</td>";
-	                  	rowString = rowString + "</td>"
+	                  	rowString = rowString + "<td id=\""+who_id+"\"></td></td>"
 
 	                  	$("#myTable").append(rowString);
                   	}
@@ -323,6 +330,68 @@ layout: default
                   }
 
                   $(".footer").css('top', document.documentElement.scrollHeight);
+
+                  var relevantDefs =  new Map();
+
+                  getOtherNames=function(lineage) {
+
+                    if(relevantDefs.get(lineage) == true) {
+
+                        var pageName = "c" + lineage + ".json";
+                        var directory = "https://raw.githubusercontent.com/cov-lineages/constellations/main/constellations/definitions/";
+                      
+                            d3.json(directory + pageName, function(json){
+                              whoName = json["variant"]["WHO_label"];
+
+                                // add to UI
+
+                                if(whoName && whoName.length > 0) {
+
+                                  var id = "who_" + lineage;
+
+                                  id = id.replace(/\./g, "_");
+
+                                  $("#" + id).text(whoName);
+                                }
+                            });
+                           
+                        
+                    }
+                  }
+
+                  
+                  var url = "https://api.github.com/repos/cov-lineages/constellations/contents/constellations/definitions"
+
+                  d3.json(url, function(json){
+                      for(var c of json) {
+                        var name = c.name;
+
+                        name = name.split("\.json")[0];
+                        name = name.substring(1);
+
+                        relevantDefs.set(name, true);
+                      }
+
+                      for(var row of $("#myTable").children()) {
+                        var child = row.children[6];
+
+                        if(!child) {
+                          console.log("wonky row");
+                          console.log(row);
+                        } else {
+                          var id = child.id;
+                          var lineage = id.split("who_")[1];
+                          lineage = lineage.replace(/_/g, ".");
+
+                          getOtherNames(lineage);
+
+                        }
+
+                        
+                      }
+
+                        
+                    });
 
 
 
@@ -904,6 +973,5 @@ layout: default
   }
 
   getOtherLineageNames(selectedLineage);
-
 
 </script>
