@@ -5,5 +5,5 @@ title: Lineage AY.43
 redirect_to: ../lineage.html?lineage=AY.43
 lineage: AY.43
 parent: B.1.617.2
-children: ['AY.43']
+children: ['AY.43', 'AY.43.1', 'AY.43.2']
 ---
