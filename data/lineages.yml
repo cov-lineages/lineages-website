@@ -1733,6 +1733,8 @@
       - AY.74
       - AY.75
       - AY.75.1
+      - AY.75.2
+      - AY.75.3
       - AY.76
       - AY.77
       - AY.78
@@ -3468,6 +3470,8 @@
       - AY.74
       - AY.75
       - AY.75.1
+      - AY.75.2
+      - AY.75.3
       - AY.76
       - AY.77
       - AY.78
@@ -11074,6 +11078,8 @@
       - AY.74
       - AY.75
       - AY.75.1
+      - AY.75.2
+      - AY.75.3
       - AY.76
       - AY.77
       - AY.78
@@ -11249,6 +11255,8 @@
       - AY.74
       - AY.75
       - AY.75.1
+      - AY.75.2
+      - AY.75.3
       - AY.76
       - AY.77
       - AY.78
@@ -11766,10 +11774,16 @@
   children:
       - AY.75
       - AY.75.1
+      - AY.75.2
+      - AY.75.3
   parent: B.1.617.2
-- name: AY.75.1
+- name: AY.75.2
   children:
-      - AY.75.1
+      - AY.75.2
+  parent: AY.75
+- name: AY.75.3
+  children:
+      - AY.75.3
   parent: AY.75
 - name: AY.76
   children:
@@ -13412,6 +13426,10 @@
   children:
       - AY.12
   parent: B.1.617.2
+- name: AY.75.1
+  children:
+      - AY.75.1
+  parent: AY.75
 - name: B.2.1
   children:
       - B.2.1
