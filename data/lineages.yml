@@ -9150,10 +9150,6 @@
   children:
       - B.1.177.78
   parent: B.1.177
-- name: B.1.177.79
-  children:
-      - B.1.177.79
-  parent: B.1.177
 - name: B.1.177.80
   children:
       - B.1.177.80
@@ -13046,6 +13042,10 @@
 - name: B.1.177.22
   children:
       - B.1.177.22
+  parent: B.1.177
+- name: B.1.177.79
+  children:
+      - B.1.177.79
   parent: B.1.177
 - name: B.1.183
   children:
