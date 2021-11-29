@@ -232,6 +232,49 @@
                     "file":  "Rolling_average_B.1.617.2_frequency_per_continent.svg",
                     "width": 80
                 }],
+                "B.1.1.529": [{
+                    "number": 1,
+                    "name": "Cumulative sequence count over time B.1.1.529",
+                    "caption": "Bars show the number of new sequences on GISAID over time, binned by epi-week. The line shows the cumulative number of sequences over time.",
+                    "file":  "Cumulative_sequence_count_over_time_B.1.1.529.svg",
+                    "width": 80
+                },{
+                    "number": 2,
+                    "name": "Date of earliest_B.1.1.529 detected",
+                    "caption": "Schematic map showing the date of the first sequence sample date in each country containing the lineage. Darker countries have earlier first sample dates.",
+                    "file":  "Date_of_earliest_B.1.1.529_detected.svg",
+                    "width": 100
+                },{
+                    "number": 3,
+                    "name": "Map of B.1.1.529 sequence counts",
+                    "caption": "Map showing the logged number of sequences of the variant in each country. Countries with more sequences are shown in darker colours.",
+                    "file":  "Map_of_B.1.1.529_sequence_counts.svg",
+                    "width": 100
+                },{
+                    "number": 4,
+                    "name": "Sequence count per country B.1.1.529",
+                    "caption": "The number of sequences of the lineage recorded in each country. The height of the bar is the logged number and the numbers above the bar are the raw counts.",
+                    "file":  "Sequence_count_per_country_B.1.1.529.svg",
+                    "width": 80
+                },{
+                    "number": 5,
+                    "name": "Frequency B.1.1.529 in sequences produced since first new variant reported per country",
+                    "caption": "The overall frequency of the lineage, defined as the number of sequences assigned the lineage divided by the total number of sequences from that country in the time since the variant was first sequenced in that country.",
+                    "file":  "Frequency_B.1.1.529_in_sequences_produced_since_first_new_variant_reported_per_country.svg",
+                    "width": 80
+                },{
+                    "number": 6,
+                    "name": "B.1.1.529 count per continent",
+                    "caption": "Seven day rolling average of sequence counts per continent. Please note that recent declines may be due to delay in reporting rather than reflecting a change in the underlying virus population.",
+                    "file":  "B.1.1.529_count_per_continent.svg",
+                    "width": 80
+                },{
+                    "number": 7,
+                    "name": "Rolling average B.1.1.529 frequency per continent",
+                    "caption": "Seven day rolling average of frequency of sequences of the lineage of interest. Frequency is calculated by dividing the number of sequences of the lineage of interest by the total sequences for each continent for each day.",
+                    "file":  "Rolling_average_B.1.1.529_frequency_per_continent.svg",
+                    "width": 80
+                }],
                 "B.1.525": [{
                     "number": 1,
                     "name": "Cumulative sequence count over time B.1.525",
