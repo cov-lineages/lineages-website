@@ -17,7 +17,7 @@
   logourl: pando.png
   category: Internally Developed Tools
 - name: Civet
-  link: https://github.com/artic-network/civet
+  link: ./resources/civet.html
   description: Civet is a tool developed with 'real-time' genomics in mind. <br><br> Using a background phylogeny, such as the large phylogeny available through the COG-UK infrastructure on CLIMB, civet will generate a report for a set of sequences of interest i.e. an outbreak investigation.
   subheading: software
   logourl: civet.png
