@@ -10196,10 +10196,10 @@
     },
     "B.1.1.529": {
         "Lineage": "B.1.1.529",
-        "Country count": 14,
-        "Countries": "South Africa 124, Botswana 19, Hong Kong 5, Australia 4, Italy 4, United Kingdom 4, Canada 2, Germany 1, Spain 1, Czech Republic 1, Burkina Faso 1, Austria 1, Israel 1, Belgium 1",
-        "Earliest date": "2021-02-05",
-        "Count": 169,
+        "Country count": 13,
+        "Countries": "South Africa 124, Botswana 19, Hong Kong 5, Australia 4, Italy 4, United Kingdom 4, Canada 2, Germany 1, Spain 1, Czech Republic 1, Austria 1, Israel 1, Belgium 1",
+        "Earliest date": "2021-11-11",
+        "Count": 168,
         "Date": [
             {
                 "date": "2021-11-11",
@@ -10256,10 +10256,6 @@
             {
                 "date": "2021-11-13",
                 "count": 2
-            },
-            {
-                "date": "2021-02-05",
-                "count": 1
             },
             {
                 "date": "2021-11-25",
