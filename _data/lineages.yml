@@ -3212,6 +3212,8 @@
       - B.59
       - B.60
       - B.61
+      - BA.1
+      - BA.2
       - C.1
       - C.1.1
       - C.1.2
@@ -4896,6 +4898,8 @@
       - B.1.638
       - B.1.639
       - B.1.640
+      - BA.1
+      - BA.2
       - C.1
       - C.1.1
       - C.1.2
@@ -5536,6 +5540,8 @@
       - B.1.1.527
       - B.1.1.528
       - B.1.1.529
+      - BA.1
+      - BA.2
       - C.1
       - C.1.1
       - C.1.2
@@ -8052,7 +8058,17 @@
 - name: B.1.1.529
   children:
       - B.1.1.529
+      - BA.1
+      - BA.2
   parent: B.1.1
+- name: BA.1
+  children:
+      - BA.1
+  parent: B.1.1.529
+- name: BA.2
+  children:
+      - BA.2
+  parent: B.1.1.529
 - name: B.1.2
   children:
       - B.1.2
@@ -13584,22 +13600,3 @@
   children:
       - B.1.628
   parent: B.1
-- name: AY.9.1
-  children:
-      - AY.9.1
-  parent: AY.9
-- name: AY.12
-  children:
-      - AY.12
-  parent: B.1.617.2
-- name: AY.75.1
-  children:
-      - AY.75.1
-  parent: AY.75
-- name: AY.115
-  children:
-      - AY.115
-  parent: B.1.617.2
-- name: B.2.1
-  children:
-      - B.2.1
