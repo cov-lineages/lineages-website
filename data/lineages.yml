@@ -3236,6 +3236,7 @@
       - B.61
       - BA.1
       - BA.2
+      - BA.3
       - C.1
       - C.1.1
       - C.1.2
@@ -4942,6 +4943,7 @@
       - B.1.640.2
       - BA.1
       - BA.2
+      - BA.3
       - C.1
       - C.1.1
       - C.1.2
@@ -5585,6 +5587,7 @@
       - B.1.1.529
       - BA.1
       - BA.2
+      - BA.3
       - C.1
       - C.1.1
       - C.1.2
@@ -8111,6 +8114,7 @@
       - B.1.1.529
       - BA.1
       - BA.2
+      - BA.3
   parent: B.1.1
 - name: BA.1
   children:
@@ -8119,6 +8123,10 @@
 - name: BA.2
   children:
       - BA.2
+  parent: B.1.1.529
+- name: BA.3
+  children:
+      - BA.3
   parent: B.1.1.529
 - name: B.1.2
   children:
