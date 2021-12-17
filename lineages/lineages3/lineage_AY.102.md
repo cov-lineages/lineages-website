@@ -5,5 +5,5 @@ title: Lineage AY.102
 redirect_to: ../lineage.html?lineage=AY.102
 lineage: AY.102
 parent: B.1.617.2
-children: ['AY.102', 'AY.102.1']
+children: ['AY.102', 'AY.102.1', 'AY.102.2']
 ---
