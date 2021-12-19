@@ -5,5 +5,5 @@ title: Lineage P.1.12
 redirect_to: ../lineage.html?lineage=P.1.12
 lineage: P.1.12
 parent: P.1
-children: ['P.1.12']
+children: ['P.1.12', 'P.1.12.1']
 ---
