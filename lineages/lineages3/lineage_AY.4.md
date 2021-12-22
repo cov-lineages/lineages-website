@@ -5,5 +5,5 @@ title: Lineage AY.4
 redirect_to: ../lineage.html?lineage=AY.4
 lineage: AY.4
 parent: B.1.617.2
-children: ['AY.4', 'AY.4.1', 'AY.4.2', 'AY.4.2.1', 'AY.4.2.2', 'AY.4.2.3', 'AY.4.3', 'AY.4.4', 'AY.4.5', 'AY.4.6', 'AY.4.7', 'AY.4.8']
+children: ['AY.4', 'AY.4.1', 'AY.4.2', 'AY.4.2.1', 'AY.4.2.2', 'AY.4.2.3', 'AY.4.3', 'AY.4.4', 'AY.4.5', 'AY.4.6', 'AY.4.7', 'AY.4.8', 'AY.4.9', 'AY.4.10']
 ---
