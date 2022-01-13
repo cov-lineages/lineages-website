@@ -12252,10 +12252,6 @@
   children:
       - AY.88
   parent: B.1.617.2
-- name: AY.89
-  children:
-      - AY.89
-  parent: B.1.617.2
 - name: AY.90
   children:
       - AY.90
@@ -13578,3 +13574,6 @@
       - B.1.177.1
   parent: B.1.177
 - name: B.1.177.13
+  children:
+      - B.1.177.13
+  parent: B.1.177
