@@ -5,5 +5,5 @@ title: Lineage BA.1
 redirect_to: ../lineage.html?lineage=BA.1
 lineage: BA.1
 parent: B.1.1.529
-children: ['BA.1', 'BA.1.1']
+children: ['BA.1', 'BA.1.1', 'BA.1.2', 'BA.1.3', 'BA.1.4', 'BA.1.5', 'BA.1.6', 'BA.1.7', 'BA.1.8', 'BA.1.9', 'BA.1.10', 'BA.1.11', 'BA.1.12', 'BA.1.13', 'BA.1.13.1', 'BA.1.14', 'BA.1.15', 'BA.1.15.1']
 ---
