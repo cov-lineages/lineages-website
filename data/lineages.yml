@@ -12610,10 +12610,6 @@
   children:
       - AY.95
   parent: B.1.617.2
-- name: AY.96
-  children:
-      - AY.96
-  parent: B.1.617.2
 - name: AY.98
   children:
       - AY.98
@@ -14344,6 +14340,10 @@
 - name: AY.89
   children:
       - AY.89
+  parent: B.1.617.2
+- name: AY.96
+  children:
+      - AY.96
   parent: B.1.617.2
 - name: AY.97
   children:
