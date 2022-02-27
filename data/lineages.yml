@@ -1720,6 +1720,7 @@
       - AY.34.2
       - AY.35
       - AY.36
+      - AY.36.1
       - AY.37
       - AY.38
       - AY.39
@@ -3315,6 +3316,9 @@
       - BA.1.17
       - BA.1.17.1
       - BA.2
+      - BA.2.1
+      - BA.2.2
+      - BA.2.3
       - BA.3
       - BB.1
       - BB.2
@@ -3580,6 +3584,7 @@
       - AY.34.2
       - AY.35
       - AY.36
+      - AY.36.1
       - AY.37
       - AY.38
       - AY.39
@@ -5103,6 +5108,9 @@
       - BA.1.17
       - BA.1.17.1
       - BA.2
+      - BA.2.1
+      - BA.2.2
+      - BA.2.3
       - BA.3
       - BB.1
       - BB.2
@@ -5787,6 +5795,9 @@
       - BA.1.17
       - BA.1.17.1
       - BA.2
+      - BA.2.1
+      - BA.2.2
+      - BA.2.3
       - BA.3
       - C.1
       - C.1.1
@@ -8359,6 +8370,9 @@
       - BA.1.17
       - BA.1.17.1
       - BA.2
+      - BA.2.1
+      - BA.2.2
+      - BA.2.3
       - BA.3
   parent: B.1.1
 - name: BA.1
@@ -8401,7 +8415,6 @@
       - BA.1.16.1
       - BA.1.17
       - BA.1.17.1
-      - BC.1
   parent: B.1.1.529
 - name: BA.1.1
   children:
@@ -8422,17 +8435,11 @@
       - BA.1.1.14
       - BA.1.1.15
       - BA.1.1.16
-      - BC.1
   parent: BA.1
 - name: BA.1.1.1
   children:
       - BA.1.1.1
-      - BC.1
   parent: BA.1.1
-- name: BC.1
-  children:
-      - BC.1
-  parent: BA.1.1.1
 - name: BA.1.1.2
   children:
       - BA.1.1.2
@@ -8576,7 +8583,22 @@
 - name: BA.2
   children:
       - BA.2
+      - BA.2.1
+      - BA.2.2
+      - BA.2.3
   parent: B.1.1.529
+- name: BA.2.1
+  children:
+      - BA.2.1
+  parent: BA.2
+- name: BA.2.2
+  children:
+      - BA.2.2
+  parent: BA.2
+- name: BA.2.3
+  children:
+      - BA.2.3
+  parent: BA.2
 - name: BA.3
   children:
       - BA.3
@@ -11632,6 +11654,7 @@
       - AY.34.2
       - AY.35
       - AY.36
+      - AY.36.1
       - AY.37
       - AY.38
       - AY.39
@@ -11882,6 +11905,7 @@
       - AY.34.2
       - AY.35
       - AY.36
+      - AY.36.1
       - AY.37
       - AY.38
       - AY.39
@@ -12443,7 +12467,12 @@
 - name: AY.36
   children:
       - AY.36
+      - AY.36.1
   parent: B.1.617.2
+- name: AY.36.1
+  children:
+      - AY.36.1
+  parent: AY.36
 - name: AY.37
   children:
       - AY.37
