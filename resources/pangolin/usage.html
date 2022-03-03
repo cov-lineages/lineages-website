@@ -2,31 +2,38 @@
 layout: default
 ---
 <h1>Usage</h1>
+<div class="contrib"><a href="{{ 'resources/pangolin.html' | absolute_url }}">Back to pangolin documentation home page.</a></div>
 
 <h3>Simple usage</h3>
-
-<p>By default pangolin will run the pangoLEARN model to assign the most likely lineage out of all <a href="https://github.com/cov-lineages/pango-designation">currently designated lineages</a>) and scorpio to assign specific <a href="https://github.com/cov-lineages/constellations/tree/main/constellations/definitions">lineages of interest</a> by presence of constellations. </p>
-
 <ol class="listWithCode">
   <li>Activate the environment with <span class="code">conda activate pangolin</span></li>
-  <li>Run <span class="code">pangolin &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input file</li>
+  <li>Run <span class="code">pangolin &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input (fasta) file</li>
 </ol>
 
-<h3>UShER mode</h3>
+<h3>Default behaviour</h3>
+<div class="contrib">
+<p>As of pangolin 4.0, pangolin will run lineage assignment by default in accurate (UShER) mode.</p>
+<p><strong>Note</strong>: This will be significantly slower for larger datasets, which we still recommend be run in fast mode or with a lot of threads.</p>
+<p>To run in fast mode (e.g. for larger datasets), specify <span class="code">--analysis-mode fast</span> on the command line and this will run the pangoLEARN model inference.</p>
+</div>
 
-<p>Pangolin 3.0 can optionally run a fast parsimony-based lineage assignment using <a href="https://github.com/yatisht/usher">UShER</a> as the inference engine.
+<h3>Analysis mode options</h3>
+<div class="contrib">
+<h5>Accurate (UShER) mode</h5>
+<p>Pangolin 4.0 runs a parsimony-based lineage assignment using <a href="https://github.com/yatisht/usher">UShER</a> as the inference engine.</p>
+<p>Run <span class="code">pangolin &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input (fasta) file</p>
+<h5>Fast (pangoLEARN) mode</h5>
+<p>To run pangoLEARN mode, which as of 4.0 uses a <a href="{{ 'resources/pangolin/pangolearn.html' | absolute_url }}">random forest machine learning approach</a> as the inference engine.</p>
+<p>Run <span class="code">pangolin --analysis-mode fast &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input (fasta) file</p>
+</div>
 
 
-<ol class="listWithCode">
-  <li>Activate the environment with <span class="code">conda activate pangolin</span></li>
-  <li>Run <span class="code">pangolin --usher &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input file</li>
-</ol>
-
-
-<h3>Output alignment</h3>
-
-<p>In the process of lineage assignment, pangolin creates an alignment using <a href="https://github.com/lh3/minimap2">minimap2</a> to map against an early, anonymised reference SARS-CoV-2 sequence and then using <a href="https://github.com/cov-ert/gofasta">gofasta</a> to generate a fasta file from that mapping with the non-coding regions masked out with N's. For convenience (I know I certainly find it very useful for quickly generating a SARS-CoV-2 alignment), pangolin has a flag that will output this alignment in addition to the lineage report instead of writing it to temp. The exact parameters can be found in the source code <a href="https://github.com/cov-lineages/pangolin/blob/a6e5c46c4ddd50a9e647abccf70e544fa18898cb/pangolin/scripts/pangolearn.smk#L47">here</a>.</p>
-
+<h3>Output multiple sequence alignment</h3>
+<div class="contrib">
+<p>In the process of lineage assignment, pangolin creates an alignment using <a href="https://github.com/lh3/minimap2">minimap2</a> to map against an early, anonymised reference SARS-CoV-2 sequence and then using <a href="https://github.com/virus-evolution/gofasta">gofasta</a> to generate a fasta file from that mapping with the non-coding regions masked out with N's.</p> 
+<p>For convenience (I know I certainly find it very useful for quickly generating a SARS-CoV-2 alignment), pangolin has a flag that will output this alignment in addition to the lineage report instead of writing it to temp. The exact parameters can be found in the source code <a href="https://github.com/cov-lineages/pangolin/blob/a6e5c46c4ddd50a9e647abccf70e544fa18898cb/pangolin/scripts/pangolearn.smk#L47">here</a>.</p>
+<p>By default the output alignment file is called alignment.fasta, but as of pangolin 4.0 you can now specify the name of this file with the <span class="code">--alignment-file</span> flag.</p>
+</div>
 <ol class="listWithCode">
   <li>Activate the environment with <span class="code">conda activate pangolin</span></li>
   <li>Run <span class="code">pangolin --alignment &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input file</li>
@@ -34,44 +41,62 @@ layout: default
 
 
 <h3>Full usage options</h3>
-<br>
+<div class="contrib">
 <pre>
-pangolin: Phylogenetic Assignment of Named Global Outbreak LINeages
+  usage: pangolin <query> [options]
 
-positional arguments:
-  query                 Query fasta file of sequences to analyse.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -o OUTDIR, 
-  --outdir OUTDIR
-                        Output directory. Default: current working directory
-  --outfile OUTFILE     Optional output file name. Default: lineage_report.csv
-  --alignment           Optional alignment output.
-  -d DATADIR, 
-  --datadir DATADIR
-                        Data directory minimally containing a fasta alignment and guide tree
-  --tempdir TEMPDIR     Specify where you want the temp stuff to go. Default: $TMPDIR
-  --no-temp             Output all intermediate files, for dev purposes.
-  --decompress-model    Permanently decompress the model file to save time running pangolin.
-  --usher               Use UShER model instead of default pangoLEARN
-  --usher-tree 
-  USHER_PROTOBUF
-                        UShER Mutation Annotated Tree protobuf file to use instead of --usher default from pangoLEARN repository or --datadir
-  --max-ambig MAXAMBIG  Maximum proportion of Ns allowed for pangolin to attempt assignment. Default: 0.3
-  --min-length MINLEN   Minimum query length allowed for pangolin to attempt assignment. Default: 25000
-  --verbose             Print lots of stuff to screen
-  -t THREADS, 
-  --threads THREADS
-                        Number of threads
-  -v, 
-  --version         show pangolin's version number and exit
-  -pv, 
-  --pangoLEARN-version
-                        show pangoLEARN's version number and exit
-  -dv, 
-  --pango-designation-version
-                        show pango-designation version number and exit
-  --update              Automatically updates to latest release of pangolin and pangoLEARN, then exits
-
+    pangolin: Phylogenetic Assignment of Named Global Outbreak LINeages
+    
+    optional arguments:
+      -h, --help            show this help message and exit
+    
+    Input-Output options:
+      query                 Query fasta file of sequences to analyse.
+      -o OUTDIR, 
+      --outdir OUTDIR
+                            Output directory. Default: current working directory
+      --outfile OUTFILE     Optional output file name. Default: lineage_report.csv
+      --tempdir TEMPDIR     Specify where you want the temp stuff to go. Default: $TMPDIR
+      --no-temp             Output all intermediate files, for dev purposes.
+      --alignment           Output multiple sequence alignment.
+      --alignment-file ALIGNMENT_FILE
+                            Multiple sequence alignment file name.
+    
+    Analysis options:
+      --analysis-mode ANALYSIS_MODE
+                            Specify which inference engine to use. 
+                            Options: accurate (UShER), fast (pangoLEARN), pangolearn, usher. 
+                            Default: UShER inference.
+      --skip-designation-cache
+                            Developer option - do not use designation cache to assign lineages.
+      --max-ambig MAXAMBIG  Maximum proportion of Ns allowed for pangolin to attempt assignment. 
+                            Default: 0.3
+      --min-length MINLEN   Minimum query length allowed for pangolin to attempt assignment. 
+                            Default: 25000
+    
+    Data options:
+      --update              Automatically updates to latest release of pangolin, pangolin-data, scorpio 
+                            and constellations, then exits.
+      --update-data         Automatically updates to latest release of constellations and pangolin-data, 
+                            including the pangoLEARN model, UShER tree file and alias file then
+                            exits.
+      -d DATADIR, 
+      --datadir DATADIR
+                            Data directory minimally containing the pangoLEARN model, header files, 
+                            UShER tree and alias file. Default: Installed pangolin-data package.
+      --usher-tree USHER_PROTOBUF
+                            UShER Mutation Annotated Tree protobuf file to use instead of --usher 
+                            default from pangolin-data repository or --datadir.
+    
+    Misc options:
+      --aliases             Print Pango alias_key.json and exit.
+      -v, --version         show program's version number and exit
+      -pv, --pangolin-data-version
+                            show version number of pangolin data files (UShER tree and pangoLEARN model files) 
+                            and exit.
+      --all-versions        Print all tool, dependency, and data versions then exit.
+      --verbose             Print lots of stuff to screen
+      -t THREADS, --threads THREADS
+                            Number of threads
   </pre>
+</div>
