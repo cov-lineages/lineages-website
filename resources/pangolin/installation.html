@@ -3,13 +3,14 @@ layout: default
 ---
 
 <h1>Installation</h1>
+<div class="contrib"><a href="{{ 'resources/pangolin.html' | absolute_url }}">Back to pangolin documentation home page.</a></div>
 
-<h2>Using Bioconda</h2>
+
+<h2>Using Bioconda or Mamba</h2>
 
 <ol class="listWithCode">
-	<li> Install using conda (or mamba) <span class="code">conda install -c conda-forge -c bioconda -c defaults pangolin</span></li>
+	<li> Install using <a href="https://docs.conda.io/en/latest/miniconda.html">conda</a> (or <a href="https://mamba.readthedocs.io/en/latest/installation.html">mamba</a>)<br><br><span class="code">conda install -c bioconda -c conda-forge -c defaults pangolin</span></li>
 	<li> Try it out <span class="code">pangolin -h</span></li>
-	<li> That's it!</li>
 </ol>
 
 <h2>For development</h2>
@@ -19,23 +20,16 @@ layout: default
 	<li> <span class="code">conda env create -f environment.yml</span></li>
 	<li> <span class="code">conda activate pangolin</span></li>
 	<li> <span class="code">pip install . </span></li>
-	<li> That's it!</li>
 </ol>
 
 <div class="contrib">Need help troubleshooting your installation? See the <a href="https://github.com/cov-lineages/pangolin/wiki">pangolin wiki</a></div>
 <br>
 <h2>Dependencies If <b>Not</b> Installing Using the Conda Environment</h2>
 
-<div class="contrib"><strong>Note</strong>: we recommend using pangolin in the conda environment specified in the <b>environment.yml</b> file as per the instructions above. If you can't use conda for some reason, bear in mind the data files are hosted in a separate repository at <a href="https://github.com/cov-lineages/pangoLEARN.git">cov-lineages/pangoLEARN</a> <br><br>
-You will need to pip install them alongside the other dependencies for pangolin (details found in <a href="https://github.com/cov-lineages/pangolin/blob/master/environment.yml">environment.yml</a>).</div>
+<div class="contrib"><strong>Note</strong>: we recommend using pangolin in the conda environment specified in the <b>environment.yml</b> file as per the instructions above.</div>
+<div class="contrib">If you can't use conda for some reason, bear in mind the data files are hosted in a separate repository at <a href="https://github.com/cov-lineages/pangolin-data.git">cov-lineages/pangolin-data</a></div>
+<div class="contrib">You will need to pip install them alongside the other dependencies for pangolin (full details and versions found in <a href="https://github.com/cov-lineages/pangolin/blob/master/environment.yml">environment.yml</a>).</div>
 
-<h4>Dependencies specific to pangolin 3.0 </h4>
-<ul>
-	<li>pangolin now also has an UShER mode for fast parsimony placement, so requires UShER</li>
-	<li>pangolin 3.0 now outputs <a href="https://github.com/cov-lineages/scorpio.git">scorpio</a> calls for VOCs and VUIs*</li>
-</ul>
-
-<i>*VOCs and VUIs: Variants of concern and Variants under investigation</i><br><br>
 
 <h4>Check the install worked</h4>
 
@@ -47,7 +41,7 @@ You will need to pip install them alongside the other dependencies for pangolin 
 </div>
 <br>
 
-<p>You should see the versions of <strong>pangolin</strong> and <strong>pangoLEARN</strong> data release printed respectively.</p>
+<p>You should see the versions of <strong>pangolin</strong> and <strong>pangolin-data</strong> release printed respectively.</p>
 
 <h4>Troubleshooting update</h4>
 <ul class="listWithCode">

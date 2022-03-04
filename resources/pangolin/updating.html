@@ -5,6 +5,8 @@ title: Updating Pangolin
 
 
 <h1>Updating Pangolin</h1>
+<div class="contrib"><a href="{{ 'resources/pangolin.html' | absolute_url }}">Back to pangolin documentation home page.</a></div>
+
 
 <h3>For Major Releases:</h3>
 
@@ -23,17 +25,25 @@ title: Updating Pangolin
 pangolin --update
 </span>
 <br><br>
+<h3>To only update the data models:</h3>
+<br>
+<span class="code">
+	pangolin --update-data
+	</span>
+<br><br>
 
-<p>Note: This flag will update versions of pangolin and pangoLEARN to the latest tagged releases. Major releases that involve any changes to dependencies (like v2.3) will need to also update the pangolin environment using the instructions below.</p>
-
-<p>Update flag thanks to <a href="https://github.com/fmaguire">Finlay Maguire</a>!</p>
+<p>Note: The update flags will update versions of pangolin, pangolin-data, scorpio and constellations to the latest tagged releases. Major releases that involve any changes to dependencies (like updating to pangolin v4.0) will need to also update the pangolin environment using the instructions below.</p>
 
 
 <div class="contrib">
 	<h5>Troubleshooting Update</h5>
 
 	<ul class="listWithCode">
+		<li>If there are issues with updating pangolin, first port of call is to uninstall and re-install. </span></li>
 		<li>If you have previously installed pangolin using <span class="code">pip</span> you will need to update pangolin in the same way, ie <span class="code">pip install . </span></li>
 		<li>Try <span class="code">pip uninstall pangolin</span> and then re-install with <span class="code">python setup.py install</span></li>
+		<li>Try removing and re-creating the pangolin environment. </span></li>
+		<li>If all else fails, post an issue on the GitHub, or check previously solved GitHub issues which may offer some insight! </span></li>
+
 	</ul>
 </div>
