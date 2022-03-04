@@ -8,11 +8,24 @@ layout: default
 
 <p>To run Pangolin, you will need</p>
 <ol>
-  <li>Some version of conda (we use Miniconda3). Can be downloaded from <a href="https://docs.conda.io/en/latest/miniconda.html">here</a></li>
+  <li>Some version of  <a href="https://docs.conda.io/en/latest/miniconda.html">conda</a> (or <a href="https://mamba.readthedocs.io/en/latest/installation.html">mamba</a>) (we use Miniconda3). Can be downloaded from <a href="https://docs.conda.io/en/latest/miniconda.html">here</a></li>
   <li>Your query fasta file</li>
 </ol>
 
-<h2>Dependencies</h2>
+<h4>Dependencies specific to pangolin 4.0 </h4>
+<p>pangolin has foregone the need for pango-designation as a dependency and instead rationalised the pangoLEARN and pango-designation dependencies into one minimal dependency, <strong>pangolin-data</strong>.</p>
+<ul>
+	<li><a href="git+https://github.com/cov-lineages/pangolin-data.git">pangolin-data</a></li>
+</ul>
+
+<h4>Dependencies specific to pangolin 3.0 </h4>
+<ul>
+	<li>pangolin now also has an UShER mode for fast parsimony placement, so requires UShER</li>
+	<li>pangolin 3.0 now outputs <a href="https://github.com/cov-lineages/scorpio.git">scorpio</a> calls for VOCs and VUIs*</li>
+</ul>
+
+
+<h2>All dependencies</h2>
 
 <div class="contrib">
     <ul>
@@ -28,11 +41,11 @@ layout: default
     <li>snakemake-minimal=5.13</li>
     <li>pandas==1.0.1</li>
     <li>usher</li>
-    <li>git+https://github.com/cov-lineages/pangoLEARN.git</li>
-    <li>git+https://github.com/cov-lineages/pangoLEARN.git</li>
+    <li>git+https://github.com/cov-lineages/pangolin-data.git</li>
     <li>git+https://github.com/cov-lineages/scorpio.git</li>
     <li>git+https://github.com/cov-lineages/constellations.git</li>
   </ul>
-  <strong>We recommend installing these packages using conda</strong>
+  <strong>We recommend installing these packages using conda with the <a href="https://github.com/cov-lineages/pangolin/environment.yml">environment</a> file.</strong>
 </div>
 
+<i>*VOCs and VUIs: Variants of concern and Variants under investigation</i><br><br>

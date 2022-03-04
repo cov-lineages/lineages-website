@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<h1>How it works</h1>
+<div class="contrib"><a href="{{ 'resources/pangolin.html' | absolute_url }}">Back to pangolin documentation home page.</a></div>
+
+<h2>Changes in pangolin 4.0</h2>
+<div class="contrib">
+<ol class="listWithCode">
+	<li> Changes to <a href="{{ 'resources/pangolin/requirements.html' | absolute_url }}"> pangolin dependencies</a>: pangolin-data now a dependency, removes need for pangoLEARN and pango-designation</li>
+	<li> Version number reporting change. See <a href="{{ 'resources/pangolin/output.html' | absolute_url }}">output documentation</a> for more information</li>
+	<li> Change to <a href="{{ 'resources/pangolin/output.html' | absolute_url }}">output csv format</a></li>
+	<li> Change to how sequences that fail to get assigned a lineage are reported: Change from `None` to `Unassigned`.</li>
+</ol>
+</div>
+<h2>pangolin 4.0 pipeline schema</h2>
+<div style="text-align: center;">
+    <img src="../../assets/images/pangolin_pipelines.svg" style="width:90%" alt="" />
+</div>
+
+
+
+<div class="contrib">
+    <h5>pangolin 4.0 pipeline description</h5>
+    <p>pangolin will assign the most likely lineage out of all <a href="https://github.com/cov-lineages/pango-designation">currently designated lineages</a> and uses scorpio to sanity-check specific lineages that correspond to <a href="https://github.com/cov-lineages/constellations/tree/main/constellations/definitions">variants</a> by presence of constellations.</p>
+
+    <ol class="listWithCode">
+        <li><p>All input sequences are aligned against an early, anonymised reference SARS-CoV-2 sequence. pangolin creates the alignment using <a href="https://github.com/lh3/minimap2">minimap2</a> to map and then using <a href="https://github.com/virus-evolution/gofasta">gofasta</a> to generate a fasta file from that mapping with the non-coding regions masked out with N's.</p>
+            <p>This alignment is rationalised to unique sequences using a hash system</p>
+            <p>Each sequence is run through the designation cache to see if it has been previously designated a lineage</p>
+            <p>The sequences are run through a sequence QC check that reports proportion ambiguity of a given sequence. Any sequences that fail this check will not get assigned a lineage.</p>
+            <p>Each sequence is run through <a href="https://github.com/cov-lineages/scorpio">scorpio</a> to check for variants of concern or variants of interest, as defined in <a href="https://github.com/cov-lineages/constellations/tree/main/constellations/definitions">cov-lineages constellations</a>.</p>
+            <p>The output of each of these steps is amalgamated into a preprocessing report csv file.</p>
+            <p>The final products of the preprocessing pipeline are the alignment file and the merged report.</p>
+        </li>
+        <li>
+            <p>The inference pipelines each run the inference step (either pangoLEARN or UShER)</p>
+            <p>The output of each inference step is processed into a standardised format</p>
+        </li>
+        <li><p>The output of both sets of pipelines (pre-processing and inference) is integrated to produce the final lineage report.</p></li>
+    </ol>
+</div>
