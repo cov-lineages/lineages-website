@@ -8,18 +8,30 @@ title: Updating Pangolin
 <div class="contrib"><a href="{{ 'resources/pangolin.html' | absolute_url }}">Back to pangolin documentation home page.</a></div>
 
 
-<h3>For Major Releases:</h3>
+<h2>For Major Releases:</h2>
 
-<p>Navigate to your local pangolin repository on the command line.</p>
+<h3>Updating a Bioconda or Mamba installation</h3>
+
+<p>If you used conda (or mamba) to install pangolin, <span class="code">conda activate</span> the environment in which you installed pangolin if it's not already activated, and then update:</p>
+<p>
+<span class="code">
+conda update pangolin
+</span>
+</p>
+
+<h3>Updating a development installation</h3>
+
+<p>Navigate to your local directory where you cloned the pangolin repository on the command line.</p>
 
 <ol class="listWithCode">
+	<li> <span class="code">cd pangolin</span>
 	<li> <span class="code">conda activate pangolin</span>
 	<li> <span class="code">git pull</span> pulls the latest changes from github
 	<li> <span class="code">conda env update -f environment.yml</span> updates the conda environment 
 	<li> <span class="code">pip install .</span> re-installs pangolin.
 </ol>
 
-<h3>For Minor Releases:</h3>
+<h2>For Minor Releases:</h2>
 <br>
 <span class="code">
 pangolin --update
@@ -42,8 +54,8 @@ pangolin --update
 		<li>If there are issues with updating pangolin, first port of call is to uninstall and re-install. </span></li>
 		<li>If you have previously installed pangolin using <span class="code">pip</span> you will need to update pangolin in the same way, ie <span class="code">pip install . </span></li>
 		<li>Try <span class="code">pip uninstall pangolin</span> and then re-install with <span class="code">python setup.py install</span></li>
-		<li>Try removing and re-creating the pangolin environment. </span></li>
-		<li>If all else fails, post an issue on the GitHub, or check previously solved GitHub issues which may offer some insight! </span></li>
+		<li>Try removing and re-creating the pangolin environment in conda (or mamba). </span></li>
+		<li>If all else fails, post an issue on the GitHub, or check <a href="{{ 'https://github.com/cov-lineages/pangolin/issues?q=is%3Aissue+is%3Aclosed' | absolute_url }}">previously solved GitHub issues</a> which may offer some insight! </span></li>
 
 	</ul>
 </div>
