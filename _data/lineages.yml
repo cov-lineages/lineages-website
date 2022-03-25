@@ -1709,6 +1709,7 @@
       - AY.28
       - AY.29
       - AY.29.1
+      - AY.29.2
       - AY.30
       - AY.31
       - AY.32
@@ -3573,6 +3574,7 @@
       - AY.28
       - AY.29
       - AY.29.1
+      - AY.29.2
       - AY.30
       - AY.31
       - AY.32
@@ -11643,6 +11645,7 @@
       - AY.28
       - AY.29
       - AY.29.1
+      - AY.29.2
       - AY.30
       - AY.31
       - AY.32
@@ -11894,6 +11897,7 @@
       - AY.28
       - AY.29
       - AY.29.1
+      - AY.29.2
       - AY.30
       - AY.31
       - AY.32
@@ -12414,10 +12418,15 @@
   children:
       - AY.29
       - AY.29.1
+      - AY.29.2
   parent: B.1.617.2
 - name: AY.29.1
   children:
       - AY.29.1
+  parent: AY.29
+- name: AY.29.2
+  children:
+      - AY.29.2
   parent: AY.29
 - name: AY.30
   children:
@@ -14631,15 +14640,3 @@
   children:
       - B.48
   parent: B
-- name: B.54
-  children:
-      - B.54
-  parent: B
-- name: B.59
-  children:
-      - B.59
-  parent: B
-- name: C.15
-  children:
-      - C.15
-  parent: B.1.1.1
