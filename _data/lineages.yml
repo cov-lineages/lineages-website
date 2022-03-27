@@ -3320,6 +3320,10 @@
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.4
+      - BA.2.5
+      - BA.2.6
+      - BA.2.7
       - BA.3
       - BB.1
       - BB.2
@@ -5113,6 +5117,10 @@
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.4
+      - BA.2.5
+      - BA.2.6
+      - BA.2.7
       - BA.3
       - BB.1
       - BB.2
@@ -5800,6 +5808,10 @@
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.4
+      - BA.2.5
+      - BA.2.6
+      - BA.2.7
       - BA.3
       - C.1
       - C.1.1
@@ -8375,6 +8387,10 @@
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.4
+      - BA.2.5
+      - BA.2.6
+      - BA.2.7
       - BA.3
   parent: B.1.1
 - name: BA.1
@@ -8588,6 +8604,10 @@
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.4
+      - BA.2.5
+      - BA.2.6
+      - BA.2.7
   parent: B.1.1.529
 - name: BA.2.1
   children:
@@ -8600,6 +8620,22 @@
 - name: BA.2.3
   children:
       - BA.2.3
+  parent: BA.2
+- name: BA.2.4
+  children:
+      - BA.2.4
+  parent: BA.2
+- name: BA.2.5
+  children:
+      - BA.2.5
+  parent: BA.2
+- name: BA.2.6
+  children:
+      - BA.2.6
+  parent: BA.2
+- name: BA.2.7
+  children:
+      - BA.2.7
   parent: BA.2
 - name: BA.3
   children:
@@ -13557,6 +13593,26 @@
   children:
       - XF
   parent: 
+- name: XG
+  children:
+      - XG
+  parent: 
+- name: XH
+  children:
+      - XH
+  parent: 
+- name: XJ
+  children:
+      - XJ
+  parent: 
+- name: XK
+  children:
+      - XK
+  parent: 
+- name: XL
+  children:
+      - XL
+  parent: 
 - name: A.2.1
   children:
       - A.2.1
@@ -14589,54 +14645,3 @@
       - AY.12
   parent: B.1.617.2
 - name: AY.75.1
-  children:
-      - AY.75.1
-  parent: AY.75
-- name: AY.89
-  children:
-      - AY.89
-  parent: B.1.617.2
-- name: AY.96
-  children:
-      - AY.96
-  parent: B.1.617.2
-- name: AY.97
-  children:
-      - AY.97
-  parent: B.1.617.2
-- name: AY.115
-  children:
-      - AY.115
-  parent: B.1.617.2
-- name: B.2.1
-  children:
-      - B.2.1
-  parent: B.2
-- name: B.2.6
-  children:
-      - B.2.6
-  parent: B.2
-- name: B.2.10
-  children:
-      - B.2.10
-  parent: B.2
-- name: B.2.11
-  children:
-      - B.2.11
-  parent: B.2
-- name: B.2.12
-  children:
-      - B.2.12
-  parent: B.2
-- name: B.6.7
-  children:
-      - B.6.7
-  parent: B.6
-- name: B.14
-  children:
-      - B.14
-  parent: B
-- name: B.48
-  children:
-      - B.48
-  parent: B
