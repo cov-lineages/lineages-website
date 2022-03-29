@@ -3324,6 +3324,7 @@
       - BA.2.5
       - BA.2.6
       - BA.2.7
+      - BA.2.8
       - BA.3
       - BB.1
       - BB.2
@@ -5121,6 +5122,7 @@
       - BA.2.5
       - BA.2.6
       - BA.2.7
+      - BA.2.8
       - BA.3
       - BB.1
       - BB.2
@@ -5812,6 +5814,7 @@
       - BA.2.5
       - BA.2.6
       - BA.2.7
+      - BA.2.8
       - BA.3
       - C.1
       - C.1.1
@@ -8391,6 +8394,7 @@
       - BA.2.5
       - BA.2.6
       - BA.2.7
+      - BA.2.8
       - BA.3
   parent: B.1.1
 - name: BA.1
@@ -8608,6 +8612,7 @@
       - BA.2.5
       - BA.2.6
       - BA.2.7
+      - BA.2.8
   parent: B.1.1.529
 - name: BA.2.1
   children:
@@ -8636,6 +8641,10 @@
 - name: BA.2.7
   children:
       - BA.2.7
+  parent: BA.2
+- name: BA.2.8
+  children:
+      - BA.2.8
   parent: BA.2
 - name: BA.3
   children:
