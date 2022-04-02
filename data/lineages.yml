@@ -1368,6 +1368,7 @@
       - B.1.640
       - B.1.640.1
       - B.1.640.2
+      - B.1.641
       - B.2.1
       - B.2.6
       - B.2.10
@@ -1667,6 +1668,7 @@
       - AY.5.4
       - AY.5.5
       - AY.5.6
+      - AY.5.7
       - AY.6
       - AY.7
       - AY.7.1
@@ -3208,6 +3210,7 @@
       - B.1.640
       - B.1.640.1
       - B.1.640.2
+      - B.1.641
       - B.2.1
       - B.2.6
       - B.2.10
@@ -3317,17 +3320,21 @@
       - BA.1.16.1
       - BA.1.17
       - BA.1.17.1
+      - BA.1.17.2
       - BA.1.18
       - BA.1.19
       - BA.2
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.3.1
       - BA.2.4
       - BA.2.5
       - BA.2.6
       - BA.2.7
       - BA.2.8
+      - BA.2.9
+      - BA.2.10
       - BA.3
       - BB.1
       - BB.2
@@ -3540,6 +3547,7 @@
       - AY.5.4
       - AY.5.5
       - AY.5.6
+      - AY.5.7
       - AY.6
       - AY.7
       - AY.7.1
@@ -5080,6 +5088,7 @@
       - B.1.640
       - B.1.640.1
       - B.1.640.2
+      - B.1.641
       - BA.1
       - BA.1.1
       - BA.1.1.1
@@ -5118,17 +5127,21 @@
       - BA.1.16.1
       - BA.1.17
       - BA.1.17.1
+      - BA.1.17.2
       - BA.1.18
       - BA.1.19
       - BA.2
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.3.1
       - BA.2.4
       - BA.2.5
       - BA.2.6
       - BA.2.7
       - BA.2.8
+      - BA.2.9
+      - BA.2.10
       - BA.3
       - BB.1
       - BB.2
@@ -5812,17 +5825,21 @@
       - BA.1.16.1
       - BA.1.17
       - BA.1.17.1
+      - BA.1.17.2
       - BA.1.18
       - BA.1.19
       - BA.2
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.3.1
       - BA.2.4
       - BA.2.5
       - BA.2.6
       - BA.2.7
       - BA.2.8
+      - BA.2.9
+      - BA.2.10
       - BA.3
       - C.1
       - C.1.1
@@ -8394,17 +8411,21 @@
       - BA.1.16.1
       - BA.1.17
       - BA.1.17.1
+      - BA.1.17.2
       - BA.1.18
       - BA.1.19
       - BA.2
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.3.1
       - BA.2.4
       - BA.2.5
       - BA.2.6
       - BA.2.7
       - BA.2.8
+      - BA.2.9
+      - BA.2.10
       - BA.3
   parent: B.1.1
 - name: BA.1
@@ -8447,6 +8468,7 @@
       - BA.1.16.1
       - BA.1.17
       - BA.1.17.1
+      - BA.1.17.2
       - BA.1.18
       - BA.1.19
   parent: B.1.1.529
@@ -8609,10 +8631,15 @@
   children:
       - BA.1.17
       - BA.1.17.1
+      - BA.1.17.2
   parent: BA.1
 - name: BA.1.17.1
   children:
       - BA.1.17.1
+  parent: BA.1.17
+- name: BA.1.17.2
+  children:
+      - BA.1.17.2
   parent: BA.1.17
 - name: BA.1.18
   children:
@@ -8628,11 +8655,14 @@
       - BA.2.1
       - BA.2.2
       - BA.2.3
+      - BA.2.3.1
       - BA.2.4
       - BA.2.5
       - BA.2.6
       - BA.2.7
       - BA.2.8
+      - BA.2.9
+      - BA.2.10
   parent: B.1.1.529
 - name: BA.2.1
   children:
@@ -8645,7 +8675,12 @@
 - name: BA.2.3
   children:
       - BA.2.3
+      - BA.2.3.1
   parent: BA.2
+- name: BA.2.3.1
+  children:
+      - BA.2.3.1
+  parent: BA.2.3
 - name: BA.2.4
   children:
       - BA.2.4
@@ -8665,6 +8700,14 @@
 - name: BA.2.8
   children:
       - BA.2.8
+  parent: BA.2
+- name: BA.2.9
+  children:
+      - BA.2.9
+  parent: BA.2
+- name: BA.2.10
+  children:
+      - BA.2.10
   parent: BA.2
 - name: BA.3
   children:
@@ -11668,6 +11711,7 @@
       - AY.5.4
       - AY.5.5
       - AY.5.6
+      - AY.5.7
       - AY.6
       - AY.7
       - AY.7.1
@@ -11921,6 +11965,7 @@
       - AY.5.4
       - AY.5.5
       - AY.5.6
+      - AY.5.7
       - AY.6
       - AY.7
       - AY.7.1
@@ -12283,6 +12328,7 @@
       - AY.5.4
       - AY.5.5
       - AY.5.6
+      - AY.5.7
   parent: B.1.617.2
 - name: AY.5.1
   children:
@@ -12307,6 +12353,10 @@
 - name: AY.5.6
   children:
       - AY.5.6
+  parent: AY.5
+- name: AY.5.7
+  children:
+      - AY.5.7
   parent: AY.5
 - name: AY.6
   children:
@@ -13315,6 +13365,10 @@
   children:
       - B.1.640.2
   parent: B.1.640
+- name: B.1.641
+  children:
+      - B.1.641
+  parent: B.1
 - name: B.1.9
   children:
       - B.1.9
@@ -13648,6 +13702,30 @@
 - name: XL
   children:
       - XL
+  parent: 
+- name: XM
+  children:
+      - XM
+  parent: 
+- name: XN
+  children:
+      - XN
+  parent: 
+- name: XP
+  children:
+      - XP
+  parent: 
+- name: XQ
+  children:
+      - XQ
+  parent: 
+- name: XR
+  children:
+      - XR
+  parent: 
+- name: XS
+  children:
+      - XS
   parent: 
 - name: A.2.1
   children:
