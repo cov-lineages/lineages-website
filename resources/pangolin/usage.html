@@ -19,12 +19,17 @@ layout: default
 
 <h3>Analysis mode options</h3>
 <div class="contrib">
-<h5>Accurate (UShER) mode</h5>
-<p>Pangolin 4.0 runs a parsimony-based lineage assignment using <a href="https://github.com/yatisht/usher">UShER</a> as the inference engine.</p>
+<p>
+Pangolin includes multiple analysis engines: UShER and pangoLEARN.<br>
+Scorpio is used in conjunction with UShER/ pangoLEARN to curate variant of concern (VOC)-related lineage calls.<br>
+<h5>UShER mode</h5>
+<p>In pangolin 4.0, UShER is the default and is selected using option "usher" or "accurate". pangolin runs a parsimony-based lineage assignment using <a href="https://github.com/yatisht/usher">UShER</a> as the inference engine.</p>
 <p>Run <span class="code">pangolin &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input (fasta) file</p>
-<h5>Fast (pangoLEARN) mode</h5>
-<p>To run pangoLEARN mode, which as of 4.0 uses a <a href="{{ 'resources/pangolin/pangolearn.html' | absolute_url }}">random forest machine learning approach</a> as the inference engine.</p>
+<h5>pangoLEARN mode</h5>
+<p>pangoLEARN can alternatively be selected using "pangolearn" or "fast". As of v4.0, pangoLEARN mode uses a <a href="{{ 'resources/pangolin/pangolearn.html' | absolute_url }}">random forest machine learning approach</a> as the inference engine.</p>
 <p>Run <span class="code">pangolin --analysis-mode fast &lt;query&gt;</span> where <span class="code">&lt;query&gt;</span> is the name of your input (fasta) file</p>
+<h5>scorpio only mode</h5>
+<p>Finally, it is possible to skip the UShER/ pangoLEARN step by selecting "scorpio" mode, but in this case only VOC-related lineages will be assigned. The output version number (e.g. `SCORPIO_v0.1.4`) corresponds to the version of constellations used in the scorpio assignment.</p>
 </div>
 
 
