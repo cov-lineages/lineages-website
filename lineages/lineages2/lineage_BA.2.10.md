@@ -5,5 +5,5 @@ title: Lineage BA.2.10
 redirect_to: ../lineage.html?lineage=BA.2.10
 lineage: BA.2.10
 parent: BA.2
-children: ['BA.2.10']
+children: ['BA.2.10', 'BA.2.10.1']
 ---
