@@ -1,0 +1,9 @@
+---
+permalink: /lineages/lineage_BA.5.html
+layout: lineage_page
+title: Lineage BA.5
+redirect_to: ../lineage.html?lineage=BA.5
+lineage: BA.5
+parent: B.1.1.529
+children: ['BA.5']
+---
