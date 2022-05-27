@@ -3400,11 +3400,16 @@
       - BA.2.40.1
       - BA.2.41
       - BA.2.42
+      - BA.2.43
+      - BA.2.44
+      - BA.2.45
       - BA.3
       - BA.3.1
       - BA.4
+      - BA.4.1
       - BA.5
       - BA.5.1
+      - BA.5.2
       - BB.1
       - BB.2
       - C.1
@@ -5275,11 +5280,16 @@
       - BA.2.40.1
       - BA.2.41
       - BA.2.42
+      - BA.2.43
+      - BA.2.44
+      - BA.2.45
       - BA.3
       - BA.3.1
       - BA.4
+      - BA.4.1
       - BA.5
       - BA.5.1
+      - BA.5.2
       - BB.1
       - BB.2
       - C.1
@@ -6032,11 +6042,16 @@
       - BA.2.40.1
       - BA.2.41
       - BA.2.42
+      - BA.2.43
+      - BA.2.44
+      - BA.2.45
       - BA.3
       - BA.3.1
       - BA.4
+      - BA.4.1
       - BA.5
       - BA.5.1
+      - BA.5.2
       - C.1
       - C.1.1
       - C.1.2
@@ -8680,11 +8695,16 @@
       - BA.2.40.1
       - BA.2.41
       - BA.2.42
+      - BA.2.43
+      - BA.2.44
+      - BA.2.45
       - BA.3
       - BA.3.1
       - BA.4
+      - BA.4.1
       - BA.5
       - BA.5.1
+      - BA.5.2
   parent: B.1.1
 - name: BA.1
   children:
@@ -9022,6 +9042,9 @@
       - BA.2.40.1
       - BA.2.41
       - BA.2.42
+      - BA.2.43
+      - BA.2.44
+      - BA.2.45
   parent: B.1.1.529
 - name: BA.2.1
   children:
@@ -9256,6 +9279,18 @@
   children:
       - BA.2.42
   parent: BA.2
+- name: BA.2.43
+  children:
+      - BA.2.43
+  parent: BA.2
+- name: BA.2.44
+  children:
+      - BA.2.44
+  parent: BA.2
+- name: BA.2.45
+  children:
+      - BA.2.45
+  parent: BA.2
 - name: BA.3
   children:
       - BA.3
@@ -9268,15 +9303,25 @@
 - name: BA.4
   children:
       - BA.4
+      - BA.4.1
   parent: B.1.1.529
+- name: BA.4.1
+  children:
+      - BA.4.1
+  parent: BA.4
 - name: BA.5
   children:
       - BA.5
       - BA.5.1
+      - BA.5.2
   parent: B.1.1.529
 - name: BA.5.1
   children:
       - BA.5.1
+  parent: BA.5
+- name: BA.5.2
+  children:
+      - BA.5.2
   parent: BA.5
 - name: BB.2
   children:
@@ -15104,51 +15149,3 @@
 - name: B.1.255
   children:
       - B.1.255
-  parent: B.1
-- name: B.1.257
-  children:
-      - B.1.257
-  parent: B.1
-- name: B.1.258.1
-  children:
-      - B.1.258.1
-  parent: B.1.258
-- name: B.1.258.8
-  children:
-      - B.1.258.8
-  parent: B.1.258
-- name: B.1.258.13
-  children:
-      - B.1.258.13
-  parent: B.1.258
-- name: B.1.259
-  children:
-      - B.1.259
-  parent: B.1
-- name: B.1.261
-  children:
-      - B.1.261
-  parent: B.1
-- name: B.1.262
-  children:
-      - B.1.262
-  parent: B.1
-- name: B.1.266
-  children:
-      - B.1.266
-  parent: B.1
-- name: B.1.269
-  children:
-      - B.1.269
-  parent: B.1
-- name: B.1.271
-  children:
-      - B.1.271
-  parent: B.1
-- name: B.1.272
-  children:
-      - B.1.272
-  parent: B.1
-- name: B.1.275
-  children:
-      - B.1.275
