@@ -3455,6 +3455,8 @@
       - BA.2.73
       - BA.2.74
       - BA.2.75
+      - BA.2.76
+      - BA.2.77
       - BA.3
       - BA.3.1
       - BA.4
@@ -3467,6 +3469,7 @@
       - BA.4.3
       - BA.4.4
       - BA.4.5
+      - BA.4.6
       - BA.5
       - BA.5.1
       - BA.5.1.1
@@ -3476,6 +3479,7 @@
       - BA.5.2.1
       - BA.5.2.2
       - BA.5.2.3
+      - BA.5.2.4
       - BA.5.3
       - BA.5.3.1
       - BA.5.3.2
@@ -3492,11 +3496,13 @@
       - BE.1
       - BE.1.1
       - BE.2
+      - BE.3
       - BF.1
       - BF.1.1
       - BF.2
       - BF.3
       - BF.4
+      - BF.5
       - BG.1
       - BG.2
       - BG.3
@@ -5424,6 +5430,8 @@
       - BA.2.73
       - BA.2.74
       - BA.2.75
+      - BA.2.76
+      - BA.2.77
       - BA.3
       - BA.3.1
       - BA.4
@@ -5436,6 +5444,7 @@
       - BA.4.3
       - BA.4.4
       - BA.4.5
+      - BA.4.6
       - BA.5
       - BA.5.1
       - BA.5.1.1
@@ -5445,6 +5454,7 @@
       - BA.5.2.1
       - BA.5.2.2
       - BA.5.2.3
+      - BA.5.2.4
       - BA.5.3
       - BA.5.3.1
       - BA.5.3.2
@@ -5461,11 +5471,13 @@
       - BE.1
       - BE.1.1
       - BE.2
+      - BE.3
       - BF.1
       - BF.1.1
       - BF.2
       - BF.3
       - BF.4
+      - BF.5
       - BG.1
       - BG.2
       - BG.3
@@ -6275,6 +6287,8 @@
       - BA.2.73
       - BA.2.74
       - BA.2.75
+      - BA.2.76
+      - BA.2.77
       - BA.3
       - BA.3.1
       - BA.4
@@ -6287,6 +6301,7 @@
       - BA.4.3
       - BA.4.4
       - BA.4.5
+      - BA.4.6
       - BA.5
       - BA.5.1
       - BA.5.1.1
@@ -6296,6 +6311,7 @@
       - BA.5.2.1
       - BA.5.2.2
       - BA.5.2.3
+      - BA.5.2.4
       - BA.5.3
       - BA.5.3.1
       - BA.5.3.2
@@ -6310,11 +6326,13 @@
       - BE.1
       - BE.1.1
       - BE.2
+      - BE.3
       - BF.1
       - BF.1.1
       - BF.2
       - BF.3
       - BF.4
+      - BF.5
       - BG.1
       - BG.2
       - BG.3
@@ -9017,6 +9035,8 @@
       - BA.2.73
       - BA.2.74
       - BA.2.75
+      - BA.2.76
+      - BA.2.77
       - BA.3
       - BA.3.1
       - BA.4
@@ -9029,6 +9049,7 @@
       - BA.4.3
       - BA.4.4
       - BA.4.5
+      - BA.4.6
       - BA.5
       - BA.5.1
       - BA.5.1.1
@@ -9038,6 +9059,7 @@
       - BA.5.2.1
       - BA.5.2.2
       - BA.5.2.3
+      - BA.5.2.4
       - BA.5.3
       - BA.5.3.1
       - BA.5.3.2
@@ -9052,11 +9074,13 @@
       - BE.1
       - BE.1.1
       - BE.2
+      - BE.3
       - BF.1
       - BF.1.1
       - BF.2
       - BF.3
       - BF.4
+      - BF.5
       - BG.1
       - BG.2
       - BG.3
@@ -9478,6 +9502,8 @@
       - BA.2.73
       - BA.2.74
       - BA.2.75
+      - BA.2.76
+      - BA.2.77
   parent: B.1.1.529
 - name: BA.2.1
   children:
@@ -9955,6 +9981,14 @@
   children:
       - BA.2.75
   parent: BA.2
+- name: BA.2.76
+  children:
+      - BA.2.76
+  parent: BA.2
+- name: BA.2.77
+  children:
+      - BA.2.77
+  parent: BA.2
 - name: BA.3
   children:
       - BA.3
@@ -9976,6 +10010,7 @@
       - BA.4.3
       - BA.4.4
       - BA.4.5
+      - BA.4.6
   parent: B.1.1.529
 - name: BA.4.1
   children:
@@ -10017,6 +10052,10 @@
   children:
       - BA.4.5
   parent: BA.4
+- name: BA.4.6
+  children:
+      - BA.4.6
+  parent: BA.4
 - name: BA.5
   children:
       - BA.5
@@ -10028,6 +10067,7 @@
       - BA.5.2.1
       - BA.5.2.2
       - BA.5.2.3
+      - BA.5.2.4
       - BA.5.3
       - BA.5.3.1
       - BA.5.3.2
@@ -10062,11 +10102,37 @@
       - BA.5.2.1
       - BA.5.2.2
       - BA.5.2.3
+      - BA.5.2.4
   parent: BA.5
 - name: BA.5.2.1
   children:
       - BA.5.2.1
   parent: BA.5.2
+- name: BF.1
+  children:
+      - BF.1
+      - BF.1.1
+  parent: B.1.1.529.5.2.1
+- name: BF.1.1
+  children:
+      - BF.1.1
+  parent: BF.1
+- name: BF.2
+  children:
+      - BF.2
+  parent: B.1.1.529.5.2.1
+- name: BF.3
+  children:
+      - BF.3
+  parent: B.1.1.529.5.2.1
+- name: BF.4
+  children:
+      - BF.4
+  parent: B.1.1.529.5.2.1
+- name: BF.5
+  children:
+      - BF.5
+  parent: B.1.1.529.5.2.1
 - name: BA.5.2.2
   children:
       - BA.5.2.2
@@ -10074,6 +10140,10 @@
 - name: BA.5.2.3
   children:
       - BA.5.2.3
+  parent: BA.5.2
+- name: BA.5.2.4
+  children:
+      - BA.5.2.4
   parent: BA.5.2
 - name: BA.5.3
   children:
@@ -10087,6 +10157,23 @@
   children:
       - BA.5.3.1
   parent: BA.5.3
+- name: BE.1
+  children:
+      - BE.1
+      - BE.1.1
+  parent: B.1.1.529.5.3.1
+- name: BE.1.1
+  children:
+      - BE.1.1
+  parent: BE.1
+- name: BE.2
+  children:
+      - BE.2
+  parent: B.1.1.529.5.3.1
+- name: BE.3
+  children:
+      - BE.3
+  parent: B.1.1.529.5.3.1
 - name: BA.5.3.2
   children:
       - BA.5.3.2
@@ -10111,40 +10198,6 @@
   children:
       - BB.2
   parent: B.1.621.1
-- name: BE.1
-  children:
-      - BE.1
-      - BE.1.1
-  parent: B.1.1.529.5.3.1
-- name: BE.2
-  children:
-      - BE.2
-  parent: B.1.1.529.5.3.1
-- name: BE.1.1
-  children:
-      - BE.1.1
-  parent: BE.1
-- name: BF.1
-  children:
-      - BF.1
-      - BF.1.1
-  parent: B.1.1.529.5.2.1
-- name: BF.1.1
-  children:
-      - BF.1.1
-  parent: BF.1
-- name: BF.2
-  children:
-      - BF.2
-  parent: B.1.1.529.5.2.1
-- name: BF.3
-  children:
-      - BF.3
-  parent: B.1.1.529.5.2.1
-- name: BF.4
-  children:
-      - BF.4
-  parent: B.1.1.529.5.2.1
 - name: B.1.2
   children:
       - B.1.2
