@@ -3370,6 +3370,7 @@
       - BA.2.3.16
       - BA.2.3.17
       - BA.2.3.18
+      - BA.2.3.19
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -3510,6 +3511,8 @@
       - BF.3
       - BF.4
       - BF.5
+      - BF.6
+      - BF.7
       - BG.1
       - BG.2
       - BG.3
@@ -5352,6 +5355,7 @@
       - BA.2.3.16
       - BA.2.3.17
       - BA.2.3.18
+      - BA.2.3.19
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -5492,6 +5496,8 @@
       - BF.3
       - BF.4
       - BF.5
+      - BF.6
+      - BF.7
       - BG.1
       - BG.2
       - BG.3
@@ -6216,6 +6222,7 @@
       - BA.2.3.16
       - BA.2.3.17
       - BA.2.3.18
+      - BA.2.3.19
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -6354,6 +6361,8 @@
       - BF.3
       - BF.4
       - BF.5
+      - BF.6
+      - BF.7
       - BG.1
       - BG.2
       - BG.3
@@ -8971,6 +8980,7 @@
       - BA.2.3.16
       - BA.2.3.17
       - BA.2.3.18
+      - BA.2.3.19
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -9109,6 +9119,8 @@
       - BF.3
       - BF.4
       - BF.5
+      - BF.6
+      - BF.7
       - BG.1
       - BG.2
       - BG.3
@@ -9445,6 +9457,7 @@
       - BA.2.3.16
       - BA.2.3.17
       - BA.2.3.18
+      - BA.2.3.19
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -9572,6 +9585,7 @@
       - BA.2.3.16
       - BA.2.3.17
       - BA.2.3.18
+      - BA.2.3.19
   parent: BA.2
 - name: BA.2.3.1
   children:
@@ -9644,6 +9658,10 @@
 - name: BA.2.3.18
   children:
       - BA.2.3.18
+  parent: BA.2.3
+- name: BA.2.3.19
+  children:
+      - BA.2.3.19
   parent: BA.2.3
 - name: BA.2.4
   children:
@@ -10199,6 +10217,14 @@
 - name: BF.5
   children:
       - BF.5
+  parent: B.1.1.529.5.2.1
+- name: BF.6
+  children:
+      - BF.6
+  parent: B.1.1.529.5.2.1
+- name: BF.7
+  children:
+      - BF.7
   parent: B.1.1.529.5.2.1
 - name: BA.5.2.2
   children:
@@ -16175,29 +16201,3 @@
 - name: B.1.278
   children:
       - B.1.278
-  parent: B.1
-- name: B.1.283
-  children:
-      - B.1.283
-  parent: B.1
-- name: B.1.286
-  children:
-      - B.1.286
-  parent: B.1
-- name: B.1.288
-  children:
-      - B.1.288
-  parent: B.1
-- name: B.1.290
-  children:
-      - B.1.290
-  parent: B.1
-- name: B.1.295
-  children:
-      - B.1.295
-  parent: B.1
-- name: B.1.296
-  children:
-      - B.1.296
-  parent: B.1
-- name: B.1.297
