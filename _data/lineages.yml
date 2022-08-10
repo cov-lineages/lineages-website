@@ -3382,6 +3382,7 @@
       - BA.2.9.3
       - BA.2.9.4
       - BA.2.9.5
+      - BA.2.9.6
       - BA.2.10
       - BA.2.10.1
       - BA.2.10.2
@@ -3543,6 +3544,7 @@
       - BG.4
       - BG.5
       - BG.6
+      - BH.1
       - C.1
       - C.1.1
       - C.1.2
@@ -5393,6 +5395,7 @@
       - BA.2.9.3
       - BA.2.9.4
       - BA.2.9.5
+      - BA.2.9.6
       - BA.2.10
       - BA.2.10.1
       - BA.2.10.2
@@ -5554,6 +5557,7 @@
       - BG.4
       - BG.5
       - BG.6
+      - BH.1
       - C.1
       - C.1.1
       - C.1.2
@@ -6286,6 +6290,7 @@
       - BA.2.9.3
       - BA.2.9.4
       - BA.2.9.5
+      - BA.2.9.6
       - BA.2.10
       - BA.2.10.1
       - BA.2.10.2
@@ -6445,6 +6450,7 @@
       - BG.4
       - BG.5
       - BG.6
+      - BH.1
       - C.1
       - C.1.1
       - C.1.2
@@ -9070,6 +9076,7 @@
       - BA.2.9.3
       - BA.2.9.4
       - BA.2.9.5
+      - BA.2.9.6
       - BA.2.10
       - BA.2.10.1
       - BA.2.10.2
@@ -9229,6 +9236,7 @@
       - BG.4
       - BG.5
       - BG.6
+      - BH.1
   parent: B.1.1
 - name: BA.1
   children:
@@ -9573,6 +9581,7 @@
       - BA.2.9.3
       - BA.2.9.4
       - BA.2.9.5
+      - BA.2.9.6
       - BA.2.10
       - BA.2.10.1
       - BA.2.10.2
@@ -9799,6 +9808,7 @@
       - BA.2.9.3
       - BA.2.9.4
       - BA.2.9.5
+      - BA.2.9.6
   parent: BA.2
 - name: BA.2.9.1
   children:
@@ -9819,6 +9829,10 @@
 - name: BA.2.9.5
   children:
       - BA.2.9.5
+  parent: BA.2.9
+- name: BA.2.9.6
+  children:
+      - BA.2.9.6
   parent: BA.2.9
 - name: BA.2.10
   children:
@@ -9877,6 +9891,10 @@
   children:
       - BG.6
   parent: B.1.1.529.2.12.1
+- name: BH.1
+  children:
+      - BH.1
+  parent: B.1.1.529.2.38.3
 - name: BA.2.12.2
   children:
       - BA.2.12.2
@@ -16722,20 +16740,3 @@
 - name: AY.12
   children:
       - AY.12
-  parent: B.1.617.2
-- name: AY.75.1
-  children:
-      - AY.75.1
-  parent: AY.75
-- name: AY.89
-  children:
-      - AY.89
-  parent: B.1.617.2
-- name: AY.96
-  children:
-      - AY.96
-  parent: B.1.617.2
-- name: AY.97
-  children:
-      - AY.97
-  parent: B.1.617.2
