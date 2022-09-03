@@ -3371,6 +3371,7 @@
       - BA.2.3.17
       - BA.2.3.18
       - BA.2.3.19
+      - BA.2.3.20
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -3538,6 +3539,7 @@
       - BA.5.5
       - BA.5.5.1
       - BA.5.5.2
+      - BA.5.5.3
       - BA.5.6
       - BA.5.6.1
       - BA.5.6.2
@@ -3580,6 +3582,7 @@
       - BF.19
       - BF.20
       - BF.21
+      - BF.22
       - BG.1
       - BG.2
       - BG.3
@@ -3591,6 +3594,9 @@
       - BK.1
       - BL.1
       - BM.1
+      - BN.1
+      - BP.1
+      - BQ.1
       - C.1
       - C.1.1
       - C.1.2
@@ -5430,6 +5436,7 @@
       - BA.2.3.17
       - BA.2.3.18
       - BA.2.3.19
+      - BA.2.3.20
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -5597,6 +5604,7 @@
       - BA.5.5
       - BA.5.5.1
       - BA.5.5.2
+      - BA.5.5.3
       - BA.5.6
       - BA.5.6.1
       - BA.5.6.2
@@ -5639,6 +5647,7 @@
       - BF.19
       - BF.20
       - BF.21
+      - BF.22
       - BG.1
       - BG.2
       - BG.3
@@ -5650,6 +5659,9 @@
       - BK.1
       - BL.1
       - BM.1
+      - BN.1
+      - BP.1
+      - BQ.1
       - C.1
       - C.1.1
       - C.1.2
@@ -6371,6 +6383,7 @@
       - BA.2.3.17
       - BA.2.3.18
       - BA.2.3.19
+      - BA.2.3.20
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -6538,6 +6551,7 @@
       - BA.5.5
       - BA.5.5.1
       - BA.5.5.2
+      - BA.5.5.3
       - BA.5.6
       - BA.5.6.1
       - BA.5.6.2
@@ -6578,6 +6592,7 @@
       - BF.19
       - BF.20
       - BF.21
+      - BF.22
       - BG.1
       - BG.2
       - BG.3
@@ -6589,6 +6604,9 @@
       - BK.1
       - BL.1
       - BM.1
+      - BN.1
+      - BP.1
+      - BQ.1
       - C.1
       - C.1.1
       - C.1.2
@@ -9203,6 +9221,7 @@
       - BA.2.3.17
       - BA.2.3.18
       - BA.2.3.19
+      - BA.2.3.20
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -9370,6 +9389,7 @@
       - BA.5.5
       - BA.5.5.1
       - BA.5.5.2
+      - BA.5.5.3
       - BA.5.6
       - BA.5.6.1
       - BA.5.6.2
@@ -9410,6 +9430,7 @@
       - BF.19
       - BF.20
       - BF.21
+      - BF.22
       - BG.1
       - BG.2
       - BG.3
@@ -9421,6 +9442,9 @@
       - BK.1
       - BL.1
       - BM.1
+      - BN.1
+      - BP.1
+      - BQ.1
   parent: B.1.1
 - name: BA.1
   children:
@@ -9754,6 +9778,7 @@
       - BA.2.3.17
       - BA.2.3.18
       - BA.2.3.19
+      - BA.2.3.20
       - BA.2.4
       - BA.2.5
       - BA.2.6
@@ -9895,6 +9920,7 @@
       - BA.2.3.17
       - BA.2.3.18
       - BA.2.3.19
+      - BA.2.3.20
   parent: BA.2
 - name: BA.2.3.1
   children:
@@ -9960,6 +9986,10 @@
   children:
       - BA.2.3.16
   parent: BA.2.3
+- name: BP.1
+  children:
+      - BP.1
+  parent: B.1.1.529.2.3.16
 - name: BA.2.3.17
   children:
       - BA.2.3.17
@@ -9971,6 +10001,10 @@
 - name: BA.2.3.19
   children:
       - BA.2.3.19
+  parent: BA.2.3
+- name: BA.2.3.20
+  children:
+      - BA.2.3.20
   parent: BA.2.3
 - name: BA.2.4
   children:
@@ -10430,6 +10464,10 @@
   children:
       - BA.2.75.5
   parent: BA.2.75
+- name: BN.1
+  children:
+      - BN.1
+  parent: B.1.1.529.2.75.5
 - name: BA.2.76
   children:
       - BA.2.76
@@ -10611,6 +10649,7 @@
       - BA.5.5
       - BA.5.5.1
       - BA.5.5.2
+      - BA.5.5.3
       - BA.5.6
       - BA.5.6.1
       - BA.5.6.2
@@ -10827,6 +10866,10 @@
   children:
       - BF.21
   parent: B.1.1.529.5.2.1
+- name: BF.22
+  children:
+      - BF.22
+  parent: B.1.1.529.5.2.1
 - name: BA.5.2.2
   children:
       - BA.5.2.2
@@ -10900,6 +10943,10 @@
   children:
       - BE.1.1.1
   parent: BE.1.1
+- name: BQ.1
+  children:
+      - BQ.1
+  parent: B.1.1.529.5.3.1.1.1.1
 - name: BE.1.2
   children:
       - BE.1.2
@@ -10933,6 +10980,7 @@
       - BA.5.5
       - BA.5.5.1
       - BA.5.5.2
+      - BA.5.5.3
   parent: BA.5
 - name: BA.5.5.1
   children:
@@ -10941,6 +10989,10 @@
 - name: BA.5.5.2
   children:
       - BA.5.5.2
+  parent: BA.5.5
+- name: BA.5.5.3
+  children:
+      - BA.5.5.3
   parent: BA.5.5
 - name: BA.5.6
   children:
@@ -10972,10 +11024,6 @@
   children:
       - BA.5.10
   parent: BA.5
-- name: BB.2
-  children:
-      - BB.2
-  parent: B.1.621.1
 - name: B.1.2
   children:
       - B.1.2
@@ -15602,6 +15650,10 @@
       - BB.1
       - BB.2
   parent: B.1.621
+- name: BB.2
+  children:
+      - BB.2
+  parent: B.1.621.1
 - name: B.1.621.2
   children:
       - B.1.621.2
