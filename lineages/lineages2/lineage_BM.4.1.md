@@ -5,5 +5,5 @@ title: Lineage BM.4.1
 redirect_to: ../lineage.html?lineage=BM.4.1
 lineage: BM.4.1
 parent: BM.4
-children: ['BM.4.1']
+children: ['BM.4.1', 'BM.4.1.1']
 ---
