@@ -5,5 +5,5 @@ title: Lineage XBC
 redirect_to: ../lineage.html?lineage=XBC
 lineage: XBC
 parent: 
-children: ['XBC']
+children: ['XBC', 'XBC.1']
 ---
