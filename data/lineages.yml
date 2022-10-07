@@ -3615,6 +3615,7 @@
       - BF.5
       - BF.6
       - BF.7
+      - BF.7.1
       - BF.8
       - BF.9
       - BF.10
@@ -5774,6 +5775,7 @@
       - BF.5
       - BF.6
       - BF.7
+      - BF.7.1
       - BF.8
       - BF.9
       - BF.10
@@ -6813,6 +6815,7 @@
       - BF.5
       - BF.6
       - BF.7
+      - BF.7.1
       - BF.8
       - BF.9
       - BF.10
@@ -9745,6 +9748,7 @@
       - BF.5
       - BF.6
       - BF.7
+      - BF.7.1
       - BF.8
       - BF.9
       - BF.10
@@ -11456,7 +11460,12 @@
 - name: BF.7
   children:
       - BF.7
+      - BF.7.1
   parent: B.1.1.529.5.2.1
+- name: BF.7.1
+  children:
+      - BF.7.1
+  parent: BF.7
 - name: BF.8
   children:
       - BF.8
