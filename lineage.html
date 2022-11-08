@@ -282,80 +282,78 @@ layout: default
 
 
             d3.csv("https://raw.githubusercontent.com/cov-lineages/cov-support/master/cov_support/data/country_coordinates.csv", function(coordsCsv) {
-                let url = "https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/";
-                Promise.all([
-                    d3.json(url + "lineage_data_1.json"),
-                    d3.json(url + "lineage_data_2.json"),
-                    d3.json(url + "lineage_data_3.json"),
-                    d3.json(url + "lineage_data_4.json"),
-                    d3.json(url + "lineage_data_5.json")
-                ]).then(function(allData) {
-                    let metadata = d3.merge(allData);
-                    if(!metadata[selectedLineage]) {
-                        window.location.href = "./lineage_list.html";
-                    }
-                    $("#description").html(metadata[selectedLineage]["Description"]);
-                    $("#countries").html("<b>Most Common Countries</b>: " + metadata[selectedLineage]["Countries"]);
-                    $("#earliest_date").html("<b>Earliest Date</b>: " + metadata[selectedLineage]["Earliest date"]);
-                    $("#num_designated").html("<b>Number Designated</b>: " + metadata[selectedLineage]["Number designated"]);
-                    $("#num_assigned").html("<b>Number Assigned</b>: " + metadata[selectedLineage]["Number assigned"]);
+                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_0.json", function(metadata0) {
+                    d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_1.json", function(metadata1) {
+                        d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_2.json", function(metadata2) {
+                            d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_3.json", function(metadata3) {
+                                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_4.json", function(metadata4) {
+                                    var metadata = d3.merge([metadata0, metadata1, metadata2, metadata3, metadata4]);
+                                    if (!metadata[selectedLineage]) {
+                                        window.location.href = "./lineage_list.html";
+                                    }
 
-                  for(var child of children) {
-                  	if(metadata[child]) {
-                  		var rowString = "";
 
-	                  	if(child.indexOf("*") > 0) {
-	                  		rowString = "<tr><td>"+child+"</td>";
-	                  	} else {
-	                  		rowString = "<tr><td><a href=\"./lineage.html?lineage="+child+"\">"+child+"</a></td>";
-	                  	}
+                                    $("#description").html(metadata[selectedLineage]["Description"]);
+                                    $("#countries").html("<b>Most Common Countries</b>: " + metadata[selectedLineage]["Countries"]);
+                                    $("#earliest_date").html("<b>Earliest Date</b>: " + metadata[selectedLineage]["Earliest date"]);
+                                    $("#num_designated").html("<b>Number Designated</b>: " + metadata[selectedLineage]["Number designated"]);
+                                    $("#num_assigned").html("<b>Number Assigned</b>: " + metadata[selectedLineage]["Number assigned"]);
 
-                      var who_id = "who_" + child.replace(/\./g, "_");
+                                    for (var child of children) {
+                                        if (metadata[child]) {
+                                            var rowString = "";
 
-	                  	rowString = rowString + "<td>"+metadata[child]["Countries"]+"</td>";
-	                  	rowString = rowString + "<td>"+metadata[child]["Earliest date"]+"</td>";
-	                  	rowString = rowString + "<td>"+metadata[child]["Number designated"]+"</td>";
-	                  	rowString = rowString + "<td>"+metadata[child]["Number assigned"]+"</td>";
-	                  	rowString = rowString + "<td>"+metadata[child]["Description"]+"</td>";
-	                  	rowString = rowString + "<td id=\""+who_id+"\"></td></td>"
+                                            if (child.indexOf("*") > 0) {
+                                                rowString = "<tr><td>" + child + "</td>";
+                                            } else {
+                                                rowString = "<tr><td><a href=\"./lineage.html?lineage=" + child + "\">" + child + "</a></td>";
+                                            }
 
-	                  	$("#myTable").append(rowString);
-                  	}
-                  }
+                                            var who_id = "who_" + child.replace(/\./g, "_");
 
-                  if(children.length == 1 && children[0] != selectedLineage) {
-                  	$("#myTable").append("<tr><td>No descendent lineages found</td></tr>");
-                  }
+                                            rowString = rowString + "<td>" + metadata[child]["Countries"] + "</td>";
+                                            rowString = rowString + "<td>" + metadata[child]["Earliest date"] + "</td>";
+                                            rowString = rowString + "<td>" + metadata[child]["Number designated"] + "</td>";
+                                            rowString = rowString + "<td>" + metadata[child]["Number assigned"] + "</td>";
+                                            rowString = rowString + "<td>" + metadata[child]["Description"] + "</td>";
+                                            rowString = rowString + "<td id=\"" + who_id + "\"></td></td>"
 
-                  $(".footer").css('top', document.documentElement.scrollHeight);
+                                            $("#myTable").append(rowString);
+                                        }
+                                    }
 
-                  var relevantDefs =  new Map();
+                                    if (children.length == 1 && children[0] != selectedLineage) {
+                                        $("#myTable").append("<tr><td>No descendent lineages found</td></tr>");
+                                    }
 
-                  getOtherNames=function(lineage) {
+                                    $(".footer").css('top', document.documentElement.scrollHeight);
 
-                    if(relevantDefs.get(lineage) == true) {
+                                    var relevantDefs = new Map();
 
-                        var pageName = "c" + lineage + ".json";
-                        var directory = "https://raw.githubusercontent.com/cov-lineages/constellations/main/constellations/definitions/";
-                      
-                            d3.json(directory + pageName, function(json){
-                              whoName = json["variant"]["WHO_label"];
+                                    getOtherNames = function (lineage) {
 
-                                // add to UI
+                                        if (relevantDefs.get(lineage) == true) {
 
-                                if(whoName && whoName.length > 0) {
+                                            var pageName = "c" + lineage + ".json";
+                                            var directory = "https://raw.githubusercontent.com/cov-lineages/constellations/main/constellations/definitions/";
 
-                                  var id = "who_" + lineage;
+                                            d3.json(directory + pageName, function (json) {
+                                                whoName = json["variant"]["WHO_label"];
 
-                                  id = id.replace(/\./g, "_");
+                                                // add to UI
 
-                                  $("#" + id).text(whoName);
-                                }
-                            });
-                           
-                        
-                    }
-                  }
+                                                if (whoName && whoName.length > 0) {
+
+                                                    var id = "who_" + lineage;
+
+                                                    id = id.replace(/\./g, "_");
+
+                                                    $("#" + id).text(whoName);
+                                                }
+                                            });
+
+                                        };
+                                    };
 
                   
                   var url = "https://api.github.com/repos/cov-lineages/constellations/contents/constellations/definitions"
@@ -566,6 +564,10 @@ layout: default
 
 			    });
 			  });
+                        });
+                    });
+                });
+            });
       	}
       }
   });
