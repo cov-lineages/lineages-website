@@ -281,26 +281,24 @@ layout: default
 
 
 
-      		d3.csv("https://raw.githubusercontent.com/cov-lineages/cov-support/master/cov_support/data/country_coordinates.csv", function(coordsCsv) {
-			    d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data.json",function(metadata) {
-			      /*metadata = metadata.filter(function(d) {
-			        if(d.lineage == selectedLineage || children.includes(d.lineage)) {
-			          return true;
-			        }
-			        return false;
-			      });*/
-
-                  if(!metadata[selectedLineage]) {
-                    window.location.href = "./lineage_list.html";
-                  }
-
-
-			           $("#description").html(metadata[selectedLineage]["Description"]);
-                 $("#countries").html("<b>Most Common Countries</b>: " + metadata[selectedLineage]["Countries"]);
-                 $("#earliest_date").html("<b>Earliest Date</b>: " + metadata[selectedLineage]["Earliest date"]);
-                 $("#num_designated").html("<b>Number Designated</b>: " + metadata[selectedLineage]["Number designated"]);
-                 $("#num_assigned").html("<b>Number Assigned</b>: " + metadata[selectedLineage]["Number assigned"]);
-
+            d3.csv("https://raw.githubusercontent.com/cov-lineages/cov-support/master/cov_support/data/country_coordinates.csv", function(coordsCsv) {
+                let url = "https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/";
+                Promise.all([
+                    d3.json(url + "lineage_data_1.json"),
+                    d3.json(url + "lineage_data_2.json"),
+                    d3.json(url + "lineage_data_3.json"),
+                    d3.json(url + "lineage_data_4.json"),
+                    d3.json(url + "lineage_data_5.json")
+                ]).then(function(allData) {
+                    let metadata = d3.merge(allData);
+                    if(!metadata[selectedLineage]) {
+                        window.location.href = "./lineage_list.html";
+                    }
+                    $("#description").html(metadata[selectedLineage]["Description"]);
+                    $("#countries").html("<b>Most Common Countries</b>: " + metadata[selectedLineage]["Countries"]);
+                    $("#earliest_date").html("<b>Earliest Date</b>: " + metadata[selectedLineage]["Earliest date"]);
+                    $("#num_designated").html("<b>Number Designated</b>: " + metadata[selectedLineage]["Number designated"]);
+                    $("#num_assigned").html("<b>Number Assigned</b>: " + metadata[selectedLineage]["Number assigned"]);
 
                   for(var child of children) {
                   	if(metadata[child]) {
