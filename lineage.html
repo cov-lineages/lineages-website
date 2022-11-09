@@ -281,11 +281,11 @@ layout: default
 
 
             d3.csv("https://raw.githubusercontent.com/cov-lineages/cov-support/master/cov_support/data/country_coordinates.csv", function (coordsCsv) {
-                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_0.json", function (metadata0) {
-                    d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_1.json", function (metadata1) {
-                        d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_2.json", function (metadata2) {
-                            d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_3.json", function (metadata3) {
-                                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_4.json", function (metadata4) {
+                d3.json("https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/lineage_data_0.json", function (metadata0) {
+                    d3.json("https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/lineage_data_1.json", function (metadata1) {
+                        d3.json("https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/lineage_data_2.json", function (metadata2) {
+                            d3.json("https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/lineage_data_3.json", function (metadata3) {
+                                d3.json("https://raw.githubusercontent.com/cov-lineages/lineages-website/master/_data/lineage_data_4.json", function (metadata4) {
                                     var metadata = metadata0.concat(metadata1, metadata2, metadata3, metadata4);
                                     if (!metadata[selectedLineage]) {
                                         window.location.href = "./lineage_list.html";
