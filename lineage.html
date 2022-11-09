@@ -280,18 +280,16 @@ layout: default
       		}
 
 
-
-            d3.csv("https://raw.githubusercontent.com/cov-lineages/cov-support/master/cov_support/data/country_coordinates.csv", function(coordsCsv) {
-                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_0.json", function(metadata0) {
-                    d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_1.json", function(metadata1) {
-                        d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_2.json", function(metadata2) {
-                            d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_3.json", function(metadata3) {
-                                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_4.json", function(metadata4) {
+            d3.csv("https://raw.githubusercontent.com/cov-lineages/cov-support/master/cov_support/data/country_coordinates.csv", function (coordsCsv) {
+                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_0.json", function (metadata0) {
+                    d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_1.json", function (metadata1) {
+                        d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_2.json", function (metadata2) {
+                            d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_3.json", function (metadata3) {
+                                d3.json("https://media.githubusercontent.com/media/cov-lineages/lineages-website/master/_data/lineage_data_4.json", function (metadata4) {
                                     var metadata = metadata0.concat(metadata1, metadata2, metadata3, metadata4);
                                     if (!metadata[selectedLineage]) {
                                         window.location.href = "./lineage_list.html";
                                     }
-
 
                                     $("#description").html(metadata[selectedLineage]["Description"]);
                                     $("#countries").html("<b>Most Common Countries</b>: " + metadata[selectedLineage]["Countries"]);
@@ -352,223 +350,210 @@ layout: default
                                                 }
                                             });
 
-                                        };
-                                    };
+                                        }
+                                    }
 
-                  
-                  var url = "https://api.github.com/repos/cov-lineages/constellations/contents/constellations/definitions"
+                                    var url = "https://api.github.com/repos/cov-lineages/constellations/contents/constellations/definitions"
 
-                  d3.json(url, function(json){
-                      for(var c of json) {
-                        var name = c.name;
+                                    d3.json(url, function (json) {
+                                        for (var c of json) {
+                                            var name = c.name;
 
-                        name = name.split("\.json")[0];
-                        name = name.substring(1);
+                                            name = name.split("\.json")[0];
+                                            name = name.substring(1);
 
-                        relevantDefs.set(name, true);
-                      }
+                                            relevantDefs.set(name, true);
+                                        }
 
-                      for(var row of $("#myTable").children()) {
-                        var child = row.children[6];
+                                        for (var row of $("#myTable").children()) {
+                                            var child = row.children[6];
 
-                        if(!child) {
-                          console.log("wonky row");
-                          console.log(row);
-                        } else {
-                          var id = child.id;
-                          var lineage = id.split("who_")[1];
-                          lineage = lineage.replace(/_/g, ".");
+                                            if (!child) {
+                                                console.log("wonky row");
+                                                console.log(row);
+                                            } else {
+                                                var id = child.id;
+                                                var lineage = id.split("who_")[1];
+                                                lineage = lineage.replace(/_/g, ".");
 
-                          getOtherNames(lineage);
+                                                getOtherNames(lineage);
 
-                        }
+                                            }
 
-                        
-                      }
 
-                        
-                    });
+                                        }
 
 
+                                    });
 
-			      var countryCentroidMap = new Map();
+                                    var countryCentroidMap = new Map();
 
-			      coordsCsv.forEach(function(country) {
-			        countryCentroidMap[country.Country.toUpperCase()] = country;
+                                    coordsCsv.forEach(function (country) {
+                                        countryCentroidMap[country.Country.toUpperCase()] = country;
 
-			        var key = country.Country.toUpperCase();
+                                        var key = country.Country.toUpperCase();
 
-			        if(key == "USA") {
-			          countryCentroidMap["UNITED STATES OF AMERICA"] = country;
-			        }
+                                        if (key == "USA") {
+                                            countryCentroidMap["UNITED STATES OF AMERICA"] = country;
+                                        }
 
-			        if(key == "CONGO") {
-			          countryCentroidMap["DEMOCRATIC REPUBLIC OF THE CONGO"] = country;
-			          countryCentroidMap["REPUBLIC_OF_THE_CONGO"] = country;
-			        }
+                                        if (key == "CONGO") {
+                                            countryCentroidMap["DEMOCRATIC REPUBLIC OF THE CONGO"] = country;
+                                            countryCentroidMap["REPUBLIC_OF_THE_CONGO"] = country;
+                                        }
 
-			        if(key == "UK") {
-			          countryCentroidMap["UNITED KINGDOM"] = country;
-			        }
+                                        if (key == "UK") {
+                                            countryCentroidMap["UNITED KINGDOM"] = country;
+                                        }
 
-			        if(key == "TIMOR-LESTE") {
-			          countryCentroidMap["EAST TIMOR"] = country;
-			        }
+                                        if (key == "TIMOR-LESTE") {
+                                            countryCentroidMap["EAST TIMOR"] = country;
+                                        }
 
-			        if(key == "SERBIA") {
-			          countryCentroidMap["REPUBLIC OF SERBIA"] = country;
-			        }
+                                        if (key == "SERBIA") {
+                                            countryCentroidMap["REPUBLIC OF SERBIA"] = country;
+                                        }
 
-			        if(key == "PALESTINIAN_TERRITORIES") {
-			          countryCentroidMap["PALESTINE"] = country;
-			        }
+                                        if (key == "PALESTINIAN_TERRITORIES") {
+                                            countryCentroidMap["PALESTINE"] = country;
+                                        }
 
-			        if(key == "SWAZILAND") {
-			          countryCentroidMap["ESWATINI"] = country;
-			        }
+                                        if (key == "SWAZILAND") {
+                                            countryCentroidMap["ESWATINI"] = country;
+                                        }
 
-			      });
+                                    });
 
-			      var countryToCount = new Map();
-			      var dateToEntries = new Map();
+                                    var countryToCount = new Map();
+                                    var dateToEntries = new Map();
+                                    var dateToRegions = {};
 
-			      var dateToRegions = {};
+                                    var lineages = children;
 
-			      var lineages = children;
+                                    if (!lineages.includes(selectedLineage)) {
+                                        lineages.push(selectedLineage);
+                                    }
 
-			      if(!lineages.includes(selectedLineage)) {
-			        lineages.push(selectedLineage);
-			      }
+                                    var sum = 0;
+                                    lineages.forEach(function (key) {
+                                        if (key in metadata) {
+                                            metadata[key]["Country counts"].forEach(function (c) {
+                                                c.counts.forEach(function (count) {
 
+                                                    if (countryCentroidMap[c.country.toUpperCase()]) {
 
+                                                        if (!dateToRegions[count.date]) {
+                                                            dateToRegions[count.date] = {
+                                                                Africa: 0,
+                                                                Antarctica: 0,
+                                                                Asia: 0,
+                                                                Europe: 0,
+                                                                NorthAmerica: 0,
+                                                                Oceania: 0,
+                                                                SouthAmerica: 0,
+                                                                date: count.date
+                                                            }
+                                                        }
 
-			      var sum = 0;
-			      lineages.forEach(function(key) {
+                                                        var region = countryCentroidMap[c.country.toUpperCase()].Continent;
 
-			        if(key in metadata) {
+                                                        dateToRegions[count.date][region] = dateToRegions[count.date][region] + count.count;
 
-			          metadata[key]["Country counts"].forEach(function(c) {
-			            c.counts.forEach(function(count) {
-			              
-			              if(countryCentroidMap[c.country.toUpperCase()]) {
+                                                    }
 
-			                if(!dateToRegions[count.date]) {
-			                    dateToRegions[count.date] = {
-			                      Africa: 0,
-			                      Antarctica: 0,
-			                      Asia: 0,
-			                      Europe: 0,
-			                      NorthAmerica: 0,
-			                      Oceania: 0,
-			                      SouthAmerica: 0,
-			                      date: count.date
-			                    }
-			                  }
+                                                    countryName = c.country.toUpperCase();
 
-			                  var region = countryCentroidMap[c.country.toUpperCase()].Continent;
+                                                    if (!countryToCount[countryName]) {
+                                                        countryToCount[countryName] = 0;
+                                                    }
 
-			                  dateToRegions[count.date][region] = dateToRegions[count.date][region] + count.count;
-			              
-			              }
+                                                    countryToCount[countryName] = countryToCount[countryName] + count.count;
 
-			              countryName = c.country.toUpperCase();
 
-			              if(!countryToCount[countryName]) {
-			                countryToCount[countryName] = 0;
-			              }
+                                                });
+                                            });
+                                        }
+                                    });
 
-			              countryToCount[countryName] = countryToCount[countryName] + count.count;
+                                    initialData = [];
+                                    barChartData = [];
+                                    dateChartData = Object.entries(dateToRegions);
 
+                                    Object.keys(countryToCount).forEach(function (c) {
+                                        c = c.toUpperCase();
 
-			            });
-			          });
-			        }
-			        
+                                        if (c == "USA" || c == "UNITED_STATES") {
+                                            c = "UNITED STATES OF AMERICA"
+                                        }
 
-			      });
+                                        if (c == "CONGO" || c == "REPUBLIC_OF_THE_CONGO") {
+                                            c = "DEMOCRATIC REPUBLIC OF THE CONGO"
+                                        }
 
-			      initialData = [];
-			      barChartData = [];
-			      dateChartData = Object.entries(dateToRegions);
+                                        if (c == "UK" || c == "UNITED_KINGDOM") {
+                                            c = "UNITED KINGDOM";
+                                        }
 
+                                        if (c == "EAST TIMOR") {
+                                            c = "TIMOR-LESTE";
+                                        }
 
-			      Object.keys(countryToCount).forEach(function(c) {  
-			        c = c.toUpperCase();
+                                        if (c == "SERBIA") {
+                                            c = "REPUBLIC OF SERBIA";
+                                        }
 
-			        if(c == "USA" || c == "UNITED_STATES") {
-			          c = "UNITED STATES OF AMERICA"
-			        }
+                                        if (c == "PALESTINIAN_TERRITORIES") {
+                                            c = "PALESTINE";
+                                        }
 
-			        if(c == "CONGO" || c =="REPUBLIC_OF_THE_CONGO") {
-			          c = "DEMOCRATIC REPUBLIC OF THE CONGO"
-			        }
+                                        if (c == "SWAZILAND") {
+                                            c = "ESWATINI";
+                                        }
 
-			        if(c == "UK" || c == "UNITED_KINGDOM") {
-			          c = "UNITED KINGDOM";
-			        }
 
-			        if(c == "EAST TIMOR") {
-			          c = "TIMOR-LESTE";
-			        }
+                                        if (countryCentroidMap[c] && countryToCount[c]) {
 
-			        if(c == "SERBIA") {
-			          c = "REPUBLIC OF SERBIA";
-			        }
+                                            var entry = {
+                                                country: c,
+                                                count: countryToCount[c],
+                                                latitude: countryCentroidMap[c].Latitude,
+                                                longitude: countryCentroidMap[c].Longitude,
+                                                region: countryCentroidMap[c].Continent
+                                            }
 
-			        if(c == "PALESTINIAN_TERRITORIES") {
-			          c = "PALESTINE";
-			        }
+                                            initialData.push(entry);
 
-			        if(c == "SWAZILAND") {
-			          c = "ESWATINI";
-			        }
+                                            var barChartEntry = {
+                                                country: c,
+                                                count: countryToCount[c],
+                                                region: countryCentroidMap[c].Continent
+                                            }
 
+                                            barChartData.push(barChartEntry);
+                                        } else {
+                                            console.log("unable to find centroid or count for: '" + c + "'");
+                                        }
 
-			        if(countryCentroidMap[c] && countryToCount[c]) {
+                                        barChartData = barChartData.sort((a, b) => (a.count > b.count) ? 1 : ((b.count > a.count) ? -1 : 0));
 
-			          var entry = {
-			            country: c,
-			            count: countryToCount[c],
-			            latitude: countryCentroidMap[c].Latitude,
-			            longitude: countryCentroidMap[c].Longitude,
-			            region: countryCentroidMap[c].Continent
-			          }
+                                    });
 
-			          initialData.push(entry);
+                                    drawLocations();
+                                    drawBarChart(barChartData);
 
-			          var barChartEntry = {
-			            country: c,
-			            count: countryToCount[c],
-			            region: countryCentroidMap[c].Continent
-			          }
+                                    if (dateChartData.length > 0) {
+                                        drawDateChart(dateChartData);
+                                    } else {
+                                        $("#date_chart").hide();
+                                    }
 
-			          barChartData.push(barChartEntry);
-			        } else {
-			          console.log("unable to find centroid or count for: '" + c + "'");
-			        }
-
-			        barChartData = barChartData.sort((a,b) => (a.count > b.count) ? 1 : ((b.count > a.count) ? -1 : 0)); 
-
-			      });
-
-			      drawLocations();
-			      drawBarChart(barChartData);
-
-			      if(dateChartData.length>0) {
-			        drawDateChart(dateChartData);
-			      } else {
-			        $("#date_chart").hide();
-			      }
-
-
-
-			    });
-			  });
+                                });
+                            });
                         });
                     });
                 });
             });
-      	}
+        }
       }
   });
 
