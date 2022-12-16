@@ -4,6 +4,6 @@ layout: lineage_page
 title: Lineage CA.5
 redirect_to: ../lineage.html?lineage=CA.5
 lineage: CA.5
-parent: B.1.1.529.2.75.2
+parent: 
 children: ['CA.5']
 ---

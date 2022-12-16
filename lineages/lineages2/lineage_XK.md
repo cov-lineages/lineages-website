@@ -4,6 +4,6 @@ layout: lineage_page
 title: Lineage XK
 redirect_to: ../lineage.html?lineage=XK
 lineage: XK
-parent: 
+parent: None
 children: ['XK']
 ---
