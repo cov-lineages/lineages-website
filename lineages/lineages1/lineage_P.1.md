@@ -5,5 +5,5 @@ title: Lineage P.1
 redirect_to: ../lineage.html?lineage=P.1
 lineage: P.1
 parent: B.1.1.28
-children: ['P.1', 'P.1.2', 'P.1.6', 'P.1.7', 'P.1.7.1', 'P.1.9', 'P.1.12', 'P.1.12.1', 'P.1.14', 'P.1.15', 'P.1.16', 'P.1.17']
+children: ['P.1', 'P.1.7.1', 'P.1.12', 'P.1.14', 'P.1.15']
 ---

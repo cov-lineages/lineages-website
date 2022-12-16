@@ -4,6 +4,6 @@ layout: lineage_page
 title: Lineage BR.2
 redirect_to: ../lineage.html?lineage=BR.2
 lineage: BR.2
-parent: B.1.1.529.2.75.4
+parent: 
 children: ['BR.2']
 ---

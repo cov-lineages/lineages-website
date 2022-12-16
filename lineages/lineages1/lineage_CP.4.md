@@ -4,6 +4,6 @@ layout: lineage_page
 title: Lineage CP.4
 redirect_to: ../lineage.html?lineage=CP.4
 lineage: CP.4
-parent: B.1.1.529.5.2.6
+parent: 
 children: ['CP.4']
 ---
