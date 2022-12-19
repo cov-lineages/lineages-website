@@ -5,5 +5,5 @@ title: Lineage CA.3
 redirect_to: ../lineage.html?lineage=CA.3
 lineage: CA.3
 parent: 
-children: ['CA.3']
+children: ['CA.3', 'CA.3.1']
 ---
