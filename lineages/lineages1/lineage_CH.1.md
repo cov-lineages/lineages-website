@@ -5,5 +5,5 @@ title: Lineage CH.1
 redirect_to: ../lineage.html?lineage=CH.1
 lineage: CH.1
 parent: 
-children: ['CH.1', 'CH.1.1']
+children: ['CH.1', 'CH.1.1', 'CH.1.1.1', 'CH.1.1.2']
 ---

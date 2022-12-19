@@ -5,5 +5,5 @@ title: Lineage CQ.1
 redirect_to: ../lineage.html?lineage=CQ.1
 lineage: CQ.1
 parent: 
-children: ['CQ.1']
+children: ['CQ.1', 'CQ.1.1']
 ---
