@@ -5,5 +5,5 @@ title: Lineage BQ.1.13
 redirect_to: ../lineage.html?lineage=BQ.1.13
 lineage: BQ.1.13
 parent: BQ.1
-children: ['BQ.1.13']
+children: ['BQ.1.13', 'BQ.1.13.1']
 ---
