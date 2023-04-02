@@ -1,9 +1,0 @@
----
-permalink: /lineages/lineage_AY.3.html
-layout: lineage_page
-title: Lineage AY.3
-redirect_to: ../lineage.html?lineage=AY.3
-lineage: AY.3
-parent: B.1.617.2
-children: ['AY.3']
----
