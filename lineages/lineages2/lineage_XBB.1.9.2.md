@@ -4,6 +4,6 @@ layout: lineage_page
 title: Lineage XBB.1.9.2
 redirect_to: ../lineage.html?lineage=XBB.1.9.2
 lineage: XBB.1.9.2
-parent: None
+parent: XBB.1.9
 children: ['XBB.1.9.2']
 ---
