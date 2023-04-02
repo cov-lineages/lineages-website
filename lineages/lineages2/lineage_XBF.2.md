@@ -4,6 +4,6 @@ layout: lineage_page
 title: Lineage XBF.2
 redirect_to: ../lineage.html?lineage=XBF.2
 lineage: XBF.2
-parent: None
+parent: XBF
 children: ['XBF.2']
 ---
