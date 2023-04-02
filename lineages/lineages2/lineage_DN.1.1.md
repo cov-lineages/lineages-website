@@ -5,5 +5,5 @@ title: Lineage DN.1.1
 redirect_to: ../lineage.html?lineage=DN.1.1
 lineage: DN.1.1
 parent: DN.1
-children: ['DN.1.1']
+children: ['DN.1.1', 'DN.1.1.1', 'DN.1.1.2']
 ---
