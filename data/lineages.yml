@@ -12,7 +12,6 @@
       - AY.44
       - AY.46.1
       - AY.46.6
-      - AY.59
       - AY.103
       - AY.108
       - AY.112
@@ -176,7 +175,6 @@
       - BA.5.2.2
       - BA.5.2.3
       - BA.5.2.4
-      - BA.5.2.5
       - BA.5.2.6
       - BA.5.2.7
       - BA.5.2.8
@@ -281,8 +279,6 @@
   parent: A
       - AY.46.6
   parent: A
-      - AY.59
-  parent: A
       - AY.103
   parent: A
       - AY.108
@@ -608,8 +604,6 @@
       - BA.5.2.3
   parent: A
       - BA.5.2.4
-  parent: A
-      - BA.5.2.5
   parent: A
       - BA.5.2.6
   parent: A
@@ -795,8 +789,6 @@
   parent: B
       - AY.46.6
   parent: B
-      - AY.59
-  parent: B
       - AY.103
   parent: B
       - AY.108
@@ -1118,8 +1110,6 @@
       - BA.5.2.3
   parent: B
       - BA.5.2.4
-  parent: B
-      - BA.5.2.5
   parent: B
       - BA.5.2.6
   parent: B
@@ -1576,8 +1566,6 @@
       - BA.5.2.3
   parent: B.1
       - BA.5.2.4
-  parent: B.1
-      - BA.5.2.5
   parent: B.1
       - BA.5.2.6
   parent: B.1
@@ -2048,8 +2036,6 @@
       - BA.5.2.3
   parent: B.1.1
       - BA.5.2.4
-  parent: B.1.1
-      - BA.5.2.5
   parent: B.1.1
       - BA.5.2.6
   parent: B.1.1
@@ -2867,12 +2853,6 @@
   children:
       - BL.2
   parent: 
-      - BL.2.1
-  parent: 
-- name: BL.2.1
-  children:
-      - BL.2.1
-  parent: BL.2
 - name: BL.3
   children:
       - BL.3
@@ -2939,8 +2919,6 @@
   parent: 
       - BM.1.1.1
   parent: 
-      - BM.1.1.2
-  parent: 
       - BM.1.1.3
   parent: 
       - BM.1.1.4
@@ -2952,8 +2930,6 @@
       - BM.1.1
   parent: BM.1
       - BM.1.1.1
-  parent: BM.1
-      - BM.1.1.2
   parent: BM.1
       - BM.1.1.3
   parent: BM.1
@@ -2975,10 +2951,6 @@
   children:
       - CJ.1.1
   parent: CJ.1
-- name: BM.1.1.2
-  children:
-      - BM.1.1.2
-  parent: BM.1.1
 - name: BM.1.1.3
   children:
       - BM.1.1.3
@@ -3945,8 +3917,6 @@
   parent: B.1.1.529
       - BA.5.2.4
   parent: B.1.1.529
-      - BA.5.2.5
-  parent: B.1.1.529
       - BA.5.2.6
   parent: B.1.1.529
       - BA.5.2.7
@@ -4426,8 +4396,6 @@
       - BA.5.2.3
   parent: BA.5
       - BA.5.2.4
-  parent: BA.5
-      - BA.5.2.5
   parent: BA.5
       - BA.5.2.6
   parent: BA.5
@@ -5106,10 +5074,6 @@
 - name: BA.5.2.4
   children:
       - BA.5.2.4
-  parent: BA.5.2
-- name: BA.5.2.5
-  children:
-      - BA.5.2.5
   parent: BA.5.2
 - name: BA.5.2.6
   children:
@@ -7055,8 +7019,6 @@
   parent: B.1
       - AY.46.6
   parent: B.1
-      - AY.59
-  parent: B.1
       - AY.103
   parent: B.1
       - AY.108
@@ -7100,8 +7062,6 @@
       - AY.46.1
   parent: B.1.617
       - AY.46.6
-  parent: B.1.617
-      - AY.59
   parent: B.1.617
       - AY.103
   parent: B.1.617
@@ -7165,10 +7125,6 @@
   children:
       - AY.46.6
   parent: AY.46
-- name: AY.59
-  children:
-      - AY.59
-  parent: B.1.617.2
 - name: AY.103
   children:
       - AY.103
@@ -7292,7 +7248,6 @@
       - XBB
       - XBB.1
       - XBB.1.1
-      - XBB.1.2
       - XBB.1.3
       - XBB.1.4
       - XBB.1.4.1
@@ -7402,8 +7357,6 @@
       - XBB.1
   parent: XBB
       - XBB.1.1
-  parent: XBB
-      - XBB.1.2
   parent: XBB
       - XBB.1.3
   parent: XBB
@@ -7570,10 +7523,6 @@
 - name: XBB.1.1
   children:
       - XBB.1.1
-  parent: XBB.1
-- name: XBB.1.2
-  children:
-      - XBB.1.2
   parent: XBB.1
 - name: XBB.1.3
   children:
