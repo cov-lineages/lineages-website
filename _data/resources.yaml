@@ -58,6 +58,12 @@
   subheading: Center for Systems Science and Engineering at Johns Hopkins University
   category: Dashboards
   logourl: jhu.png
+- name: Lineage Tree
+  link: https://observablehq.com/embed/6475ff63fc3ebfb3
+  description: An interactive visualisation representing the Pango lineage system through a collapsable tree structure.
+  subheading: Kieran Lamb @ CVR Glasgow
+  category: Dashboards
+  logourl: lintree.png
 - name: GISAID
   link: https://www.gisaid.org/
   description: Important, global data repository for SARS-COV-2 genomes as well as for other pathogens
