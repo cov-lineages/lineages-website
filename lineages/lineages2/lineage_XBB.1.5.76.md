@@ -1,0 +1,9 @@
+---
+permalink: /lineages/lineage_XBB.1.5.76.html
+layout: lineage_page
+title: Lineage XBB.1.5.76
+redirect_to: ../lineage.html?lineage=XBB.1.5.76
+lineage: XBB.1.5.76
+parent: XBB.1.5
+children: ['XBB.1.5.76']
+---
