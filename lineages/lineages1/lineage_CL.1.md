@@ -5,5 +5,5 @@ title: Lineage CL.1
 redirect_to: ../lineage.html?lineage=CL.1
 lineage: CL.1
 parent: 
-children: ['CL.1', 'CL.1.1', 'CL.1.2', 'CL.1.3']
+children: ['CL.1', 'CL.1.3']
 ---
