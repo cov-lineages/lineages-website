@@ -5,5 +5,5 @@ title: Lineage ER.1
 redirect_to: ../lineage.html?lineage=ER.1
 lineage: ER.1
 parent: 
-children: ['ER.1', 'ER.1.1']
+children: ['ER.1']
 ---
