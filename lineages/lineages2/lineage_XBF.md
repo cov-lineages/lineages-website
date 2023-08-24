@@ -4,5 +4,5 @@ layout: lineage_page
 title: Lineage XBF
 redirect_to: ../lineage.html?lineage=XBF
 lineage: XBF
-children: ['XBF', 'XBF.2', 'XBF.3', 'XBF.4', 'XBF.5', 'XBF.6', 'XBF.7', 'XBF.7.1', 'XBF.9', 'XBF.10']
+children: ['XBF', 'XBF.2', 'XBF.3', 'XBF.4', 'XBF.5', 'XBF.7', 'XBF.7.1', 'XBF.9', 'XBF.10']
 ---
