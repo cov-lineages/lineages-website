@@ -5,5 +5,5 @@ title: Lineage BY.1.1
 redirect_to: ../lineage.html?lineage=BY.1.1
 lineage: BY.1.1
 parent: BY.1
-children: ['BY.1.1', 'BY.1.1.1']
+children: ['BY.1.1']
 ---
