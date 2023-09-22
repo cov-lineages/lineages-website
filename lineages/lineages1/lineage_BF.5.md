@@ -5,5 +5,5 @@ title: Lineage BF.5
 redirect_to: ../lineage.html?lineage=BF.5
 lineage: BF.5
 parent: 
-children: ['BF.5', 'BF.5.1', 'BF.5.2', 'BF.5.3', 'BF.5.4', 'BF.5.5']
+children: ['BF.5', 'BF.5.1']
 ---

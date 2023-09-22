@@ -5,5 +5,5 @@ title: Lineage CM.5
 redirect_to: ../lineage.html?lineage=CM.5
 lineage: CM.5
 parent: 
-children: ['CM.5', 'CM.5.1', 'CM.5.2']
+children: ['CM.5', 'CM.5.2']
 ---

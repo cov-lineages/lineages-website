@@ -5,5 +5,5 @@ title: Lineage CP.1
 redirect_to: ../lineage.html?lineage=CP.1
 lineage: CP.1
 parent: 
-children: ['CP.1', 'CP.1.1', 'CP.1.2', 'CP.1.3']
+children: ['CP.1', 'CP.1.1', 'CP.1.2']
 ---
