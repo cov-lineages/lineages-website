@@ -5,5 +5,5 @@ title: Lineage XBB.1.5.21
 redirect_to: ../lineage.html?lineage=XBB.1.5.21
 lineage: XBB.1.5.21
 parent: XBB.1.5
-children: ['GC.1', 'XBB.1.5.21']
+children: ['XBB.1.5.21']
 ---
