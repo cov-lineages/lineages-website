@@ -5,5 +5,5 @@ title: Lineage B.1.617.2
 redirect_to: ../lineage.html?lineage=B.1.617.2
 lineage: B.1.617.2
 parent: B.1.617
-children: ['AY.25.1.2', 'AY.74', 'AY.122', 'B.1.617.2']
+children: ['B.1.617.2']
 ---

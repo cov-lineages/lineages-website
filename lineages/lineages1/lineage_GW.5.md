@@ -1,0 +1,9 @@
+---
+permalink: /lineages/lineage_GW.5.html
+layout: lineage_page
+title: Lineage GW.5
+redirect_to: ../lineage.html?lineage=GW.5
+lineage: GW.5
+parent: XBB.1.19.1
+children: ['GW.5']
+---
