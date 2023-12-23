@@ -5,5 +5,5 @@ title: Lineage GA.4
 redirect_to: ../lineage.html?lineage=GA.4
 lineage: GA.4
 parent: XBB.1.17.1
-children: ['GA.4']
+children: ['GA.4', 'GA.4.1', 'GA.4.1.1']
 ---

@@ -5,5 +5,5 @@ title: Lineage FY.1
 redirect_to: ../lineage.html?lineage=FY.1
 lineage: FY.1
 parent: XBB.1.22.1
-children: ['FY.1', 'FY.1.1', 'FY.1.2', 'FY.1.3']
+children: ['FY.1', 'FY.1.1', 'FY.1.2']
 ---

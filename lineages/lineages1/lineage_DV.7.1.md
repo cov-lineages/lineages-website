@@ -5,5 +5,5 @@ title: Lineage DV.7.1
 redirect_to: ../lineage.html?lineage=DV.7.1
 lineage: DV.7.1
 parent: DV.7
-children: ['DV.7.1']
+children: ['DV.7.1', 'DV.7.1.1', 'DV.7.1.2', 'DV.7.1.3']
 ---
