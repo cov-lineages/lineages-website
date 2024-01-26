@@ -5,5 +5,5 @@ title: Lineage JN.2
 redirect_to: ../lineage.html?lineage=JN.2
 lineage: JN.2
 parent: 
-children: ['JN.2']
+children: ['JN.2', 'JN.2.1', 'JN.2.2', 'JN.2.3', 'JN.2.4', 'JN.2.5']
 ---
