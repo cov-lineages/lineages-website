@@ -5,5 +5,5 @@ title: Lineage FL.2.7
 redirect_to: ../lineage.html?lineage=FL.2.7
 lineage: FL.2.7
 parent: FL.2
-children: ['FL.2.7', 'FL.2.7.1']
+children: ['FL.2.7']
 ---
