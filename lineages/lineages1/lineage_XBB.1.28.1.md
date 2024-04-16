@@ -5,5 +5,5 @@ title: Lineage XBB.1.28.1
 redirect_to: ../lineage.html?lineage=XBB.1.28.1
 lineage: XBB.1.28.1
 parent: XBB.1.28
-children: ['FW.1', 'FW.2', 'XBB.1.28.1']
+children: ['FW.1', 'FW.1.1.1', 'XBB.1.28.1']
 ---

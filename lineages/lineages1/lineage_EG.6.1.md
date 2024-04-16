@@ -5,5 +5,5 @@ title: Lineage EG.6.1
 redirect_to: ../lineage.html?lineage=EG.6.1
 lineage: EG.6.1
 parent: EG.6
-children: ['EG.6.1', 'EG.6.1.1']
+children: ['EG.6.1', 'EG.6.1.1', 'EG.6.1.2']
 ---

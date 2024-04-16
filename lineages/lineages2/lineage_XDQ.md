@@ -4,5 +4,5 @@ layout: lineage_page
 title: Lineage XDQ
 redirect_to: ../lineage.html?lineage=XDQ
 lineage: XDQ
-children: ['XDQ']
+children: ['XDQ', 'XDQ.1']
 ---
