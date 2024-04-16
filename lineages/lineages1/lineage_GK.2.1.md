@@ -5,5 +5,5 @@ title: Lineage GK.2.1
 redirect_to: ../lineage.html?lineage=GK.2.1
 lineage: GK.2.1
 parent: GK.2
-children: ['GK.2.1', 'GK.2.1.1']
+children: ['GK.2.1']
 ---

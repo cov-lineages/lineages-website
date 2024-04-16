@@ -5,5 +5,5 @@ title: Lineage EG.4
 redirect_to: ../lineage.html?lineage=EG.4
 lineage: EG.4
 parent: XBB.1.9.2
-children: ['EG.4', 'EG.4.3', 'EG.4.5']
+children: ['EG.4']
 ---

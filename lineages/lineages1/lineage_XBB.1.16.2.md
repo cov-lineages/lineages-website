@@ -5,5 +5,5 @@ title: Lineage XBB.1.16.2
 redirect_to: ../lineage.html?lineage=XBB.1.16.2
 lineage: XBB.1.16.2
 parent: XBB.1.16
-children: ['GY.1', 'GY.2', 'GY.2.1', 'GY.3', 'GY.5', 'GY.6', 'GY.7', 'GY.8', 'XBB.1.16.2']
+children: ['GY.1.1.1', 'XBB.1.16.2']
 ---
