@@ -4,5 +4,5 @@ layout: lineage_page
 title: Lineage XCT
 redirect_to: ../lineage.html?lineage=XCT
 lineage: XCT
-children: ['XCT', 'XCT.1']
+children: ['XCT']
 ---

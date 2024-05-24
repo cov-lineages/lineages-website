@@ -5,5 +5,5 @@ title: Lineage HK.13.2
 redirect_to: ../lineage.html?lineage=HK.13.2
 lineage: HK.13.2
 parent: HK.13
-children: ['HK.13.2', 'HK.13.2.1']
+children: ['HK.13.2']
 ---
