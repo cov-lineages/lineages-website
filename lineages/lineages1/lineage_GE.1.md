@@ -5,5 +5,5 @@ title: Lineage GE.1
 redirect_to: ../lineage.html?lineage=GE.1
 lineage: GE.1
 parent: XBB.2.3.10
-children: ['GE.1', 'GE.1.2', 'GE.1.2.1']
+children: ['GE.1', 'GE.1.2', 'GE.1.2.1', 'GE.1.6']
 ---
