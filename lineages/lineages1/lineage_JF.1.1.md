@@ -5,5 +5,5 @@ title: Lineage JF.1.1
 redirect_to: ../lineage.html?lineage=JF.1.1
 lineage: JF.1.1
 parent: JF.1
-children: ['JF.1.1', 'JF.1.1.2']
+children: ['JF.1.1']
 ---

@@ -4,5 +4,5 @@ layout: lineage_page
 title: Lineage XDA
 redirect_to: ../lineage.html?lineage=XDA
 lineage: XDA
-children: ['XDA', 'XDA.1']
+children: ['XDA']
 ---
