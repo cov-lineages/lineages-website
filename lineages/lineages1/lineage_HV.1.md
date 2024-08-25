@@ -5,5 +5,5 @@ title: Lineage HV.1
 redirect_to: ../lineage.html?lineage=HV.1
 lineage: HV.1
 parent: 
-children: ['HV.1', 'HV.1.1', 'HV.1.9']
+children: ['HV.1']
 ---
