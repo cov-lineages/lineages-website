@@ -9,7 +9,10 @@ layout: default
 <h2>Using Bioconda or Mamba</h2>
 
 <ol class="listWithCode">
-	<li> Install using <a href="https://docs.conda.io/en/latest/miniconda.html">conda</a> (or <a href="https://mamba.readthedocs.io/en/latest/installation.html">mamba</a>)<br><br><span class="code">conda install -c bioconda -c conda-forge -c defaults pangolin</span></li>
+	<li> Install using <a href="https://docs.conda.io/en/latest/miniconda.html">conda</a> (or <a href="https://mamba.readthedocs.io/en/latest/installation.html">mamba</a>) in a new environment named pangolin<br><br>
+          <span class="code">conda create -c conda-forge -c bioconda -c nodefaults -n pangolin pangolin</span></li>
+        <li> Activate the pangolin environment<br><br>
+          <span class="code">conda activate pangolin</span></li>
 	<li> Try it out <span class="code">pangolin -h</span></li>
 </ol>
 
